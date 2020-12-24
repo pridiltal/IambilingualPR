@@ -1,6 +1,6 @@
 --- 
 title: "I am Bilingual - Python and R"
-author: "Priyanga Talagala <br/> Thiyanga Talagala"
+author: "Priyanga Dilini Talagala <br/> Thiyanga S. Talagala"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
