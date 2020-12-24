@@ -12,5 +12,5 @@ github-repo: rstudio/bookdown-demo
 description: "I am Bilingual - Python and R"
 ---
 
-# Preface
+# Preface {-}
 
