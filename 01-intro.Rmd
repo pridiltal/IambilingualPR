@@ -1,3 +1,43 @@
 # Introduction to R and Python {#intro}
 
+## About R and Python
 
+### R 
+
+R is an object oriented, open source programming **language** and **environment** for statistical computing and graphics. R is not a statistics system but an environment within which statistical techniques are implemented. Further, R gains more capabilities via packages, its fundamental shareable units that bundle together R functions, code, data, documentation, and tests etc. [@Rcoreteam2020]. 
+
+### Python 
+
+Python is an object-oriented, interpreted, and interactive programming language. The motto of Python language is "Batteries included" as the functionality of the language can be performed via its comprehensive standard in built Libraries [@wikipython].
+
+## History of R and Python
+
+### R 
+
+R is an implementation of the S programming language which was created by John Chambers in 1976. In 1991, an alternative implementation of the basic S language was developed by Ross Ihaka and Robert Gentleman, University of Auckland, New Zealand.  It was published in 1993 [@wikiR].
+
+## Python 
+
+In 1989, Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands started the implementation of Python  as a successor to ABC programming language. Python 2.0 was released in 2000. Python 3.0, a major revision of the language that is not completely backward-compatible  was released in 2008 [@wikipython] . Today many  developers create libraries strictly for the use with Python 3.
+
+
+## Story behind their names
+
+### R 
+
+R was introduced by **R**oss Ihaka and **R**obert Gentleman and it was named after the first names of the two authors. The name of the "S" language also had some influence on the selection of its name and it was selected partly as a play on the name of S [@wikiR]. 
+
+
+### Python
+
+Python was named after a famous [TV show 'Monty Python's Flying Circus'](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus). Guido van Rossum, the creater of Python was a big fan of the TV show. He wanted to name his invention with a short, unique and slightly mysterious name and chose Python as a working title for his ongoing project. 
+
+### Logo
+
+```{r   out.width = "30%", echo = FALSE, fig.align='center', fig.cap="Retrieved from: https://www.r-project.org/logo/"}
+knitr::include_graphics("fig/C1_Rlogo.png")
+```
+
+```{r   out.width = "60%", echo = FALSE, fig.align='center', fig.cap="Retrieved from: https://www.python.org/community/logos/"}
+knitr::include_graphics("fig/C1_Pythonlogo.png")
+```
