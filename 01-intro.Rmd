@@ -16,7 +16,7 @@ Python is an object-oriented, interpreted, and interactive programming language.
 
 R is an implementation of the S programming language which was created by John Chambers in 1976. In 1991, an alternative implementation of the basic S language was developed by Ross Ihaka and Robert Gentleman, University of Auckland, New Zealand.  It was published in 1993 [@wikiR].
 
-## Python 
+### Python 
 
 In 1989, Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands started the implementation of Python  as a successor to ABC programming language. Python 2.0 was released in 2000. Python 3.0, a major revision of the language that is not completely backward-compatible  was released in 2008 [@wikipython] . Today many  developers create libraries strictly for the use with Python 3.
 
@@ -32,7 +32,7 @@ R was introduced by **R**oss Ihaka and **R**obert Gentleman and it was named aft
 
 Python was named after a famous [TV show 'Monty Python's Flying Circus'](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus). Guido van Rossum, the creater of Python was a big fan of the TV show. He wanted to name his invention with a short, unique and slightly mysterious name and chose Python as a working title for his ongoing project. 
 
-### Logo
+## Logo
 
 ```{r   out.width = "30%", echo = FALSE, fig.align='center', fig.cap="Retrieved from: https://www.r-project.org/logo/"}
 knitr::include_graphics("fig/C1_Rlogo.png")
@@ -41,3 +41,20 @@ knitr::include_graphics("fig/C1_Rlogo.png")
 ```{r   out.width = "60%", echo = FALSE, fig.align='center', fig.cap="Retrieved from: https://www.python.org/community/logos/"}
 knitr::include_graphics("fig/C1_Pythonlogo.png")
 ```
+
+## Worldwide Google Trends 
+
+```{r googletrends, echo = FALSE, warning=FALSE, message=FALSE, fig.width=13, fig.height=8}
+library(fpp3)
+library(tidyverse)
+data<-read.csv(here::here("data","multiTimeline2004.csv" ), header = TRUE)
+datatsibble <- data%>% pivot_longer(cols=2:3,names_to = "Language", values_to = "Google trends (worldwide)" )
+
+datatsibble$Month <- yearmonth(datatsibble$Month)
+datatsibble <- datatsibble %>% as_tsibble(index = Month, key = Language)
+p<- datatsibble %>% autoplot() +
+  xlab("Time")
+print(p)
+```
+
+
