@@ -1,0 +1,13 @@
+# Advanced R and Python
+
+Refer this website
+
+https://www.business-science.io/learning-python/2018/11/18/data-science-python-cheatsheet.html?utm_content=bufferd082c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+## Time Series Forecasting
+
+R   | Python
+----|----------
+[fable](https://cran.r-project.org/web/packages/fable/index.html)-Forecasting Models for Tidy Time Series] | [statsmodels](https://www.statsmodels.org/devel/user-guide.html#time-series-analysis)- Statistics based models
+[forecast](https://cran.r-project.org/web/packages/forecast/index.html)- Forecasting Functions for Time Series and Linear Models | [sktime](A unified framework for machine learning with time series)
+| [GluonTS](https://ts.gluon.ai/) -  Deep learning-based models.
