@@ -14,3 +14,7 @@ description: "I am Bilingual - Python and R"
 
 # Preface {-}
 
+WIP!!
+
+**This book is still in progress in various draft forms.**
+
