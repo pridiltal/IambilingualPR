@@ -326,7 +326,178 @@ WIP
 \hypertarget{visualize}{%
 \chapter{Visualize}\label{visualize}}
 
-WIP
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+The Palmer penguins dataset was introduced by Allison Horst, Alison Hill, and Kristen Gorman provide a great dataset for data exploration and visualization, as an alternative to iris. It was first introduced as an R package. The released version of palmerpenguins can be instaalled from CRAN with:
+
+\textbf{R Installation}
+\texttt{install.packages("palmerpenguins")}
+
+Using \href{https://pypi.org/project/palmerpenguins/}{\texttt{palmerpenguins} python package} you can easily load the Palmer penguins into your python environment.
+
+\textbf{Python Installation}
+\texttt{pip\ install\ palmerpenguins}
+
+The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt{penguins\_raw}. \texttt{penguins} is a simplified version of the \texttt{penguins\_raw} data.
+
+\hypertarget{r-4}{%
+\section{R}\label{r-4}}
+
+\hypertarget{base-r-package}{%
+\subsection{\texorpdfstring{\texttt{base} R package}{base R package}}\label{base-r-package}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Load Palmer Archipelago (Antarctica) Penguin Data}
+\KeywordTok{library}\NormalTok{(palmerpenguins)}
+\CommentTok{# Return the first part of the dataset}
+\KeywordTok{head}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 8
+##   species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g sex  
+##   <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
+## 1 Adelie  Torge~           39.1          18.7              181        3750 male 
+## 2 Adelie  Torge~           39.5          17.4              186        3800 fema~
+## 3 Adelie  Torge~           40.3          18                195        3250 fema~
+## 4 Adelie  Torge~           NA            NA                 NA          NA <NA> 
+## 5 Adelie  Torge~           36.7          19.3              193        3450 fema~
+## 6 Adelie  Torge~           39.3          20.6              190        3650 male 
+## # ... with 1 more variable: year <int>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Retrieve column names}
+\KeywordTok{colnames}\NormalTok{(penguins)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "species"           "island"            "bill_length_mm"   
+## [4] "bill_depth_mm"     "flipper_length_mm" "body_mass_g"      
+## [7] "sex"               "year"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Define color for each of the 3 iris species}
+\NormalTok{colors <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#00AFBB"}\NormalTok{, }\StringTok{"#E7B800"}\NormalTok{, }\StringTok{"#FC4E07"}\NormalTok{)}
+\NormalTok{colors <-}\StringTok{ }\NormalTok{colors[}\KeywordTok{as.numeric}\NormalTok{(penguins}\OperatorTok{$}\NormalTok{species)]}
+
+\CommentTok{# Define shapes}
+\NormalTok{shapes =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{16}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{18}\NormalTok{) }
+\NormalTok{shapes <-}\StringTok{ }\NormalTok{shapes[}\KeywordTok{as.numeric}\NormalTok{(penguins}\OperatorTok{$}\NormalTok{species)]}
+
+\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{flipper_length_mm,}
+          \DataTypeTok{y =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{body_mass_g,}
+          \DataTypeTok{col =}\NormalTok{ colors,}
+          \DataTypeTok{pch =}\NormalTok{ shapes,}
+          \DataTypeTok{xlab =} \StringTok{"Flipper Length"}\NormalTok{,}
+          \DataTypeTok{ylab =} \StringTok{"Body Mass"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{gggplot2-package}{%
+\subsection{\texorpdfstring{\texttt{gggplot2} Package}{gggplot2 Package}}\label{gggplot2-package}}
+
+\texttt{ggplot2} is an R package dedicated to data visualization which is based on The Grammar of Graphics \citep{wilkinson2012grammar}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#load ggplot2 package to make statistical graphics}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(palmerpenguins)}
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(penguins) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{( }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ flipper_length_mm,}
+                  \DataTypeTok{y =}\NormalTok{ body_mass_g,}
+                  \DataTypeTok{color =}\NormalTok{ species,}
+                  \DataTypeTok{shape =}\NormalTok{ species)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
+
+\KeywordTok{print}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\hypertarget{python-4}{%
+\section{Python}\label{python-4}}
+
+\hypertarget{matplotlib-package}{%
+\subsection{\texorpdfstring{\texttt{Matplotlib} package}{Matplotlib package}}\label{matplotlib-package}}
+
+Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#load functions in palmerpenguins package}
+\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load_penguins}
+\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load_penguins()}
+\CommentTok{# Return the first part of the dataset}
+\NormalTok{penguins.head()}
+\CommentTok{# Retrieve column names}
+\BuiltInTok{list}\NormalTok{(penguins.columns)}
+
+\CommentTok{# Import matplotlib to make statistical graphics. }
+\CommentTok{# By convention, it is imported with the shorthand sns.}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+
+\NormalTok{colors }\OperatorTok{=}\NormalTok{ \{}\StringTok{'Adelie'}\NormalTok{:}\StringTok{'blue'}\NormalTok{, }\StringTok{'Gentoo'}\NormalTok{:}\StringTok{'orange'}\NormalTok{, }\StringTok{'Chinstrap'}\NormalTok{:}\StringTok{'green'}\NormalTok{\}}
+\NormalTok{plt.scatter(penguins.flipper_length_mm, penguins.body_mass_g, c}\OperatorTok{=}\NormalTok{ penguins.species.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: colors[x]))}
+\NormalTok{plt.xlabel(}\StringTok{'Flipper Length'}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{'Body Mass'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{fig/Viz_chap/1_matplot} \end{center}
+
+\hypertarget{seaborn-package}{%
+\subsection{\texorpdfstring{\texttt{seaborn} Package}{seaborn Package}}\label{seaborn-package}}
+
+Seaborn provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Import seaborn to make statistical graphics. }
+\CommentTok{# By convention, it is imported with the shorthand sns.}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns }
+\CommentTok{#load functions in palmerpenguins package}
+\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load_penguins}
+\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load_penguins()}
+
+\CommentTok{# Apply the default theme}
+\NormalTok{sns.set_theme()}
+\CommentTok{# sns.set_style('whitegrid')}
+\NormalTok{p }\OperatorTok{=}\NormalTok{ sns.relplot(x }\OperatorTok{=} \StringTok{'flipper_length_mm'}\NormalTok{,}
+\NormalTok{            y }\OperatorTok{=}\StringTok{'body_mass_g'}\NormalTok{,}
+\NormalTok{            hue }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
+\NormalTok{            style }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
+\NormalTok{            data }\OperatorTok{=}\NormalTok{ penguins)}
+\NormalTok{p.set_xlabels(}\StringTok{'Flipper Length'}\NormalTok{)}
+\NormalTok{p.set_ylabels(}\StringTok{'Body Mass'}\NormalTok{)           }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{fig/Viz_chap/2_seaborn} \end{center}
+
+The function \texttt{relplot()} is named that way because it is designed to visualize many different statistical relationships. The \texttt{relplot()} function has a convenient kind parameter that lets you easily switch to this alternate representation:
+\texttt{scatterplot()} with \texttt{kind="scatter"}; the default and \texttt{lineplot()} with \texttt{kind="line"}.
+
+\hypertarget{plotnine-package}{%
+\subsection{\texorpdfstring{\texttt{plotnine} package}{plotnine package}}\label{plotnine-package}}
+
+\url{https://pypi.org/project/plotnine/}
+
+plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to compose plots by explicitly mapping data to the visual objects that make up the plot.
+
+Plotting with a grammar is powerful, it makes custom (and otherwise complex) plots are easy to think about and then create, while the simple plots remain simple.
 
 \hypertarget{model}{%
 \chapter{Model}\label{model}}
