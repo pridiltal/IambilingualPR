@@ -1,3 +1,28 @@
 # Variables, expressions, and statements
 
-WIP
+## Basic Exmaple
+This is a test code
+
+### R code
+
+```{r}
+# This is an R code
+x <- 1
+y <- 3
+print(x+y)
+```
+
+### Python Code
+
+The 'python' engine in knitr requires the `reticulate` package.
+
+```{r load}
+library(reticulate)
+```
+
+```{python}
+# This is a Python code
+x = 1
+y = 3
+print(x+y)
+```

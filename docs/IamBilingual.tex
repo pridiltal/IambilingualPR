@@ -34,6 +34,46 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
@@ -78,7 +118,7 @@
 
 \title{I am Bilingual - Python and R}
 \author{Priyanga Dilini Talagala Thiyanga S. Talagala}
-\date{2021-02-24}
+\date{2021-04-26}
 
 \begin{document}
 \maketitle
@@ -165,6 +205,39 @@ Python was named after a famous \href{https://en.wikipedia.org/wiki/Monty_Python
 
 \includegraphics{IamBilingual_files/figure-latex/googletrends-1.pdf}
 
+\hypertarget{installation}{%
+\section{Installation}\label{installation}}
+
+\hypertarget{python-3}{%
+\subsection{Python}\label{python-3}}
+
+Ref: \url{https://www.w3schools.com/python/python_getstarted.asp}
+
+Many PCs and Macs will have python already installed.
+
+To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):
+
+\texttt{C:\textbackslash{}Users\textbackslash{}Your\ Name\textgreater{}python\ -\/-version}
+
+To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:
+
+\texttt{python\ -\/-version}
+
+If you find that you do not have python installed on your computer, then you can download it for free from the following website: \url{https://www.python.org/}
+
+\hypertarget{r-3}{%
+\subsection{R}\label{r-3}}
+
+You can download it for free from the following websites:
+
+\begin{itemize}
+\tightlist
+\item
+  R (\url{https://cran.r-project.org/})
+\item
+  RStudio (\url{https://www.rstudio.com/products/rstudio/download/\#download}).
+\end{itemize}
+
 \hypertarget{ranked15python-packages}{%
 \section{Ranked:15Python packages}\label{ranked15python-packages}}
 
@@ -175,7 +248,50 @@ for Data Science
 \hypertarget{variables-expressions-and-statements}{%
 \chapter{Variables, expressions, and statements}\label{variables-expressions-and-statements}}
 
-WIP
+\hypertarget{basic-exmaple}{%
+\section{Basic Exmaple}\label{basic-exmaple}}
+
+This is a test code
+
+\hypertarget{r-code}{%
+\subsection{R code}\label{r-code}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This is an R code}
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}
+\NormalTok{y <-}\StringTok{ }\DecValTok{3}
+\KeywordTok{print}\NormalTok{(x}\OperatorTok{+}\NormalTok{y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\hypertarget{python-code}{%
+\subsection{Python Code}\label{python-code}}
+
+The `python' engine in knitr requires the \texttt{reticulate} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(reticulate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This is a Python code}
+\NormalTok{x }\OperatorTok{=} \DecValTok{1}
+\NormalTok{y }\OperatorTok{=} \DecValTok{3}
+\BuiltInTok{print}\NormalTok{(x}\OperatorTok{+}\NormalTok{y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 4
+\end{verbatim}
 
 \hypertarget{conditional-execution}{%
 \chapter{Conditional execution}\label{conditional-execution}}
