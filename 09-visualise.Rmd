@@ -1,4 +1,11 @@
-# Visualize
+# Data Visualization
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE)
+```
 
 <!--https://juliescholler.gitlab.io/files/M2/M2-CM2-workflow2.html#3-->
 
@@ -21,7 +28,7 @@ The palmerpenguins package contains two datasets : `penguins` and `penguins_raw`
 
 ## R
 
-### `base` R package
+**Load data**
 
 ```{r warning=FALSE, message=FALSE}
 # Load Palmer Archipelago (Antarctica) Penguin Data
@@ -30,8 +37,12 @@ library(palmerpenguins)
 head(penguins)
 # Retrieve column names
 colnames(penguins)
+```
 
-# Define color for each of the 3 iris species
+### `base` R package
+
+```{r warning=FALSE, message=FALSE}
+# Define color for each of the 3 penguine species
 colors <- c("#00AFBB", "#E7B800", "#FC4E07")
 colors <- colors[as.numeric(penguins$species)]
 
@@ -57,7 +68,6 @@ plot(x = penguins$flipper_length_mm,
 ```{r warning=FALSE, message=FALSE}
 #load ggplot2 package to make statistical graphics
 library(ggplot2)
-library(palmerpenguins)
 p <- ggplot(penguins) +
   geom_point( aes(x = flipper_length_mm,
                   y = body_mass_g,
@@ -70,16 +80,47 @@ print(p)
 ```
 
 
+### `plotly` R package for interactive data visualization
+
+
+Interactive visualization focuses on graphic representations of data that improve the way we interact with information
+
+plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.
+
+```{r }
+library(plotly)
+p <- ggplot(penguins) +
+  geom_point( aes(x = flipper_length_mm,
+                  y = body_mass_g,
+                  color = species,
+                  shape = species)) +
+  xlab("Flipper Length")+
+  ylab("Body Mass")
+
+# The function ggplotly converts a ggplot2::ggplot() object to a plotly object.
+plotly::ggplotly(p)
+
+```
+
+
+**Method 2**
+
+```{r message=FALSE, warning=FALSE}
+library(plotly)
+fig <- plot_ly(penguins, 
+               x = ~flipper_length_mm,
+               y = ~body_mass_g, 
+               color = ~species,
+               symbol = ~species,
+               type = "scatter")
+fig
+```
+
 ## Python
 
 <!--python code for the plot https://github.com/mcnakhaee/palmerpenguins-->
 
-
-
-
-### `Matplotlib` package
-
-Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on. 
+**Load data**
 
 ```{python eval=FALSE}
 #load functions in palmerpenguins package
@@ -89,13 +130,23 @@ penguins = load_penguins()
 penguins.head()
 # Retrieve column names
 list(penguins.columns)
+```
+
+
+### `Matplotlib` package
+
+Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on. 
+
+```{python eval=FALSE}
 
 # Import matplotlib to make statistical graphics. 
 # By convention, it is imported with the shorthand sns.
 import matplotlib.pyplot as plt
 
 colors = {'Adelie':'blue', 'Gentoo':'orange', 'Chinstrap':'green'}
-plt.scatter(penguins.flipper_length_mm, penguins.body_mass_g, c= penguins.species.apply(lambda x: colors[x]))
+plt.scatter(penguins.flipper_length_mm,
+penguins.body_mass_g, 
+c= penguins.species.apply(lambda x: colors[x]))
 plt.xlabel('Flipper Length')
 plt.ylabel('Body Mass')
 ```
@@ -127,7 +178,7 @@ p = sns.relplot(x = 'flipper_length_mm',
             style = 'species',
             data = penguins)
 p.set_xlabels('Flipper Length')
-p.set_ylabels('Body Mass')           
+p.set_ylabels('Body Mass')   
 ```
 
 ```{r   out.width = "90%", echo = FALSE, fig.align='center'}
@@ -147,3 +198,48 @@ https://pypi.org/project/plotnine/
 plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to compose plots by explicitly mapping data to the visual objects that make up the plot.
 
 Plotting with a grammar is powerful, it makes custom (and otherwise complex) plots are easy to think about and then create, while the simple plots remain simple.
+
+
+**NOTE: R vs Python Syntax**
+
+**Unlike in R, now all the variables must be enclosed by single quotes**
+
+```{python eval = FALSE}
+from plotnine import *
+# unlike in R, now all the variables must be enclosed by single quotes
+(ggplot(penguins) +
+  geom_point(aes(x = 'flipper_length_mm',
+                  y = 'body_mass_g',
+                  color = 'species',
+                  shape = 'species')) +
+  xlab("Flipper Length")+
+  ylab("Body Mass"))
+
+```
+
+```{r   out.width = "90%", echo = FALSE, fig.align='center'}
+knitr::include_graphics("fig/Viz_chap/3_plotnine.png")
+```
+
+### `plotly` Python library for interactive data visualization
+
+The `plotly.express` (Plotly Express or PX) module contains functions that can create entire figures at once. It is usually imported as `px`. Plotly Express is a built-in part of the `plotly` library.
+
+```{python eval = FALSE}
+import plotly.express as px
+
+fig = px.scatter(penguins,
+                 x="flipper_length_mm",
+                 y="body_mass_g",
+                 color= "species",
+                 symbol= "species",
+                 labels=dict(flipper_length_mm="Flipper Length",
+                             body_mass_g="Body Mass"))
+fig.show()
+
+```
+
+```{r showChoro1, echo=FALSE}
+htmltools::includeHTML(here::here("fig",
+"Viz_chap", "4_plotly.html"))
+```

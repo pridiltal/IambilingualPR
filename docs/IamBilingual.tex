@@ -323,8 +323,8 @@ WIP
 
 WIP
 
-\hypertarget{visualize}{%
-\chapter{Visualize}\label{visualize}}
+\hypertarget{data-visualization}{%
+\chapter{Data Visualization}\label{data-visualization}}
 
 \hypertarget{data}{%
 \section{Data}\label{data}}
@@ -344,8 +344,7 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 \hypertarget{r-4}{%
 \section{R}\label{r-4}}
 
-\hypertarget{base-r-package}{%
-\subsection{\texorpdfstring{\texttt{base} R package}{base R package}}\label{base-r-package}}
+\textbf{Load data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -382,9 +381,12 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 ## [7] "sex"               "year"
 \end{verbatim}
 
+\hypertarget{base-r-package}{%
+\subsection{\texorpdfstring{\texttt{base} R package}{base R package}}\label{base-r-package}}
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Define color for each of the 3 iris species}
+\CommentTok{# Define color for each of the 3 penguine species}
 \NormalTok{colors <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#00AFBB"}\NormalTok{, }\StringTok{"#E7B800"}\NormalTok{, }\StringTok{"#FC4E07"}\NormalTok{)}
 \NormalTok{colors <-}\StringTok{ }\NormalTok{colors[}\KeywordTok{as.numeric}\NormalTok{(penguins}\OperatorTok{$}\NormalTok{species)]}
 
@@ -401,7 +403,7 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-5-1.pdf}
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-6-1.pdf}
 
 \hypertarget{gggplot2-package}{%
 \subsection{\texorpdfstring{\texttt{gggplot2} Package}{gggplot2 Package}}\label{gggplot2-package}}
@@ -412,7 +414,6 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 \begin{Highlighting}[]
 \CommentTok{#load ggplot2 package to make statistical graphics}
 \KeywordTok{library}\NormalTok{(ggplot2)}
-\KeywordTok{library}\NormalTok{(palmerpenguins)}
 \NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(penguins) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_point}\NormalTok{( }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ flipper_length_mm,}
                   \DataTypeTok{y =}\NormalTok{ body_mass_g,}
@@ -425,15 +426,54 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-6-1.pdf}
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{plotly-r-package-for-interactive-data-visualization}{%
+\subsection{\texorpdfstring{\texttt{plotly} R package for interactive data visualization}{plotly R package for interactive data visualization}}\label{plotly-r-package-for-interactive-data-visualization}}
+
+Interactive visualization focuses on graphic representations of data that improve the way we interact with information
+
+plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(plotly)}
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(penguins) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{( }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ flipper_length_mm,}
+                  \DataTypeTok{y =}\NormalTok{ body_mass_g,}
+                  \DataTypeTok{color =}\NormalTok{ species,}
+                  \DataTypeTok{shape =}\NormalTok{ species)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
+
+\CommentTok{# The function ggplotly converts a ggplot2::ggplot() object to a plotly object.}
+\NormalTok{plotly}\OperatorTok{::}\KeywordTok{ggplotly}\NormalTok{(p)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\textbf{Method 2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(plotly)}
+\NormalTok{fig <-}\StringTok{ }\KeywordTok{plot_ly}\NormalTok{(penguins, }
+               \DataTypeTok{x =} \OperatorTok{~}\NormalTok{flipper_length_mm,}
+               \DataTypeTok{y =} \OperatorTok{~}\NormalTok{body_mass_g, }
+               \DataTypeTok{color =} \OperatorTok{~}\NormalTok{species,}
+               \DataTypeTok{symbol =} \OperatorTok{~}\NormalTok{species,}
+               \DataTypeTok{type =} \StringTok{"scatter"}\NormalTok{)}
+\NormalTok{fig}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-9-1.pdf}
 
 \hypertarget{python-4}{%
 \section{Python}\label{python-4}}
 
-\hypertarget{matplotlib-package}{%
-\subsection{\texorpdfstring{\texttt{Matplotlib} package}{Matplotlib package}}\label{matplotlib-package}}
-
-Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on.
+\textbf{Load data}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -444,13 +484,24 @@ Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib
 \NormalTok{penguins.head()}
 \CommentTok{# Retrieve column names}
 \BuiltInTok{list}\NormalTok{(penguins.columns)}
+\end{Highlighting}
+\end{Shaded}
 
+\hypertarget{matplotlib-package}{%
+\subsection{\texorpdfstring{\texttt{Matplotlib} package}{Matplotlib package}}\label{matplotlib-package}}
+
+Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on.
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{# Import matplotlib to make statistical graphics. }
 \CommentTok{# By convention, it is imported with the shorthand sns.}
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
 
 \NormalTok{colors }\OperatorTok{=}\NormalTok{ \{}\StringTok{'Adelie'}\NormalTok{:}\StringTok{'blue'}\NormalTok{, }\StringTok{'Gentoo'}\NormalTok{:}\StringTok{'orange'}\NormalTok{, }\StringTok{'Chinstrap'}\NormalTok{:}\StringTok{'green'}\NormalTok{\}}
-\NormalTok{plt.scatter(penguins.flipper_length_mm, penguins.body_mass_g, c}\OperatorTok{=}\NormalTok{ penguins.species.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: colors[x]))}
+\NormalTok{plt.scatter(penguins.flipper_length_mm,}
+\NormalTok{penguins.body_mass_g, }
+\NormalTok{c}\OperatorTok{=}\NormalTok{ penguins.species.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: colors[x]))}
 \NormalTok{plt.xlabel(}\StringTok{'Flipper Length'}\NormalTok{)}
 \NormalTok{plt.ylabel(}\StringTok{'Body Mass'}\NormalTok{)}
 \end{Highlighting}
@@ -481,7 +532,7 @@ Seaborn provides a variety of visualization patterns. It uses fewer syntax and h
 \NormalTok{            style }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
 \NormalTok{            data }\OperatorTok{=}\NormalTok{ penguins)}
 \NormalTok{p.set_xlabels(}\StringTok{'Flipper Length'}\NormalTok{)}
-\NormalTok{p.set_ylabels(}\StringTok{'Body Mass'}\NormalTok{)           }
+\NormalTok{p.set_ylabels(}\StringTok{'Body Mass'}\NormalTok{)   }
 \end{Highlighting}
 \end{Shaded}
 
@@ -498,6 +549,46 @@ The function \texttt{relplot()} is named that way because it is designed to visu
 plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to compose plots by explicitly mapping data to the visual objects that make up the plot.
 
 Plotting with a grammar is powerful, it makes custom (and otherwise complex) plots are easy to think about and then create, while the simple plots remain simple.
+
+\textbf{NOTE: R vs Python Syntax}
+
+\textbf{Unlike in R, now all the variables must be enclosed by single quotes}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ plotnine }\ImportTok{import} \OperatorTok{*}
+\CommentTok{# unlike in R, now all the variables must be enclosed by single quotes}
+\NormalTok{(ggplot(penguins) }\OperatorTok{+}
+\NormalTok{  geom_point(aes(x }\OperatorTok{=} \StringTok{'flipper_length_mm'}\NormalTok{,}
+\NormalTok{                  y }\OperatorTok{=} \StringTok{'body_mass_g'}\NormalTok{,}
+\NormalTok{                  color }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
+\NormalTok{                  shape }\OperatorTok{=} \StringTok{'species'}\NormalTok{)) }\OperatorTok{+}
+\NormalTok{  xlab(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
+\NormalTok{  ylab(}\StringTok{"Body Mass"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.9\linewidth]{fig/Viz_chap/3_plotnine} \end{center}
+
+\hypertarget{plotly-python-library-for-interactive-data-visualization}{%
+\subsection{\texorpdfstring{\texttt{plotly} Python library for interactive data visualization}{plotly Python library for interactive data visualization}}\label{plotly-python-library-for-interactive-data-visualization}}
+
+The \texttt{plotly.express} (Plotly Express or PX) module contains functions that can create entire figures at once. It is usually imported as \texttt{px}. Plotly Express is a built-in part of the \texttt{plotly} library.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ plotly.express }\ImportTok{as}\NormalTok{ px}
+
+\NormalTok{fig }\OperatorTok{=}\NormalTok{ px.scatter(penguins,}
+\NormalTok{                 x}\OperatorTok{=}\StringTok{"flipper_length_mm"}\NormalTok{,}
+\NormalTok{                 y}\OperatorTok{=}\StringTok{"body_mass_g"}\NormalTok{,}
+\NormalTok{                 color}\OperatorTok{=} \StringTok{"species"}\NormalTok{,}
+\NormalTok{                 symbol}\OperatorTok{=} \StringTok{"species"}\NormalTok{,}
+\NormalTok{                 labels}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(flipper_length_mm}\OperatorTok{=}\StringTok{"Flipper Length"}\NormalTok{,}
+\NormalTok{                             body_mass_g}\OperatorTok{=}\StringTok{"Body Mass"}\NormalTok{))}
+\NormalTok{fig.show()}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{model}{%
 \chapter{Model}\label{model}}
