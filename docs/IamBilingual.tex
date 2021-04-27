@@ -118,7 +118,7 @@
 
 \title{I am Bilingual - Python and R}
 \author{Priyanga Dilini Talagala Thiyanga S. Talagala}
-\date{2021-04-26}
+\date{2021-04-27}
 
 \begin{document}
 \maketitle
@@ -138,7 +138,7 @@ WIP!!
 \hypertarget{intro}{%
 \chapter{Introduction to R and Python}\label{intro}}
 
-WIP
+R Vs Python: What's the Difference? \url{https://www.guru99.com/r-vs-python.html}
 
 \hypertarget{about-r-and-python}{%
 \section{About R and Python}\label{about-r-and-python}}
@@ -225,18 +225,78 @@ To check if you have python installed on a Linux or Mac, then on linux open the 
 
 If you find that you do not have python installed on your computer, then you can download it for free from the following website: \url{https://www.python.org/}
 
+\textbf{Install PyCharm IDE}
+
+PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
+
+PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
+
 \hypertarget{r-3}{%
 \subsection{R}\label{r-3}}
 
 You can download it for free from the following websites:
+- R (\url{https://cran.r-project.org/})
+
+\textbf{Install Rstudio IDE}
+
+RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
 
 \begin{itemize}
 \tightlist
 \item
-  R (\url{https://cran.r-project.org/})
-\item
   RStudio (\url{https://www.rstudio.com/products/rstudio/download/\#download}).
 \end{itemize}
+
+\hypertarget{install-and-load-libraries}{%
+\section{Install and Load Libraries}\label{install-and-load-libraries}}
+
+\hypertarget{r-4}{%
+\subsection{R}\label{r-4}}
+
+R Packages: A Beginner's Guide \url{https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc\&utm_campaignid=1655852085\&utm_adgroupid=61045434222\&utm_device=c\&utm_keyword=\%2Bload\%20\%2Bpackage\%20\%2Br\&utm_matchtype=b\&utm_network=g\&utm_adpostion=\&utm_creative=469789579329\&utm_targetid=aud-522010995285:kwd-589281898774\&utm_loc_interest_ms=9071445\&utm_loc_physical_ms=1009919\&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB}
+
+An \textbf{R package} is a way to organize your own work and share it with others. Typically, a package contains code, documentation for the package and the functions inside, some tests to check everything works as it should, and data sets.
+
+Three of the most popular repositories for R packages are: CRAN, Bioconductor and Github.
+
+\hypertarget{installing-packages-from-cran}{%
+\subsubsection{Installing Packages From CRAN}\label{installing-packages-from-cran}}
+
+\texttt{install.packages("package\_name")}
+
+Example
+
+\texttt{install.packages("tidyverse")}
+
+After running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.
+
+To install more than a package at the same time, we can use a character vector
+
+\texttt{install.packages(c("vioplot",\ "MASS"))}
+
+\textbf{The function \texttt{install.packages} will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.}
+
+\hypertarget{load-packages}{%
+\subsubsection{Load Packages}\label{load-packages}}
+
+After a package is installed, you are ready to use its functionalities.
+
+If you just need a sporadic use of a few functions or data inside a package you can access them with the notation
+
+\texttt{packagename::functionname()}.
+
+If you will make a more intensive use of the package, then maybe is worth to load it into memory. The simplest way to do this is with the \texttt{library()} command.
+
+Please note that the input of install.packages() is a character vector and requires the name to be in quotes, while library() accepts either character or name and makes it possible for you to write the name of the package without quotes.
+
+Once you have the package installed, you can load the library into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. Note that quotations are not required here.
+
+\texttt{library(tidyverse)}
+
+\hypertarget{python-4}{%
+\subsection{Python}\label{python-4}}
+
+Use `import module' or `from module import'? \url{https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import}
 
 \hypertarget{ranked15python-packages}{%
 \section{Ranked:15Python packages}\label{ranked15python-packages}}
@@ -308,6 +368,53 @@ WIP
 
 WIP
 
+\hypertarget{tidy-workflow}{%
+\chapter{Tidy workflow}\label{tidy-workflow}}
+
+Moving from R to Python: The Libraries You Need to Know \url{https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html}
+
+glm, knn, randomForest, e1071 -\textgreater{} scikit-learn
+
+One thing that is a blessing and a curse in R is that the machine learning algorithms are generally segmented by package. Meaning instead of having a single (or set) of ML libraries that each implement some common algorithms, each algorithm gets its own package. It's sort of nice because you can find very esoteric, cutting edge implementations of algorithms, but it can be a pain for day-to-day use where you might be switching between algorithms. This pain is something that Python's scikit-learn solves really well. scikit-learn provides a common set of ML algorithms all under the same API. It makes switching between LogisticRegression and GradientBoostingMachines a one-liner.
+
+reshape/reshape2, plyr/dplyr -\textgreater{} pandas
+
+This was actually the subject of one of our first posts. pandas took the best parts of data munging in R and turned it into a Python package. This includes its own implementation of a data frame along with ways to modify and restructure it. Basically it took the best parts of reshape/reshape2 and plyr/dplyr and Pythonified it!
+
+ggplot2 -\textgreater{} ggplot + seaborn + bokeh
+
+One thing that R still does better than Python is plotting. Hands down, R is better in just about every facet. Even so, Python plotting has matured though it's a fractured community. If you like the ggplot-style syntax, then look no further than Yhat's own ggplot. If you're after super statistical and technical plots then reach for seaborn. And if you're in the market for some super slick, great looking interactive plots then try out bokeh.
+
+stringr -\textgreater{} nothing
+
+String manipulation in ``base R'' is nearly as unintuitive as it is silly. Any time I'm working with strings in R I do 2 things (in order):
+
+briefly nod in appreciation to New Zealand for producing Hadley Wickham
+import stringr
+stringr
+Much obliged, New Zealand
+stringr is an absolute lifesaver. It's well written, performant (at least I think so), and easy to install (don't overlook this last item. if people can't install your software, there's no sense in making it).
+
+Ok so stringr appreciation monologue complete. So the good news for you is that Python is so great for string manipulation, you don't really need a string library! It has a fantastic built-in regular expressions library, re, and a built-in string meta-libarary appropriately called string. So lucky for you, Python comes with all string-related batteries included!
+
+RStudio -\textgreater{} Rodeo
+
+To many users, RStudio is synonymous with R. And why not? It's a great IDE for data analysis in R. Historically speaking, there haven't been a lot of comparable options for Python. Of course this is no longer the case. We released the very first version of Rodeo just over a year ago and released the 2.0 for Windows, OSX, and Linux about a month ago.
+
+``Ever since we've used RStudio, we've been looking for an IDE like it for Python. We went through IDEs such as Sublime Text and Spyder, none of which suited our likings. We searched and found Rodeo and couldn't have been more pleased with the IDE.'' -Stephen Hsu, University of California, Berkeley
+
+Download Rodeo!
+Knitr -\textgreater{} Jupyter
+
+Knitr is a great way to create reproducible and highly visual analysis using R. It's been a staple in RStudio for a while now. In the Python world, the most analagous package is Jupyter. Jupyter notebooks provide an interactive environment for programming in Python (and other languages) that focuses on reproducibility and visualization--it even has a plugin for R!
+
+sqldf -\textgreater{} pandasql
+
+sqldf is a great way for SQL users to comfortably manipulate data in R. I myself used it when I first started learning R. Way back when, Yhat actually built a similar package for Python called pandasql. Same concept: write SQL queries against your data frames, get data frames back! Fast-forward 3 years and pandasql has over 256 stars on GitHub :). Not bad for a library with only 358 lines of code!
+
+Original. Reposted with permission.
+\url{https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html}
+
 \hypertarget{import}{%
 \chapter{Import}\label{import}}
 
@@ -341,8 +448,8 @@ Using \href{https://pypi.org/project/palmerpenguins/}{\texttt{palmerpenguins} py
 
 The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt{penguins\_raw}. \texttt{penguins} is a simplified version of the \texttt{penguins\_raw} data.
 
-\hypertarget{r-4}{%
-\section{R}\label{r-4}}
+\hypertarget{r-5}{%
+\section{R}\label{r-5}}
 
 \textbf{Load data}
 
@@ -470,8 +577,8 @@ plotly is an R package for creating interactive web-based graphs via the open so
 
 \includegraphics{IamBilingual_files/figure-latex/unnamed-chunk-9-1.pdf}
 
-\hypertarget{python-4}{%
-\section{Python}\label{python-4}}
+\hypertarget{python-5}{%
+\section{Python}\label{python-5}}
 
 \textbf{Load data}
 

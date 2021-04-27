@@ -1,6 +1,6 @@
 # Introduction to R and Python {#intro}
 
-WIP
+R Vs Python: What’s the Difference? https://www.guru99.com/r-vs-python.html
 
 ## About R and Python
 
@@ -77,12 +77,69 @@ To check if you have python installed on a Linux or Mac, then on linux open the 
 
 If you find that you do not have python installed on your computer, then you can download it for free from the following website: https://www.python.org/
 
+**Install PyCharm IDE**
+
+PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
+
+PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
+
 ### R 
 
 You can download it for free from the following websites:
-
 - R (https://cran.r-project.org/) 
+
+**Install Rstudio IDE**
+
+RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
+
 - RStudio (https://www.rstudio.com/products/rstudio/download/#download).
+
+
+## Install and Load Libraries
+
+### R
+
+R Packages: A Beginner's Guide https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc&utm_campaignid=1655852085&utm_adgroupid=61045434222&utm_device=c&utm_keyword=%2Bload%20%2Bpackage%20%2Br&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=469789579329&utm_targetid=aud-522010995285:kwd-589281898774&utm_loc_interest_ms=9071445&utm_loc_physical_ms=1009919&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB
+
+An **R package** is a way to organize your own work and share it with others. Typically, a package contains code, documentation for the package and the functions inside, some tests to check everything works as it should, and data sets.
+
+Three of the most popular repositories for R packages are: CRAN, Bioconductor and Github.
+
+#### Installing Packages From CRAN
+
+`install.packages("package_name")`
+
+Example
+
+`install.packages("tidyverse")`
+
+After running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.
+
+To install more than a package at the same time, we can use a character vector 
+
+`install.packages(c("vioplot", "MASS"))`
+
+**The function `install.packages` will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.**
+
+#### Load Packages
+
+After a package is installed, you are ready to use its functionalities. 
+
+If you just need a sporadic use of a few functions or data inside a package you can access them with the notation 
+
+`packagename::functionname()`.
+
+If you will make a more intensive use of the package, then maybe is worth to load it into memory. The simplest way to do this is with the `library()` command.
+
+Please note that the input of install.packages() is a character vector and requires the name to be in quotes, while library() accepts either character or name and makes it possible for you to write the name of the package without quotes.
+
+Once you have the package installed, you can load the library into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. Note that quotations are not required here.
+
+`library(tidyverse)`
+
+### Python
+
+Use 'import module' or 'from module import'? https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import
 
 ## Ranked:15Python packages
 for Data Science
