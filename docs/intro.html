@@ -76,7 +76,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -155,8 +155,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#logo"><i class="fa fa-check"></i><b>1.4</b> Logo</a></li>
 <li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#worldwide-google-trends"><i class="fa fa-check"></i><b>1.5</b> Worldwide Google Trends</a></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#installation"><i class="fa fa-check"></i><b>1.6</b> Installation</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#python-3"><i class="fa fa-check"></i><b>1.6.1</b> Python</a></li>
-<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#r-3"><i class="fa fa-check"></i><b>1.6.2</b> R</a></li>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#r-3"><i class="fa fa-check"></i><b>1.6.1</b> R</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#python-3"><i class="fa fa-check"></i><b>1.6.2</b> Python</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#install-and-load-libraries"><i class="fa fa-check"></i><b>1.7</b> Install and Load Libraries</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#r-4"><i class="fa fa-check"></i><b>1.7.1</b> R</a></li>
@@ -271,8 +271,18 @@ Figure 1.2: Retrieved from: <a href="https://www.python.org/community/logos/" cl
 </div>
 <div id="installation" class="section level2">
 <h2><span class="header-section-number">1.6</span> Installation</h2>
+<div id="r-3" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> R</h3>
+<p>You can download it for free from the following websites:
+- R (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>)</p>
+<p><strong>Install Rstudio IDE</strong></p>
+<p>RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.</p>
+<ul>
+<li>RStudio (<a href="https://www.rstudio.com/products/rstudio/download/#download" class="uri">https://www.rstudio.com/products/rstudio/download/#download</a>).</li>
+</ul>
+</div>
 <div id="python-3" class="section level3">
-<h3><span class="header-section-number">1.6.1</span> Python</h3>
+<h3><span class="header-section-number">1.6.2</span> Python</h3>
 <p>Ref: <a href="https://www.w3schools.com/python/python_getstarted.asp" class="uri">https://www.w3schools.com/python/python_getstarted.asp</a></p>
 <p>Many PCs and Macs will have python already installed.</p>
 <p>To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):</p>
@@ -284,16 +294,6 @@ Figure 1.2: Retrieved from: <a href="https://www.python.org/community/logos/" cl
 <p>PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.</p>
 <p>PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.</p>
 </div>
-<div id="r-3" class="section level3">
-<h3><span class="header-section-number">1.6.2</span> R</h3>
-<p>You can download it for free from the following websites:
-- R (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>)</p>
-<p><strong>Install Rstudio IDE</strong></p>
-<p>RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.</p>
-<ul>
-<li>RStudio (<a href="https://www.rstudio.com/products/rstudio/download/#download" class="uri">https://www.rstudio.com/products/rstudio/download/#download</a>).</li>
-</ul>
-</div>
 </div>
 <div id="install-and-load-libraries" class="section level2">
 <h2><span class="header-section-number">1.7</span> Install and Load Libraries</h2>
@@ -304,12 +304,12 @@ Figure 1.2: Retrieved from: <a href="https://www.python.org/community/logos/" cl
 <p>Three of the most popular repositories for R packages are: CRAN, Bioconductor and Github.</p>
 <div id="installing-packages-from-cran" class="section level4">
 <h4><span class="header-section-number">1.7.1.1</span> Installing Packages From CRAN</h4>
-<p><code>install.packages(&quot;package_name&quot;)</code></p>
+<p><code>install.packages("package_name")</code></p>
 <p>Example</p>
-<p><code>install.packages(&quot;tidyverse&quot;)</code></p>
+<p><code>install.packages("tidyverse")</code></p>
 <p>After running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.</p>
 <p>To install more than a package at the same time, we can use a character vector</p>
-<p><code>install.packages(c(&quot;vioplot&quot;, &quot;MASS&quot;))</code></p>
+<p><code>install.packages(c("vioplot", "MASS"))</code></p>
 <p><strong>The function <code>install.packages</code> will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.</strong></p>
 </div>
 <div id="load-packages" class="section level4">

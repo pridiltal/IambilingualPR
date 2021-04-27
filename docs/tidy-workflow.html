@@ -76,7 +76,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -155,8 +155,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#logo"><i class="fa fa-check"></i><b>1.4</b> Logo</a></li>
 <li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#worldwide-google-trends"><i class="fa fa-check"></i><b>1.5</b> Worldwide Google Trends</a></li>
 <li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#installation"><i class="fa fa-check"></i><b>1.6</b> Installation</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#python-3"><i class="fa fa-check"></i><b>1.6.1</b> Python</a></li>
-<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#r-3"><i class="fa fa-check"></i><b>1.6.2</b> R</a></li>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#r-3"><i class="fa fa-check"></i><b>1.6.1</b> R</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#python-3"><i class="fa fa-check"></i><b>1.6.2</b> Python</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#install-and-load-libraries"><i class="fa fa-check"></i><b>1.7</b> Install and Load Libraries</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#r-4"><i class="fa fa-check"></i><b>1.7.1</b> R</a></li>
@@ -216,31 +216,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tidy-workflow" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Tidy workflow</h1>
+<p>WIP</p>
 <p>Moving from R to Python: The Libraries You Need to Know <a href="https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html" class="uri">https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html</a></p>
-<p>glm, knn, randomForest, e1071 -&gt; scikit-learn</p>
-<p>One thing that is a blessing and a curse in R is that the machine learning algorithms are generally segmented by package. Meaning instead of having a single (or set) of ML libraries that each implement some common algorithms, each algorithm gets its own package. It’s sort of nice because you can find very esoteric, cutting edge implementations of algorithms, but it can be a pain for day-to-day use where you might be switching between algorithms. This pain is something that Python’s scikit-learn solves really well. scikit-learn provides a common set of ML algorithms all under the same API. It makes switching between LogisticRegression and GradientBoostingMachines a one-liner.</p>
-<p>reshape/reshape2, plyr/dplyr -&gt; pandas</p>
-<p>This was actually the subject of one of our first posts. pandas took the best parts of data munging in R and turned it into a Python package. This includes its own implementation of a data frame along with ways to modify and restructure it. Basically it took the best parts of reshape/reshape2 and plyr/dplyr and Pythonified it!</p>
-<p>ggplot2 -&gt; ggplot + seaborn + bokeh</p>
-<p>One thing that R still does better than Python is plotting. Hands down, R is better in just about every facet. Even so, Python plotting has matured though it’s a fractured community. If you like the ggplot-style syntax, then look no further than Yhat’s own ggplot. If you’re after super statistical and technical plots then reach for seaborn. And if you’re in the market for some super slick, great looking interactive plots then try out bokeh.</p>
-<p>stringr -&gt; nothing</p>
-<p>String manipulation in “base R” is nearly as unintuitive as it is silly. Any time I’m working with strings in R I do 2 things (in order):</p>
-<p>briefly nod in appreciation to New Zealand for producing Hadley Wickham
+<!--
+glm, knn, randomForest, e1071 -> scikit-learn
+ 
+One thing that is a blessing and a curse in R is that the machine learning algorithms are generally segmented by package. Meaning instead of having a single (or set) of ML libraries that each implement some common algorithms, each algorithm gets its own package. It's sort of nice because you can find very esoteric, cutting edge implementations of algorithms, but it can be a pain for day-to-day use where you might be switching between algorithms. This pain is something that Python's scikit-learn solves really well. scikit-learn provides a common set of ML algorithms all under the same API. It makes switching between LogisticRegression and GradientBoostingMachines a one-liner.
+
+reshape/reshape2, plyr/dplyr -> pandas
+ 
+This was actually the subject of one of our first posts. pandas took the best parts of data munging in R and turned it into a Python package. This includes its own implementation of a data frame along with ways to modify and restructure it. Basically it took the best parts of reshape/reshape2 and plyr/dplyr and Pythonified it!
+
+ggplot2 -> ggplot + seaborn + bokeh
+ 
+One thing that R still does better than Python is plotting. Hands down, R is better in just about every facet. Even so, Python plotting has matured though it's a fractured community. If you like the ggplot-style syntax, then look no further than Yhat's own ggplot. If you're after super statistical and technical plots then reach for seaborn. And if you're in the market for some super slick, great looking interactive plots then try out bokeh.
+
+stringr -> nothing
+ 
+String manipulation in "base R" is nearly as unintuitive as it is silly. Any time I'm working with strings in R I do 2 things (in order):
+
+briefly nod in appreciation to New Zealand for producing Hadley Wickham
 import stringr
 stringr
 Much obliged, New Zealand
-stringr is an absolute lifesaver. It’s well written, performant (at least I think so), and easy to install (don’t overlook this last item. if people can’t install your software, there’s no sense in making it).</p>
-<p>Ok so stringr appreciation monologue complete. So the good news for you is that Python is so great for string manipulation, you don’t really need a string library! It has a fantastic built-in regular expressions library, re, and a built-in string meta-libarary appropriately called string. So lucky for you, Python comes with all string-related batteries included!</p>
-<p>RStudio -&gt; Rodeo</p>
-<p>To many users, RStudio is synonymous with R. And why not? It’s a great IDE for data analysis in R. Historically speaking, there haven’t been a lot of comparable options for Python. Of course this is no longer the case. We released the very first version of Rodeo just over a year ago and released the 2.0 for Windows, OSX, and Linux about a month ago.</p>
-<p>“Ever since we’ve used RStudio, we’ve been looking for an IDE like it for Python. We went through IDEs such as Sublime Text and Spyder, none of which suited our likings. We searched and found Rodeo and couldn’t have been more pleased with the IDE.” -Stephen Hsu, University of California, Berkeley</p>
-<p>Download Rodeo!
-Knitr -&gt; Jupyter</p>
-<p>Knitr is a great way to create reproducible and highly visual analysis using R. It’s been a staple in RStudio for a while now. In the Python world, the most analagous package is Jupyter. Jupyter notebooks provide an interactive environment for programming in Python (and other languages) that focuses on reproducibility and visualization–it even has a plugin for R!</p>
-<p>sqldf -&gt; pandasql</p>
-<p>sqldf is a great way for SQL users to comfortably manipulate data in R. I myself used it when I first started learning R. Way back when, Yhat actually built a similar package for Python called pandasql. Same concept: write SQL queries against your data frames, get data frames back! Fast-forward 3 years and pandasql has over 256 stars on GitHub :). Not bad for a library with only 358 lines of code!</p>
-<p>Original. Reposted with permission.
-<a href="https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html" class="uri">https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html</a></p>
+stringr is an absolute lifesaver. It's well written, performant (at least I think so), and easy to install (don't overlook this last item. if people can't install your software, there's no sense in making it).
+
+Ok so stringr appreciation monologue complete. So the good news for you is that Python is so great for string manipulation, you don't really need a string library! It has a fantastic built-in regular expressions library, re, and a built-in string meta-libarary appropriately called string. So lucky for you, Python comes with all string-related batteries included!
+
+RStudio -> Rodeo
+ 
+To many users, RStudio is synonymous with R. And why not? It's a great IDE for data analysis in R. Historically speaking, there haven't been a lot of comparable options for Python. Of course this is no longer the case. We released the very first version of Rodeo just over a year ago and released the 2.0 for Windows, OSX, and Linux about a month ago.
+
+"Ever since we've used RStudio, we've been looking for an IDE like it for Python. We went through IDEs such as Sublime Text and Spyder, none of which suited our likings. We searched and found Rodeo and couldn't have been more pleased with the IDE." -Stephen Hsu, University of California, Berkeley
+
+Download Rodeo!
+Knitr -> Jupyter
+ 
+Knitr is a great way to create reproducible and highly visual analysis using R. It's been a staple in RStudio for a while now. In the Python world, the most analagous package is Jupyter. Jupyter notebooks provide an interactive environment for programming in Python (and other languages) that focuses on reproducibility and visualization--it even has a plugin for R!
+
+sqldf -> pandasql
+ 
+sqldf is a great way for SQL users to comfortably manipulate data in R. I myself used it when I first started learning R. Way back when, Yhat actually built a similar package for Python called pandasql. Same concept: write SQL queries against your data frames, get data frames back! Fast-forward 3 years and pandasql has over 256 stars on GitHub :). Not bad for a library with only 358 lines of code!
+
+Original. Reposted with permission.
+https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html
+-->
 
 </div>
             </section>

@@ -1,9 +1,10 @@
 # Tidy workflow
 
+WIP
 
 Moving from R to Python: The Libraries You Need to Know https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html
 
-
+<!--
 glm, knn, randomForest, e1071 -> scikit-learn
  
 One thing that is a blessing and a curse in R is that the machine learning algorithms are generally segmented by package. Meaning instead of having a single (or set) of ML libraries that each implement some common algorithms, each algorithm gets its own package. It's sort of nice because you can find very esoteric, cutting edge implementations of algorithms, but it can be a pain for day-to-day use where you might be switching between algorithms. This pain is something that Python's scikit-learn solves really well. scikit-learn provides a common set of ML algorithms all under the same API. It makes switching between LogisticRegression and GradientBoostingMachines a one-liner.
@@ -45,4 +46,4 @@ sqldf is a great way for SQL users to comfortably manipulate data in R. I myself
 
 Original. Reposted with permission.
 https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html
-
+-->

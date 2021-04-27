@@ -61,6 +61,18 @@ print(p)
 
 ## Installation
 
+### R 
+
+You can download it for free from the following websites:
+- R (https://cran.r-project.org/) 
+
+**Install Rstudio IDE**
+
+RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
+
+- RStudio (https://www.rstudio.com/products/rstudio/download/#download).
+
+
 ### Python 
 
 Ref: https://www.w3schools.com/python/python_getstarted.asp
@@ -82,18 +94,6 @@ If you find that you do not have python installed on your computer, then you can
 PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
 
 PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
-
-### R 
-
-You can download it for free from the following websites:
-- R (https://cran.r-project.org/) 
-
-**Install Rstudio IDE**
-
-RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
-
-- RStudio (https://www.rstudio.com/products/rstudio/download/#download).
-
 
 ## Install and Load Libraries
 
