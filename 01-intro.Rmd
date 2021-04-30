@@ -121,6 +121,8 @@ To install more than a package at the same time, we can use a character vector
 
 **The function `install.packages` will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.**
 
+You have to install a package only once.
+
 #### Load Packages
 
 After a package is installed, you are ready to use its functionalities. 
@@ -140,6 +142,36 @@ Once you have the package installed, you can load the library into your R sessio
 ### Python
 
 Use 'import module' or 'from module import'? https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import
+
+
+**Method 1:** `import module`
+
+**Method 2:** `from module import foo`
+
+The difference between `import module` and `from module import foo` is  subjective. User can select one method and be consitent in the use of it. 
+
+`import module`  |  `from module import foo`
+-----------------|-----------------------
+**Pros**             |   **Pros**
+- Less Maintanence of the import statements  | - Less typying to use `foo` function
+- Don't need to add any aditional imports to start using another item from the same module  |  - More control over whcih items of the module can be accessed
+**Cons**             |   **Cons**
+-  Typing `module.foo` in the code be tedious (dull, boring )  | to use new items from the module the user have to update the `import` statement
+
+- It can be minimized by using `import module as mo`, then typing `mo.foo`  | You loose context about `foo`. For example it is less clear `ceil()` does, compared to `math.ceil()`
+
+
+**Don't use**
+
+- `from modle import *`
+
+   - Because it clutters or fills with untidy collection of things in the namespace
+   
+- `import *`
+
+   - For any reasonable large set of code, if you `import *` you will likely be cementing it into the module, unable to be removed.
+   
+   - This is because now it is difficullt to identiify what items used in the code are coming from `module`. 
 
 ## Ranked:15Python packages
 for Data Science

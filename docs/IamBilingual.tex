@@ -118,7 +118,7 @@
 
 \title{I am Bilingual - Python and R}
 \author{Priyanga Dilini Talagala Thiyanga S. Talagala}
-\date{2021-04-27}
+\date{2021-04-30}
 
 \begin{document}
 \maketitle
@@ -276,6 +276,8 @@ To install more than a package at the same time, we can use a character vector
 
 \textbf{The function \texttt{install.packages} will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.}
 
+You have to install a package only once.
+
 \hypertarget{load-packages}{%
 \subsubsection{Load Packages}\label{load-packages}}
 
@@ -297,6 +299,77 @@ Once you have the package installed, you can load the library into your R sessio
 \subsection{Python}\label{python-4}}
 
 Use `import module' or `from module import'? \url{https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import}
+
+\textbf{Method 1:} \texttt{import\ module}
+
+\textbf{Method 2:} \texttt{from\ module\ import\ foo}
+
+The difference between \texttt{import\ module} and \texttt{from\ module\ import\ foo} is subjective. User can select one method and be consitent in the use of it.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.40\columnwidth}\raggedright
+\texttt{import\ module}\strut
+\end{minipage} & \begin{minipage}[b]{0.54\columnwidth}\raggedright
+\texttt{from\ module\ import\ foo}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+\textbf{Pros}\strut
+\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
+\textbf{Pros}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+- Less Maintanence of the import statements\strut
+\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
+- Less typying to use \texttt{foo} function\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+- Don't need to add any aditional imports to start using another item from the same module\strut
+\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
+- More control over whcih items of the module can be accessed\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+\textbf{Cons}\strut
+\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
+\textbf{Cons}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.40\columnwidth}\raggedright
+- Typing \texttt{module.foo} in the code be tedious (dull, boring )\strut
+\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
+to use new items from the module the user have to update the \texttt{import} statement\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  It can be minimized by using \texttt{import\ module\ as\ mo}, then typing \texttt{mo.foo} \textbar{} You loose context about \texttt{foo}. For example it is less clear \texttt{ceil()} does, compared to \texttt{math.ceil()}
+\end{itemize}
+
+\textbf{Don't use}
+
+\begin{itemize}
+\item
+  \texttt{from\ modle\ import\ *}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Because it clutters or fills with untidy collection of things in the namespace
+  \end{itemize}
+\item
+  \texttt{import\ *}
+
+  \begin{itemize}
+  \item
+    For any reasonable large set of code, if you \texttt{import\ *} you will likely be cementing it into the module, unable to be removed.
+  \item
+    This is because now it is difficullt to identiify what items used in the code are coming from \texttt{module}.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{ranked15python-packages}{%
 \section{Ranked:15Python packages}\label{ranked15python-packages}}
