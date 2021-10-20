@@ -1,0 +1,39 @@
+# Jupyter Notebooks
+
+<!--Jupyter Notebook Tutorial: Installation, Components and Magic Commands
+https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE
+-->
+
+- The [Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows the user to create and share documents that contain live code, equations, visualizations, and narrative text. 
+- [JupyterLab](https://jupyter.org/) is an advanced version of Jupyter Notebook interface. It brings the classic notebooks, text editor, terminal, and directory viewer all under one roof. However, both operate in a similar fashion.
+
+## How to install Jupyter environment?
+
+First, open a new command prompt (Windows) or terminal (Mac/Linux) on your workstation, and second, execute the following command:
+
+`jupyter notebook`
+
+If the above command fails, first, you need to install python on your workstation. There are two popular methods to install Python on your workstation.
+
+  - Installing Python using Anaconda Distribution 
+  - Installing Raw Python
+
+[Click on this link](https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE). It will guide you to install python. 
+
+
+- After installing python using one of the above methods, then we need to installing Jupyter Notebook using either  Anaconda or pip.
+
+## How to run or open Jupyter Notebooks?
+
+- After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+
+- Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.
+
+- When the notebook opens in your browser, you will see the Notebook Homepage
+
+
+## Shutdown the Jupyter Notebook Local Server
+
+- You can also close your terminal by typing the command `exit` and hitting `Enter`.
+
+- You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking `Ctrl+c`. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.

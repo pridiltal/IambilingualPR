@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Import | I am Bilingual - Python and R</title>
-  <meta name="description" content="Chapter 7 Import | I am Bilingual - Python and R" />
+  <title>Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R</title>
+  <meta name="description" content="Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Import | I am Bilingual - Python and R" />
+  <meta property="og:title" content="Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 7 Import | I am Bilingual - Python and R" />
+  <meta property="og:description" content="Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Import | I am Bilingual - Python and R" />
+  <meta name="twitter:title" content="Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R" />
   
-  <meta name="twitter:description" content="Chapter 7 Import | I am Bilingual - Python and R" />
+  <meta name="twitter:description" content="Chapter 14 Jupyter Notebooks | I am Bilingual - Python and R" />
   
 
 <meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tidy-workflow.html"/>
-<link rel="next" href="tidy.html"/>
+<link rel="prev" href="advanced-r-and-python.html"/>
+<link rel="next" href="working-with-jupyter-notebook.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -266,18 +266,53 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="import" class="section level1" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Import</h1>
-<p>WIP</p>
+<div id="jupyter-notebooks" class="section level1" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Jupyter Notebooks</h1>
+<!--Jupyter Notebook Tutorial: Installation, Components and Magic Commands
+https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE
+-->
+<ul>
+<li>The <a href="https://jupyter.org/">Jupyter Notebook</a> is an open-source web application that allows the user to create and share documents that contain live code, equations, visualizations, and narrative text.</li>
+<li><a href="https://jupyter.org/">JupyterLab</a> is an advanced version of Jupyter Notebook interface. It brings the classic notebooks, text editor, terminal, and directory viewer all under one roof. However, both operate in a similar fashion.</li>
+</ul>
+<div id="how-to-install-jupyter-environment" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> How to install Jupyter environment?</h2>
+<p>First, open a new command prompt (Windows) or terminal (Mac/Linux) on your workstation, and second, execute the following command:</p>
+<p><code>jupyter notebook</code></p>
+<p>If the above command fails, first, you need to install python on your workstation. There are two popular methods to install Python on your workstation.</p>
+<ul>
+<li>Installing Python using Anaconda Distribution</li>
+<li>Installing Raw Python</li>
+</ul>
+<p><a href="https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&amp;medium=cpc&amp;campaign=dsa_other_topnations&amp;gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE">Click on this link</a>. It will guide you to install python.</p>
+<ul>
+<li>After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.</li>
+</ul>
+</div>
+<div id="how-to-run-or-open-jupyter-notebooks" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> How to run or open Jupyter Notebooks?</h2>
+<ul>
+<li><p>After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.</p></li>
+<li><p>Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.</p></li>
+<li><p>When the notebook opens in your browser, you will see the Notebook Homepage</p></li>
+</ul>
+</div>
+<div id="shutdown-the-jupyter-notebook-local-server" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Shutdown the Jupyter Notebook Local Server</h2>
+<ul>
+<li><p>You can also close your terminal by typing the command <code>exit</code> and hitting <code>Enter</code>.</p></li>
+<li><p>You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking <code>Ctrl+c</code>. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.</p></li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tidy-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tidy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="advanced-r-and-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="working-with-jupyter-notebook.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

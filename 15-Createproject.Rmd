@@ -1,0 +1,35 @@
+# Working with jupyter notebook
+
+1. open temrinal
+2. Type `jupyter notebook`
+3. Go to --> new --> folder (or select and exiting folder from the files list)
+4. Then creat jupyter notebook
+   new--> Python 3
+
+
+# Working with pycharm
+
+1. First install pycharm 
+2. Open pycharm
+3. Create a project (select a location)
+4. Open terminal
+5. Type `jupyter notebook`
+6. Create jupyter notebook
+7. Quit notebook
+
+## install packages
+
+`python -m pip install <package>`
+
+must read what toavoide: https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
+
+## Install Python package using Jupyter Notebook
+
+- https://www.geeksforgeeks.org/install-python-package-using-jupyter-notebook/
+
+`
+import sys
+!{sys.executable} -m pip install [package_name]`
+
+
+

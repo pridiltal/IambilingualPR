@@ -159,7 +159,17 @@ knitr::include_graphics("fig/Viz_chap/1_matplot.png")
 
 ### `seaborn` Package
 
-Seaborn provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.
+Seaborn is an easy-to-use high level statistical plotting library which provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.
+
+It tries to provide a ‘grammar of graphics’ style way to create plots but in a pythonic style without getting the exact  syntax from ggplot as in plotnine.
+<!--https://www.reddit.com/r/datascience/comments/jvrqxt/matplotlib_seaborn_or_plotnine/
+
+
+Introduction to Seaborn: https://elitedatascience.com/python-seaborn-tutorial -->
+
+
+[Introduction to Seaborn](https://elitedatascience.com/python-seaborn-tutorial)
+
 
 ```{python eval=FALSE}
 # Import seaborn to make statistical graphics. 

@@ -1,39 +1,46 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={I am Bilingual - Python and R},
-            pdfauthor={Priyanga Dilini Talagala   Thiyanga S. Talagala},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={I am Bilingual - Python and R},
+  pdfauthor={Priyanga Dilini Talagala   Thiyanga S. Talagala},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -74,10 +81,17 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
-\usepackage{graphicx,grffile}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -86,25 +100,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -113,12 +116,15 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{I am Bilingual - Python and R}
 \author{Priyanga Dilini Talagala Thiyanga S. Talagala}
-\date{2021-04-30}
+\date{2021-10-20}
 
 \begin{document}
 \maketitle
@@ -306,40 +312,18 @@ Use `import module' or `from module import'? \url{https://stackoverflow.com/ques
 
 The difference between \texttt{import\ module} and \texttt{from\ module\ import\ foo} is subjective. User can select one method and be consitent in the use of it.
 
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.42}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.58}}@{}}
 \toprule
-\begin{minipage}[b]{0.40\columnwidth}\raggedright
-\texttt{import\ module}\strut
-\end{minipage} & \begin{minipage}[b]{0.54\columnwidth}\raggedright
-\texttt{from\ module\ import\ foo}\strut
-\end{minipage}\tabularnewline
+\texttt{import\ module} & \texttt{from\ module\ import\ foo} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-\textbf{Pros}\strut
-\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
-\textbf{Pros}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-- Less Maintanence of the import statements\strut
-\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
-- Less typying to use \texttt{foo} function\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-- Don't need to add any aditional imports to start using another item from the same module\strut
-\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
-- More control over whcih items of the module can be accessed\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-\textbf{Cons}\strut
-\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
-\textbf{Cons}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.40\columnwidth}\raggedright
-- Typing \texttt{module.foo} in the code be tedious (dull, boring )\strut
-\end{minipage} & \begin{minipage}[t]{0.54\columnwidth}\raggedright
-to use new items from the module the user have to update the \texttt{import} statement\strut
-\end{minipage}\tabularnewline
+\textbf{Pros} & \textbf{Pros} \\
+- Less Maintanence of the import statements & - Less typying to use \texttt{foo} function \\
+- Don't need to add any aditional imports to start using another item from the same module & - More control over whcih items of the module can be accessed \\
+\textbf{Cons} & \textbf{Cons} \\
+- Typing \texttt{module.foo} in the code be tedious (dull, boring ) & to use new items from the module the user have to update the \texttt{import} statement \\
 \bottomrule
 \end{longtable}
 
@@ -391,10 +375,10 @@ This is a test code
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# This is an R code}
-\NormalTok{x <-}\StringTok{ }\DecValTok{1}
-\NormalTok{y <-}\StringTok{ }\DecValTok{3}
-\KeywordTok{print}\NormalTok{(x}\OperatorTok{+}\NormalTok{y)}
+\CommentTok{\# This is an R code}
+\NormalTok{x }\OtherTok{\textless{}{-}} \DecValTok{1}
+\NormalTok{y }\OtherTok{\textless{}{-}} \DecValTok{3}
+\FunctionTok{print}\NormalTok{(x}\SpecialCharTok{+}\NormalTok{y)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -409,13 +393,13 @@ The `python' engine in knitr requires the \texttt{reticulate} package.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(reticulate)}
+\FunctionTok{library}\NormalTok{(reticulate)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# This is a Python code}
+\CommentTok{\# This is a Python code}
 \NormalTok{x }\OperatorTok{=} \DecValTok{1}
 \NormalTok{y }\OperatorTok{=} \DecValTok{3}
 \BuiltInTok{print}\NormalTok{(x}\OperatorTok{+}\NormalTok{y)}
@@ -488,10 +472,10 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Load Palmer Archipelago (Antarctica) Penguin Data}
-\KeywordTok{library}\NormalTok{(palmerpenguins)}
-\CommentTok{# Return the first part of the dataset}
-\KeywordTok{head}\NormalTok{(penguins)}
+\CommentTok{\# Load Palmer Archipelago (Antarctica) Penguin Data}
+\FunctionTok{library}\NormalTok{(palmerpenguins)}
+\CommentTok{\# Return the first part of the dataset}
+\FunctionTok{head}\NormalTok{(penguins)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -510,8 +494,8 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Retrieve column names}
-\KeywordTok{colnames}\NormalTok{(penguins)}
+\CommentTok{\# Retrieve column names}
+\FunctionTok{colnames}\NormalTok{(penguins)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -526,20 +510,20 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Define color for each of the 3 penguine species}
-\NormalTok{colors <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"#00AFBB"}\NormalTok{, }\StringTok{"#E7B800"}\NormalTok{, }\StringTok{"#FC4E07"}\NormalTok{)}
-\NormalTok{colors <-}\StringTok{ }\NormalTok{colors[}\KeywordTok{as.numeric}\NormalTok{(penguins}\OperatorTok{$}\NormalTok{species)]}
+\CommentTok{\# Define color for each of the 3 penguine species}
+\NormalTok{colors }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"\#00AFBB"}\NormalTok{, }\StringTok{"\#E7B800"}\NormalTok{, }\StringTok{"\#FC4E07"}\NormalTok{)}
+\NormalTok{colors }\OtherTok{\textless{}{-}}\NormalTok{ colors[}\FunctionTok{as.numeric}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{species)]}
 
-\CommentTok{# Define shapes}
-\NormalTok{shapes =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{16}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{18}\NormalTok{) }
-\NormalTok{shapes <-}\StringTok{ }\NormalTok{shapes[}\KeywordTok{as.numeric}\NormalTok{(penguins}\OperatorTok{$}\NormalTok{species)]}
+\CommentTok{\# Define shapes}
+\NormalTok{shapes }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{16}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{18}\NormalTok{) }
+\NormalTok{shapes }\OtherTok{\textless{}{-}}\NormalTok{ shapes[}\FunctionTok{as.numeric}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{species)]}
 
-\KeywordTok{plot}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{flipper_length_mm,}
-          \DataTypeTok{y =}\NormalTok{ penguins}\OperatorTok{$}\NormalTok{body_mass_g,}
-          \DataTypeTok{col =}\NormalTok{ colors,}
-          \DataTypeTok{pch =}\NormalTok{ shapes,}
-          \DataTypeTok{xlab =} \StringTok{"Flipper Length"}\NormalTok{,}
-          \DataTypeTok{ylab =} \StringTok{"Body Mass"}\NormalTok{ )}
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{flipper\_length\_mm,}
+          \AttributeTok{y =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{body\_mass\_g,}
+          \AttributeTok{col =}\NormalTok{ colors,}
+          \AttributeTok{pch =}\NormalTok{ shapes,}
+          \AttributeTok{xlab =} \StringTok{"Flipper Length"}\NormalTok{,}
+          \AttributeTok{ylab =} \StringTok{"Body Mass"}\NormalTok{ )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -552,17 +536,17 @@ The palmerpenguins package contains two datasets : \texttt{penguins} and \texttt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#load ggplot2 package to make statistical graphics}
-\KeywordTok{library}\NormalTok{(ggplot2)}
-\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(penguins) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_point}\NormalTok{( }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ flipper_length_mm,}
-                  \DataTypeTok{y =}\NormalTok{ body_mass_g,}
-                  \DataTypeTok{color =}\NormalTok{ species,}
-                  \DataTypeTok{shape =}\NormalTok{ species)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
+\CommentTok{\#load ggplot2 package to make statistical graphics}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(penguins) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{( }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm,}
+                  \AttributeTok{y =}\NormalTok{ body\_mass\_g,}
+                  \AttributeTok{color =}\NormalTok{ species,}
+                  \AttributeTok{shape =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
 
-\KeywordTok{print}\NormalTok{(p)}
+\FunctionTok{print}\NormalTok{(p)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -577,17 +561,17 @@ plotly is an R package for creating interactive web-based graphs via the open so
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(plotly)}
-\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(penguins) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_point}\NormalTok{( }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ flipper_length_mm,}
-                  \DataTypeTok{y =}\NormalTok{ body_mass_g,}
-                  \DataTypeTok{color =}\NormalTok{ species,}
-                  \DataTypeTok{shape =}\NormalTok{ species)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
-\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(plotly)}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(penguins) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{( }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ flipper\_length\_mm,}
+                  \AttributeTok{y =}\NormalTok{ body\_mass\_g,}
+                  \AttributeTok{color =}\NormalTok{ species,}
+                  \AttributeTok{shape =}\NormalTok{ species)) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Flipper Length"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Body Mass"}\NormalTok{)}
 
-\CommentTok{# The function ggplotly converts a ggplot2::ggplot() object to a plotly object.}
-\NormalTok{plotly}\OperatorTok{::}\KeywordTok{ggplotly}\NormalTok{(p)}
+\CommentTok{\# The function ggplotly converts a ggplot2::ggplot() object to a plotly object.}
+\NormalTok{plotly}\SpecialCharTok{::}\FunctionTok{ggplotly}\NormalTok{(p)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -597,13 +581,13 @@ plotly is an R package for creating interactive web-based graphs via the open so
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(plotly)}
-\NormalTok{fig <-}\StringTok{ }\KeywordTok{plot_ly}\NormalTok{(penguins, }
-               \DataTypeTok{x =} \OperatorTok{~}\NormalTok{flipper_length_mm,}
-               \DataTypeTok{y =} \OperatorTok{~}\NormalTok{body_mass_g, }
-               \DataTypeTok{color =} \OperatorTok{~}\NormalTok{species,}
-               \DataTypeTok{symbol =} \OperatorTok{~}\NormalTok{species,}
-               \DataTypeTok{type =} \StringTok{"scatter"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(plotly)}
+\NormalTok{fig }\OtherTok{\textless{}{-}} \FunctionTok{plot\_ly}\NormalTok{(penguins, }
+               \AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{flipper\_length\_mm,}
+               \AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{body\_mass\_g, }
+               \AttributeTok{color =} \SpecialCharTok{\textasciitilde{}}\NormalTok{species,}
+               \AttributeTok{symbol =} \SpecialCharTok{\textasciitilde{}}\NormalTok{species,}
+               \AttributeTok{type =} \StringTok{"scatter"}\NormalTok{)}
 \NormalTok{fig}
 \end{Highlighting}
 \end{Shaded}
@@ -617,12 +601,12 @@ plotly is an R package for creating interactive web-based graphs via the open so
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#load functions in palmerpenguins package}
-\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load_penguins}
-\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load_penguins()}
-\CommentTok{# Return the first part of the dataset}
+\CommentTok{\#load functions in palmerpenguins package}
+\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load\_penguins}
+\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load\_penguins()}
+\CommentTok{\# Return the first part of the dataset}
 \NormalTok{penguins.head()}
-\CommentTok{# Retrieve column names}
+\CommentTok{\# Retrieve column names}
 \BuiltInTok{list}\NormalTok{(penguins.columns)}
 \end{Highlighting}
 \end{Shaded}
@@ -634,16 +618,16 @@ Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Import matplotlib to make statistical graphics. }
-\CommentTok{# By convention, it is imported with the shorthand sns.}
+\CommentTok{\# Import matplotlib to make statistical graphics. }
+\CommentTok{\# By convention, it is imported with the shorthand sns.}
 \ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
 
-\NormalTok{colors }\OperatorTok{=}\NormalTok{ \{}\StringTok{'Adelie'}\NormalTok{:}\StringTok{'blue'}\NormalTok{, }\StringTok{'Gentoo'}\NormalTok{:}\StringTok{'orange'}\NormalTok{, }\StringTok{'Chinstrap'}\NormalTok{:}\StringTok{'green'}\NormalTok{\}}
-\NormalTok{plt.scatter(penguins.flipper_length_mm,}
-\NormalTok{penguins.body_mass_g, }
+\NormalTok{colors }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}Adelie\textquotesingle{}}\NormalTok{:}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Gentoo\textquotesingle{}}\NormalTok{:}\StringTok{\textquotesingle{}orange\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Chinstrap\textquotesingle{}}\NormalTok{:}\StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{\}}
+\NormalTok{plt.scatter(penguins.flipper\_length\_mm,}
+\NormalTok{penguins.body\_mass\_g, }
 \NormalTok{c}\OperatorTok{=}\NormalTok{ penguins.species.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: colors[x]))}
-\NormalTok{plt.xlabel(}\StringTok{'Flipper Length'}\NormalTok{)}
-\NormalTok{plt.ylabel(}\StringTok{'Body Mass'}\NormalTok{)}
+\NormalTok{plt.xlabel(}\StringTok{\textquotesingle{}Flipper Length\textquotesingle{}}\NormalTok{)}
+\NormalTok{plt.ylabel(}\StringTok{\textquotesingle{}Body Mass\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -652,27 +636,31 @@ Matplotlib is mainly deployed for basic plotting. Visualization using Matplotlib
 \hypertarget{seaborn-package}{%
 \subsection{\texorpdfstring{\texttt{seaborn} Package}{seaborn Package}}\label{seaborn-package}}
 
-Seaborn provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.
+Seaborn is an easy-to-use high level statistical plotting library which provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.
+
+It tries to provide a `grammar of graphics' style way to create plots but in a pythonic style without getting the exact syntax from ggplot as in plotnine.
+
+\href{https://elitedatascience.com/python-seaborn-tutorial}{Introduction to Seaborn}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Import seaborn to make statistical graphics. }
-\CommentTok{# By convention, it is imported with the shorthand sns.}
+\CommentTok{\# Import seaborn to make statistical graphics. }
+\CommentTok{\# By convention, it is imported with the shorthand sns.}
 \ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns }
-\CommentTok{#load functions in palmerpenguins package}
-\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load_penguins}
-\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load_penguins()}
+\CommentTok{\#load functions in palmerpenguins package}
+\ImportTok{from}\NormalTok{ palmerpenguins }\ImportTok{import}\NormalTok{ load\_penguins}
+\NormalTok{penguins }\OperatorTok{=}\NormalTok{ load\_penguins()}
 
-\CommentTok{# Apply the default theme}
-\NormalTok{sns.set_theme()}
-\CommentTok{# sns.set_style('whitegrid')}
-\NormalTok{p }\OperatorTok{=}\NormalTok{ sns.relplot(x }\OperatorTok{=} \StringTok{'flipper_length_mm'}\NormalTok{,}
-\NormalTok{            y }\OperatorTok{=}\StringTok{'body_mass_g'}\NormalTok{,}
-\NormalTok{            hue }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
-\NormalTok{            style }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
+\CommentTok{\# Apply the default theme}
+\NormalTok{sns.set\_theme()}
+\CommentTok{\# sns.set\_style(\textquotesingle{}whitegrid\textquotesingle{})}
+\NormalTok{p }\OperatorTok{=}\NormalTok{ sns.relplot(x }\OperatorTok{=} \StringTok{\textquotesingle{}flipper\_length\_mm\textquotesingle{}}\NormalTok{,}
+\NormalTok{            y }\OperatorTok{=}\StringTok{\textquotesingle{}body\_mass\_g\textquotesingle{}}\NormalTok{,}
+\NormalTok{            hue }\OperatorTok{=} \StringTok{\textquotesingle{}species\textquotesingle{}}\NormalTok{,}
+\NormalTok{            style }\OperatorTok{=} \StringTok{\textquotesingle{}species\textquotesingle{}}\NormalTok{,}
 \NormalTok{            data }\OperatorTok{=}\NormalTok{ penguins)}
-\NormalTok{p.set_xlabels(}\StringTok{'Flipper Length'}\NormalTok{)}
-\NormalTok{p.set_ylabels(}\StringTok{'Body Mass'}\NormalTok{)   }
+\NormalTok{p.set\_xlabels(}\StringTok{\textquotesingle{}Flipper Length\textquotesingle{}}\NormalTok{)}
+\NormalTok{p.set\_ylabels(}\StringTok{\textquotesingle{}Body Mass\textquotesingle{}}\NormalTok{)   }
 \end{Highlighting}
 \end{Shaded}
 
@@ -697,12 +685,12 @@ Plotting with a grammar is powerful, it makes custom (and otherwise complex) plo
 \begin{Shaded}
 \begin{Highlighting}[]
 \ImportTok{from}\NormalTok{ plotnine }\ImportTok{import} \OperatorTok{*}
-\CommentTok{# unlike in R, now all the variables must be enclosed by single quotes}
+\CommentTok{\# unlike in R, now all the variables must be enclosed by single quotes}
 \NormalTok{(ggplot(penguins) }\OperatorTok{+}
-\NormalTok{  geom_point(aes(x }\OperatorTok{=} \StringTok{'flipper_length_mm'}\NormalTok{,}
-\NormalTok{                  y }\OperatorTok{=} \StringTok{'body_mass_g'}\NormalTok{,}
-\NormalTok{                  color }\OperatorTok{=} \StringTok{'species'}\NormalTok{,}
-\NormalTok{                  shape }\OperatorTok{=} \StringTok{'species'}\NormalTok{)) }\OperatorTok{+}
+\NormalTok{  geom\_point(aes(x }\OperatorTok{=} \StringTok{\textquotesingle{}flipper\_length\_mm\textquotesingle{}}\NormalTok{,}
+\NormalTok{                  y }\OperatorTok{=} \StringTok{\textquotesingle{}body\_mass\_g\textquotesingle{}}\NormalTok{,}
+\NormalTok{                  color }\OperatorTok{=} \StringTok{\textquotesingle{}species\textquotesingle{}}\NormalTok{,}
+\NormalTok{                  shape }\OperatorTok{=} \StringTok{\textquotesingle{}species\textquotesingle{}}\NormalTok{)) }\OperatorTok{+}
 \NormalTok{  xlab(}\StringTok{"Flipper Length"}\NormalTok{)}\OperatorTok{+}
 \NormalTok{  ylab(}\StringTok{"Body Mass"}\NormalTok{))}
 \end{Highlighting}
@@ -720,12 +708,12 @@ The \texttt{plotly.express} (Plotly Express or PX) module contains functions tha
 \ImportTok{import}\NormalTok{ plotly.express }\ImportTok{as}\NormalTok{ px}
 
 \NormalTok{fig }\OperatorTok{=}\NormalTok{ px.scatter(penguins,}
-\NormalTok{                 x}\OperatorTok{=}\StringTok{"flipper_length_mm"}\NormalTok{,}
-\NormalTok{                 y}\OperatorTok{=}\StringTok{"body_mass_g"}\NormalTok{,}
+\NormalTok{                 x}\OperatorTok{=}\StringTok{"flipper\_length\_mm"}\NormalTok{,}
+\NormalTok{                 y}\OperatorTok{=}\StringTok{"body\_mass\_g"}\NormalTok{,}
 \NormalTok{                 color}\OperatorTok{=} \StringTok{"species"}\NormalTok{,}
 \NormalTok{                 symbol}\OperatorTok{=} \StringTok{"species"}\NormalTok{,}
-\NormalTok{                 labels}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(flipper_length_mm}\OperatorTok{=}\StringTok{"Flipper Length"}\NormalTok{,}
-\NormalTok{                             body_mass_g}\OperatorTok{=}\StringTok{"Body Mass"}\NormalTok{))}
+\NormalTok{                 labels}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(flipper\_length\_mm}\OperatorTok{=}\StringTok{"Flipper Length"}\NormalTok{,}
+\NormalTok{                             body\_mass\_g}\OperatorTok{=}\StringTok{"Body Mass"}\NormalTok{))}
 \NormalTok{fig.show()}
 \end{Highlighting}
 \end{Shaded}
@@ -748,33 +736,134 @@ WIP
 \hypertarget{time-series-forecasting}{%
 \section{Time Series Forecasting}\label{time-series-forecasting}}
 
-\begin{longtable}[]{@{}ll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
 \toprule
-\begin{minipage}[b]{0.47\columnwidth}\raggedright
-R\strut
-\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
-Python\strut
-\end{minipage}\tabularnewline
+R & Python \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.47\columnwidth}\raggedright
-\href{https://cran.r-project.org/web/packages/fable/index.html}{fable}-Forecasting Models for Tidy Time Series\strut
-\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\href{https://www.statsmodels.org/devel/user-guide.html\#time-series-analysis}{statsmodels}- Statistics based models\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.47\columnwidth}\raggedright
-\href{https://cran.r-project.org/web/packages/forecast/index.html}{forecast}- Forecasting Functions for Time Series and Linear Models\strut
-\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\href{https://www.sktime.org/en/latest/}{sktime}- A unified framework for machine learning with time series\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.47\columnwidth}\raggedright
-\(\text{}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
-\href{https://ts.gluon.ai/}{GluonTS}- Deep learning-based models.\strut
-\end{minipage}\tabularnewline
+\href{https://cran.r-project.org/web/packages/fable/index.html}{fable}-Forecasting Models for Tidy Time Series & \href{https://www.statsmodels.org/devel/user-guide.html\#time-series-analysis}{statsmodels}- Statistics based models \\
+\href{https://cran.r-project.org/web/packages/forecast/index.html}{forecast}- Forecasting Functions for Time Series and Linear Models & \href{https://www.sktime.org/en/latest/}{sktime}- A unified framework for machine learning with time series \\
+\(\text{}\) & \href{https://ts.gluon.ai/}{GluonTS}- Deep learning-based models. \\
 \bottomrule
 \end{longtable}
 
-\bibliography{book.bib}
+\hypertarget{jupyter-notebooks}{%
+\chapter{Jupyter Notebooks}\label{jupyter-notebooks}}
+
+\begin{itemize}
+\tightlist
+\item
+  The \href{https://jupyter.org/}{Jupyter Notebook} is an open-source web application that allows the user to create and share documents that contain live code, equations, visualizations, and narrative text.
+\item
+  \href{https://jupyter.org/}{JupyterLab} is an advanced version of Jupyter Notebook interface. It brings the classic notebooks, text editor, terminal, and directory viewer all under one roof. However, both operate in a similar fashion.
+\end{itemize}
+
+\hypertarget{how-to-install-jupyter-environment}{%
+\section{How to install Jupyter environment?}\label{how-to-install-jupyter-environment}}
+
+First, open a new command prompt (Windows) or terminal (Mac/Linux) on your workstation, and second, execute the following command:
+
+\texttt{jupyter\ notebook}
+
+If the above command fails, first, you need to install python on your workstation. There are two popular methods to install Python on your workstation.
+
+\begin{itemize}
+\tightlist
+\item
+  Installing Python using Anaconda Distribution
+\item
+  Installing Raw Python
+\end{itemize}
+
+\href{https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google\&medium=cpc\&campaign=dsa_other_topnations\&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE}{Click on this link}. It will guide you to install python.
+
+\begin{itemize}
+\tightlist
+\item
+  After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.
+\end{itemize}
+
+\hypertarget{how-to-run-or-open-jupyter-notebooks}{%
+\section{How to run or open Jupyter Notebooks?}\label{how-to-run-or-open-jupyter-notebooks}}
+
+\begin{itemize}
+\item
+  After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+\item
+  Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.
+\item
+  When the notebook opens in your browser, you will see the Notebook Homepage
+\end{itemize}
+
+\hypertarget{shutdown-the-jupyter-notebook-local-server}{%
+\section{Shutdown the Jupyter Notebook Local Server}\label{shutdown-the-jupyter-notebook-local-server}}
+
+\begin{itemize}
+\item
+  You can also close your terminal by typing the command \texttt{exit} and hitting \texttt{Enter}.
+\item
+  You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking \texttt{Ctrl+c}. You will be asked to confirm that you want to Shutdown this notebook server (y/{[}n{]})?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.
+\end{itemize}
+
+\hypertarget{working-with-jupyter-notebook}{%
+\chapter{Working with jupyter notebook}\label{working-with-jupyter-notebook}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  open temrinal
+\item
+  Type \texttt{jupyter\ notebook}
+\item
+  Go to --\textgreater{} new --\textgreater{} folder (or select and exiting folder from the files list)
+\item
+  Then creat jupyter notebook
+  new--\textgreater{} Python 3
+\end{enumerate}
+
+\hypertarget{working-with-pycharm}{%
+\chapter{Working with pycharm}\label{working-with-pycharm}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First install pycharm
+\item
+  Open pycharm
+\item
+  Create a project (select a location)
+\item
+  Open terminal
+\item
+  Type \texttt{jupyter\ notebook}
+\item
+  Create jupyter notebook
+\item
+  Quit notebook
+\end{enumerate}
+
+\hypertarget{install-packages}{%
+\section{install packages}\label{install-packages}}
+
+\texttt{python\ -m\ pip\ install\ \textless{}package\textgreater{}}
+
+must read what toavoide: \url{https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/}
+
+\hypertarget{install-python-package-using-jupyter-notebook}{%
+\section{Install Python package using Jupyter Notebook}\label{install-python-package-using-jupyter-notebook}}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.geeksforgeeks.org/install-python-package-using-jupyter-notebook/}
+\end{itemize}
+
+\texttt{import\ sys\ !\{sys.executable\}\ -m\ pip\ install\ {[}package\_name{]}}
+
+  \bibliography{book.bib}
 
 \end{document}
