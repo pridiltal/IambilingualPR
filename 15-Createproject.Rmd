@@ -1,6 +1,6 @@
 # Working with jupyter notebook
 
-1. open temrinal
+1. open terminal
 2. Type `jupyter notebook`
 3. Go to --> new --> folder (or select and exiting folder from the files list)
 4. Then creat jupyter notebook

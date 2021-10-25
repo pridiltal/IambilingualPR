@@ -17,6 +17,68 @@ If the above command fails, first, you need to install python on your workstatio
 
   - Installing Python using Anaconda Distribution 
   - Installing Raw Python
+  
+After installing python using one of the above methods, then we need to installing Jupyter Notebook using either  Anaconda or pip.
+  
+  
+<!--Installing Jupyter Notebook 
+
+https://www.datacamp.com/community/tutorials/installing-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=278443377086&utm_targetid=aud-392016246653:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1009919&gclid=CjwKCAjw_L6LBhBbEiwA4c46upyVY8Onx3-i_vkRg6TZ9HMnYjfSIF6yQogXDTKaBPXGh81gaO8sGRoCN54QAvD_BwE-->
+
+  
+### Method 1:  How to Install the Notebook Using `pip`
+
+- If you don't want to install Anaconda, you just have to make sure that you have the latest version of `pip`.
+- If you have installed Python, you will typically already have it.
+- You can check the already installed pip version
+
+`pip3 --version`
+
+- You can upgrade that using
+
+```
+# On Windows
+python -m pip install -U pip setuptools
+
+# On OS X or Linux
+pip3 install -U pip setuptools
+```
+
+- When you install Python directly from its [official website](https://www.python.org/), it does not include **Jupyter Notebook** in its standard library.
+- In this case, you need to install Jupyter Notebook using the `pip`. The process is as follows:
+
+`python -m pip install jupyter`
+
+or if you are using Python 3
+
+`python3 -m pip install jupyter`
+
+or simply
+
+`pip install jupyter`
+
+Congratulations, you have installed Jupyter Notebook!
+
+After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+
+
+### Method 2: Installing Jupyter Notebook using Anaconda
+
+- If you have installed Python using Anaconda Distribution, then it includes Python, the Jupyter Notebook, and other commonly used packages for the scientific community.
+
+-  You can follow the instructions for the installation of Anaconda here for [Mac: click here](https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x) or [Windows: click here](https://www.datacamp.com/community/tutorials/installing-anaconda-windows).
+
+## Working with Jupyter Notebook
+
+This video: [(click here)](https://www.youtube.com/watch?v=IKBMIThz78c) will guide you to create your first jupyter notebook.
+
+
+
+<!--
+
+`jupyter notebook`
+
+<!--
 
 [Click on this link](https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE). It will guide you to install python. 
 
@@ -31,9 +93,20 @@ If the above command fails, first, you need to install python on your workstatio
 
 - When the notebook opens in your browser, you will see the Notebook Homepage
 
+## Working with jupyter notebook
 
+1. The Files tab lists the directories and files in the home folder, which usually is the home directory of the user logged in to the computer.
+2. If you want to create a new folder, Go to 
+  `New -- Folder`
+  
+3. Then create a jupyter notebook by 
+   `New-- Python 3`
+   
+   
 ## Shutdown the Jupyter Notebook Local Server
 
 - You can also close your terminal by typing the command `exit` and hitting `Enter`.
 
 - You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking `Ctrl+c`. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.
+
+-->

@@ -124,7 +124,7 @@
 
 \title{I am Bilingual - Python and R}
 \author{Priyanga Dilini Talagala Thiyanga S. Talagala}
-\date{2021-10-20}
+\date{2021-10-25}
 
 \begin{document}
 \maketitle
@@ -252,6 +252,37 @@ If you find that you do not have python installed on your computer, then you can
 PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
 
 PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
+
+\textbf{Jupyter Notebook}
+
+Is Anaconda necessary to be installed to PC besides Jupyter Notebook?
+
+\href{https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook}{source}
+
+Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?
+
+The packages in python are generally installed with ``pip'' (or ``conda'') in the terminal and are then available regardless where you run your script from. Assuming you don't have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.
+
+If you don't want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)
+
+\href{https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/}{Source - How to use Pip from the Jupyter Notebook}
+
+\begin{verbatim}
+# Not Recommended 
+# DON'T DO THIS
+!pip install numpy
+\end{verbatim}
+
+Here is a short snippet that should generally work:
+
+\textbf{Install a pip package in the current Jupyter kernel}
+
+\begin{verbatim}
+import sys
+!{sys.executable} -m pip install numpy
+\end{verbatim}
+
+The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.
 
 \hypertarget{install-and-load-libraries}{%
 \section{Install and Load Libraries}\label{install-and-load-libraries}}
@@ -777,44 +808,82 @@ If the above command fails, first, you need to install python on your workstatio
   Installing Raw Python
 \end{itemize}
 
-\href{https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google\&medium=cpc\&campaign=dsa_other_topnations\&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE}{Click on this link}. It will guide you to install python.
+After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.
+
+\hypertarget{method-1-how-to-install-the-notebook-using-pip}{%
+\subsection{\texorpdfstring{Method 1: How to Install the Notebook Using \texttt{pip}}{Method 1: How to Install the Notebook Using pip}}\label{method-1-how-to-install-the-notebook-using-pip}}
 
 \begin{itemize}
 \tightlist
 \item
-  After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.
+  If you don't want to install Anaconda, you just have to make sure that you have the latest version of \texttt{pip}.
+\item
+  If you have installed Python, you will typically already have it.
+\item
+  You can check the already installed pip version
 \end{itemize}
 
-\hypertarget{how-to-run-or-open-jupyter-notebooks}{%
-\section{How to run or open Jupyter Notebooks?}\label{how-to-run-or-open-jupyter-notebooks}}
+\texttt{pip3\ -\/-version}
+
+\begin{itemize}
+\tightlist
+\item
+  You can upgrade that using
+\end{itemize}
+
+\begin{verbatim}
+# On Windows
+python -m pip install -U pip setuptools
+
+# On OS X or Linux
+pip3 install -U pip setuptools
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  When you install Python directly from its \href{https://www.python.org/}{official website}, it does not include \textbf{Jupyter Notebook} in its standard library.
+\item
+  In this case, you need to install Jupyter Notebook using the \texttt{pip}. The process is as follows:
+\end{itemize}
+
+\texttt{python\ -m\ pip\ install\ jupyter}
+
+or if you are using Python 3
+
+\texttt{python3\ -m\ pip\ install\ jupyter}
+
+or simply
+
+\texttt{pip\ install\ jupyter}
+
+Congratulations, you have installed Jupyter Notebook!
+
+After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+
+\hypertarget{method-2-installing-jupyter-notebook-using-anaconda}{%
+\subsection{Method 2: Installing Jupyter Notebook using Anaconda}\label{method-2-installing-jupyter-notebook-using-anaconda}}
 
 \begin{itemize}
 \item
-  After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+  If you have installed Python using Anaconda Distribution, then it includes Python, the Jupyter Notebook, and other commonly used packages for the scientific community.
 \item
-  Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.
-\item
-  When the notebook opens in your browser, you will see the Notebook Homepage
-\end{itemize}
-
-\hypertarget{shutdown-the-jupyter-notebook-local-server}{%
-\section{Shutdown the Jupyter Notebook Local Server}\label{shutdown-the-jupyter-notebook-local-server}}
-
-\begin{itemize}
-\item
-  You can also close your terminal by typing the command \texttt{exit} and hitting \texttt{Enter}.
-\item
-  You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking \texttt{Ctrl+c}. You will be asked to confirm that you want to Shutdown this notebook server (y/{[}n{]})?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.
+  You can follow the instructions for the installation of Anaconda here for \href{https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x}{Mac: click here} or \href{https://www.datacamp.com/community/tutorials/installing-anaconda-windows}{Windows: click here}.
 \end{itemize}
 
 \hypertarget{working-with-jupyter-notebook}{%
-\chapter{Working with jupyter notebook}\label{working-with-jupyter-notebook}}
+\section{Working with Jupyter Notebook}\label{working-with-jupyter-notebook}}
+
+This video: \href{https://www.youtube.com/watch?v=IKBMIThz78c}{(click here)} will guide you to create your first jupyter notebook.
+
+\hypertarget{working-with-jupyter-notebook-1}{%
+\chapter{Working with jupyter notebook}\label{working-with-jupyter-notebook-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  open temrinal
+  open terminal
 \item
   Type \texttt{jupyter\ notebook}
 \item

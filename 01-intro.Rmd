@@ -95,6 +95,51 @@ PyCharm is a cross-platform IDE that provides consistent experience on the Windo
 
 PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
 
+**Jupyter Notebook**
+
+Is Anaconda necessary to be installed to PC besides Jupyter Notebook?
+
+[source](https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook)
+
+Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?
+
+
+The packages in python are generally installed with "pip" (or "conda") in the terminal and are then available regardless where you run your script from. Assuming you don't have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.
+
+If you don't want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)
+
+[Source - How to use Pip from the Jupyter Notebook](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
+```
+# Not Recommended 
+# DON'T DO THIS
+!pip install numpy
+```
+
+Here is a short snippet that should generally work:
+
+**Install a pip package in the current Jupyter kernel**
+
+```
+import sys
+!{sys.executable} -m pip install numpy
+```
+
+The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.
+
+
+https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook
+
+Python packages are not installed with python functions, like it would be the case in R with install.packages("package name"). Instead, an external package manager usually is used to install and possibly compile the package files to a directory where python can import it from.
+
+Anaconda offers (among others) the package manager conda. Most popular is pip. Some Linux distributions also offer python packages via their package manager (e.g. apt on Debian/Ubuntu). All these package managers download packages from their own repositories, so conda install numpy, pip install numpy and apt install python3-numpy all install a package numpy, but from different sources and in possibly different versions.
+
+Jupyter Notebook is a programming environment, where you can execute shell commands with !command, so depending on the system where the Jupyter server is running, you can use !pip install numpy, !conda install numpy or other commands as cells in the Jupyter Notebook you are working in. This will run the command in a shell.
+
+That graphical menu with Jupyter, RStudio etc. you describe is the program "Anaconda Navigator", which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.
+
+Anaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands. 
+
+
 ## Install and Load Libraries
 
 ### R

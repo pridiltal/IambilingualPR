@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R</title>
+  <meta name="description" content="Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R" />
+  
+  <meta name="twitter:description" content="Chapter 2 Install a pip package in the current Jupyter kernel | I am Bilingual - Python and R" />
+  
+
+<meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala" />
+
+
+<meta name="date" content="2021-10-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="variables-expressions-and-statements.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">I am Bilingual - Python and R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and Python</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#about-r-and-python"><i class="fa fa-check"></i><b>1.1</b> About R and Python</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#r"><i class="fa fa-check"></i><b>1.1.1</b> R</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#python"><i class="fa fa-check"></i><b>1.1.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#history-of-r-and-python"><i class="fa fa-check"></i><b>1.2</b> History of R and Python</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#r-1"><i class="fa fa-check"></i><b>1.2.1</b> R</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#python-1"><i class="fa fa-check"></i><b>1.2.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#story-behind-their-names"><i class="fa fa-check"></i><b>1.3</b> Story behind their names</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#r-2"><i class="fa fa-check"></i><b>1.3.1</b> R</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#python-2"><i class="fa fa-check"></i><b>1.3.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#logo"><i class="fa fa-check"></i><b>1.4</b> Logo</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#worldwide-google-trends"><i class="fa fa-check"></i><b>1.5</b> Worldwide Google Trends</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#installation"><i class="fa fa-check"></i><b>1.6</b> Installation</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#r-3"><i class="fa fa-check"></i><b>1.6.1</b> R</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#python-3"><i class="fa fa-check"></i><b>1.6.2</b> Python</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="install-a-pip-package-in-the-current-jupyter-kernel.html"><a href="install-a-pip-package-in-the-current-jupyter-kernel.html"><i class="fa fa-check"></i><b>2</b> Install a pip package in the current Jupyter kernel</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="install-a-pip-package-in-the-current-jupyter-kernel.html"><a href="install-a-pip-package-in-the-current-jupyter-kernel.html#install-and-load-libraries"><i class="fa fa-check"></i><b>2.1</b> Install and Load Libraries</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="install-a-pip-package-in-the-current-jupyter-kernel.html"><a href="install-a-pip-package-in-the-current-jupyter-kernel.html#r-4"><i class="fa fa-check"></i><b>2.1.1</b> R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="install-a-pip-package-in-the-current-jupyter-kernel.html"><a href="install-a-pip-package-in-the-current-jupyter-kernel.html#python-4"><i class="fa fa-check"></i><b>2.1.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="install-a-pip-package-in-the-current-jupyter-kernel.html"><a href="install-a-pip-package-in-the-current-jupyter-kernel.html#ranked15python-packages"><i class="fa fa-check"></i><b>2.2</b> Ranked:15Python packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-expressions-and-statements.html"><a href="variables-expressions-and-statements.html"><i class="fa fa-check"></i><b>3</b> Variables, expressions, and statements</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="variables-expressions-and-statements.html"><a href="variables-expressions-and-statements.html#basic-exmaple"><i class="fa fa-check"></i><b>3.1</b> Basic Exmaple</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="variables-expressions-and-statements.html"><a href="variables-expressions-and-statements.html#r-code"><i class="fa fa-check"></i><b>3.1.1</b> R code</a></li>
+<li class="chapter" data-level="3.1.2" data-path="variables-expressions-and-statements.html"><a href="variables-expressions-and-statements.html#python-code"><i class="fa fa-check"></i><b>3.1.2</b> Python Code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conditional-execution.html"><a href="conditional-execution.html"><i class="fa fa-check"></i><b>4</b> Conditional execution</a></li>
+<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a></li>
+<li class="chapter" data-level="6" data-path="iteration.html"><a href="iteration.html"><i class="fa fa-check"></i><b>6</b> Iteration</a></li>
+<li class="chapter" data-level="7" data-path="tidy-workflow.html"><a href="tidy-workflow.html"><i class="fa fa-check"></i><b>7</b> Tidy workflow</a></li>
+<li class="chapter" data-level="8" data-path="import.html"><a href="import.html"><i class="fa fa-check"></i><b>8</b> Import</a></li>
+<li class="chapter" data-level="9" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>9</b> Tidy</a></li>
+<li class="chapter" data-level="10" data-path="transform.html"><a href="transform.html"><i class="fa fa-check"></i><b>10</b> Transform</a></li>
+<li class="chapter" data-level="11" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>11</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="data-visualization.html"><a href="data-visualization.html#data"><i class="fa fa-check"></i><b>11.1</b> Data</a></li>
+<li class="chapter" data-level="11.2" data-path="data-visualization.html"><a href="data-visualization.html#r-5"><i class="fa fa-check"></i><b>11.2</b> R</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="data-visualization.html"><a href="data-visualization.html#base-r-package"><i class="fa fa-check"></i><b>11.2.1</b> <code>base</code> R package</a></li>
+<li class="chapter" data-level="11.2.2" data-path="data-visualization.html"><a href="data-visualization.html#gggplot2-package"><i class="fa fa-check"></i><b>11.2.2</b> <code>gggplot2</code> Package</a></li>
+<li class="chapter" data-level="11.2.3" data-path="data-visualization.html"><a href="data-visualization.html#plotly-r-package-for-interactive-data-visualization"><i class="fa fa-check"></i><b>11.2.3</b> <code>plotly</code> R package for interactive data visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="data-visualization.html"><a href="data-visualization.html#python-5"><i class="fa fa-check"></i><b>11.3</b> Python</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="data-visualization.html"><a href="data-visualization.html#matplotlib-package"><i class="fa fa-check"></i><b>11.3.1</b> <code>Matplotlib</code> package</a></li>
+<li class="chapter" data-level="11.3.2" data-path="data-visualization.html"><a href="data-visualization.html#seaborn-package"><i class="fa fa-check"></i><b>11.3.2</b> <code>seaborn</code> Package</a></li>
+<li class="chapter" data-level="11.3.3" data-path="data-visualization.html"><a href="data-visualization.html#plotnine-package"><i class="fa fa-check"></i><b>11.3.3</b> <code>plotnine</code> package</a></li>
+<li class="chapter" data-level="11.3.4" data-path="data-visualization.html"><a href="data-visualization.html#plotly-python-library-for-interactive-data-visualization"><i class="fa fa-check"></i><b>11.3.4</b> <code>plotly</code> Python library for interactive data visualization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="model.html"><a href="model.html"><i class="fa fa-check"></i><b>12</b> Model</a></li>
+<li class="chapter" data-level="13" data-path="communicate.html"><a href="communicate.html"><i class="fa fa-check"></i><b>13</b> Communicate</a></li>
+<li class="chapter" data-level="14" data-path="advanced-r-and-python.html"><a href="advanced-r-and-python.html"><i class="fa fa-check"></i><b>14</b> Advanced R and Python</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="advanced-r-and-python.html"><a href="advanced-r-and-python.html#time-series-forecasting"><i class="fa fa-check"></i><b>14.1</b> Time Series Forecasting</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html"><i class="fa fa-check"></i><b>15</b> Jupyter Notebooks</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>15.1</b> How to install Jupyter environment?</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-1-how-to-install-the-notebook-using-pip"><i class="fa fa-check"></i><b>15.1.1</b> Method 1: How to Install the Notebook Using <code>pip</code></a></li>
+<li class="chapter" data-level="15.1.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-2-installing-jupyter-notebook-using-anaconda"><i class="fa fa-check"></i><b>15.1.2</b> Method 2: Installing Jupyter Notebook using Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#working-with-jupyter-notebook"><i class="fa fa-check"></i><b>15.2</b> Working with Jupyter Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="working-with-jupyter-notebook-1.html"><a href="working-with-jupyter-notebook-1.html"><i class="fa fa-check"></i><b>16</b> Working with jupyter notebook</a></li>
+<li class="chapter" data-level="17" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html"><i class="fa fa-check"></i><b>17</b> Working with pycharm</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html#install-packages"><i class="fa fa-check"></i><b>17.1</b> install packages</a></li>
+<li class="chapter" data-level="17.2" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html#install-python-package-using-jupyter-notebook"><i class="fa fa-check"></i><b>17.2</b> Install Python package using Jupyter Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">I am Bilingual - Python and R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="install-a-pip-package-in-the-current-jupyter-kernel" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Install a pip package in the current Jupyter kernel</h1>
+<pre><code>import sys
+!{sys.executable} -m pip install numpy</code></pre>
+<div id="install-and-load-libraries" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Install and Load Libraries</h2>
+<div id="r-4" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> R</h3>
+<p>R Packages: A Beginner’s Guide <a href="https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc&amp;utm_campaignid=1655852085&amp;utm_adgroupid=61045434222&amp;utm_device=c&amp;utm_keyword=%2Bload%20%2Bpackage%20%2Br&amp;utm_matchtype=b&amp;utm_network=g&amp;utm_adpostion=&amp;utm_creative=469789579329&amp;utm_targetid=aud-522010995285:kwd-589281898774&amp;utm_loc_interest_ms=9071445&amp;utm_loc_physical_ms=1009919&amp;gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB" class="uri">https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc&amp;utm_campaignid=1655852085&amp;utm_adgroupid=61045434222&amp;utm_device=c&amp;utm_keyword=%2Bload%20%2Bpackage%20%2Br&amp;utm_matchtype=b&amp;utm_network=g&amp;utm_adpostion=&amp;utm_creative=469789579329&amp;utm_targetid=aud-522010995285:kwd-589281898774&amp;utm_loc_interest_ms=9071445&amp;utm_loc_physical_ms=1009919&amp;gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB</a></p>
+<p>An <strong>R package</strong> is a way to organize your own work and share it with others. Typically, a package contains code, documentation for the package and the functions inside, some tests to check everything works as it should, and data sets.</p>
+<p>Three of the most popular repositories for R packages are: CRAN, Bioconductor and Github.</p>
+<div id="installing-packages-from-cran" class="section level4" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Installing Packages From CRAN</h4>
+<p><code>install.packages("package_name")</code></p>
+<p>Example</p>
+<p><code>install.packages("tidyverse")</code></p>
+<p>After running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.</p>
+<p>To install more than a package at the same time, we can use a character vector</p>
+<p><code>install.packages(c("vioplot", "MASS"))</code></p>
+<p><strong>The function <code>install.packages</code> will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.</strong></p>
+<p>You have to install a package only once.</p>
+</div>
+<div id="load-packages" class="section level4" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> Load Packages</h4>
+<p>After a package is installed, you are ready to use its functionalities.</p>
+<p>If you just need a sporadic use of a few functions or data inside a package you can access them with the notation</p>
+<p><code>packagename::functionname()</code>.</p>
+<p>If you will make a more intensive use of the package, then maybe is worth to load it into memory. The simplest way to do this is with the <code>library()</code> command.</p>
+<p>Please note that the input of install.packages() is a character vector and requires the name to be in quotes, while library() accepts either character or name and makes it possible for you to write the name of the package without quotes.</p>
+<p>Once you have the package installed, you can load the library into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. Note that quotations are not required here.</p>
+<p><code>library(tidyverse)</code></p>
+</div>
+</div>
+<div id="python-4" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Python</h3>
+<p>Use ‘import module’ or ‘from module import?’ <a href="https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import" class="uri">https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import</a></p>
+<p><strong>Method 1:</strong> <code>import module</code></p>
+<p><strong>Method 2:</strong> <code>from module import foo</code></p>
+<p>The difference between <code>import module</code> and <code>from module import foo</code> is subjective. User can select one method and be consitent in the use of it.</p>
+<table>
+<colgroup>
+<col width="42%" />
+<col width="57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>import module</code></th>
+<th><code>from module import foo</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pros</strong></td>
+<td><strong>Pros</strong></td>
+</tr>
+<tr class="even">
+<td>- Less Maintanence of the import statements</td>
+<td>- Less typying to use <code>foo</code> function</td>
+</tr>
+<tr class="odd">
+<td>- Don’t need to add any aditional imports to start using another item from the same module</td>
+<td>- More control over whcih items of the module can be accessed</td>
+</tr>
+<tr class="even">
+<td><strong>Cons</strong></td>
+<td><strong>Cons</strong></td>
+</tr>
+<tr class="odd">
+<td>- Typing <code>module.foo</code> in the code be tedious (dull, boring )</td>
+<td>to use new items from the module the user have to update the <code>import</code> statement</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>It can be minimized by using <code>import module as mo</code>, then typing <code>mo.foo</code> | You loose context about <code>foo</code>. For example it is less clear <code>ceil()</code> does, compared to <code>math.ceil()</code></li>
+</ul>
+<p><strong>Don’t use</strong></p>
+<ul>
+<li><p><code>from modle import *</code></p>
+<ul>
+<li>Because it clutters or fills with untidy collection of things in the namespace</li>
+</ul></li>
+<li><p><code>import *</code></p>
+<ul>
+<li><p>For any reasonable large set of code, if you <code>import *</code> you will likely be cementing it into the module, unable to be removed.</p></li>
+<li><p>This is because now it is difficullt to identiify what items used in the code are coming from <code>module</code>.</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="ranked15python-packages" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Ranked:15Python packages</h2>
+<p>for Data Science</p>
+<p><a href="http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf" class="uri">http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables-expressions-and-statements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["IamBilingual.pdf"],
+"toc": {
+"collapse": "subsection",
+"download": false
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

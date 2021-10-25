@@ -24,7 +24,7 @@
 <meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,11 +238,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="14" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html"><i class="fa fa-check"></i><b>14</b> Jupyter Notebooks</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a></li>
-<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-run-or-open-jupyter-notebooks"><i class="fa fa-check"></i><b>14.2</b> How to run or open Jupyter Notebooks?</a></li>
-<li class="chapter" data-level="14.3" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#shutdown-the-jupyter-notebook-local-server"><i class="fa fa-check"></i><b>14.3</b> Shutdown the Jupyter Notebook Local Server</a></li>
+<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-1-how-to-install-the-notebook-using-pip"><i class="fa fa-check"></i><b>14.1.1</b> Method 1: How to Install the Notebook Using <code>pip</code></a></li>
+<li class="chapter" data-level="14.1.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-2-installing-jupyter-notebook-using-anaconda"><i class="fa fa-check"></i><b>14.1.2</b> Method 2: Installing Jupyter Notebook using Anaconda</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook.html"><a href="working-with-jupyter-notebook.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
+<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#working-with-jupyter-notebook"><i class="fa fa-check"></i><b>14.2</b> Working with Jupyter Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook-1.html"><a href="working-with-jupyter-notebook-1.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
 <li class="chapter" data-level="16" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html"><i class="fa fa-check"></i><b>16</b> Working with pycharm</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html#install-packages"><i class="fa fa-check"></i><b>16.1</b> install packages</a></li>
@@ -345,6 +348,21 @@ Figure 1.2: Retrieved from: <a href="https://www.python.org/community/logos/" cl
 <p><strong>Install PyCharm IDE</strong></p>
 <p>PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.</p>
 <p>PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.</p>
+<p><strong>Jupyter Notebook</strong></p>
+<p>Is Anaconda necessary to be installed to PC besides Jupyter Notebook?</p>
+<p><a href="https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook">source</a></p>
+<p>Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?</p>
+<p>The packages in python are generally installed with “pip” (or “conda”) in the terminal and are then available regardless where you run your script from. Assuming you don’t have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.</p>
+<p>If you don’t want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)</p>
+<p><a href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">Source - How to use Pip from the Jupyter Notebook</a></p>
+<pre><code># Not Recommended 
+# DON&#39;T DO THIS
+!pip install numpy</code></pre>
+<p>Here is a short snippet that should generally work:</p>
+<p><strong>Install a pip package in the current Jupyter kernel</strong></p>
+<pre><code>import sys
+!{sys.executable} -m pip install numpy</code></pre>
+<p>The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.</p>
 </div>
 </div>
 <div id="install-and-load-libraries" class="section level2" number="1.7">

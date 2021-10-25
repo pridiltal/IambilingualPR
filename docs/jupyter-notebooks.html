@@ -24,7 +24,7 @@
 <meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="advanced-r-and-python.html"/>
-<link rel="next" href="working-with-jupyter-notebook.html"/>
+<link rel="next" href="working-with-jupyter-notebook-1.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -238,11 +238,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="14" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html"><i class="fa fa-check"></i><b>14</b> Jupyter Notebooks</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a></li>
-<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-run-or-open-jupyter-notebooks"><i class="fa fa-check"></i><b>14.2</b> How to run or open Jupyter Notebooks?</a></li>
-<li class="chapter" data-level="14.3" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#shutdown-the-jupyter-notebook-local-server"><i class="fa fa-check"></i><b>14.3</b> Shutdown the Jupyter Notebook Local Server</a></li>
+<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-1-how-to-install-the-notebook-using-pip"><i class="fa fa-check"></i><b>14.1.1</b> Method 1: How to Install the Notebook Using <code>pip</code></a></li>
+<li class="chapter" data-level="14.1.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-2-installing-jupyter-notebook-using-anaconda"><i class="fa fa-check"></i><b>14.1.2</b> Method 2: Installing Jupyter Notebook using Anaconda</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook.html"><a href="working-with-jupyter-notebook.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
+<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#working-with-jupyter-notebook"><i class="fa fa-check"></i><b>14.2</b> Working with Jupyter Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook-1.html"><a href="working-with-jupyter-notebook-1.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
 <li class="chapter" data-level="16" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html"><i class="fa fa-check"></i><b>16</b> Working with pycharm</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html#install-packages"><i class="fa fa-check"></i><b>16.1</b> install packages</a></li>
@@ -284,25 +287,85 @@ https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-ma
 <li>Installing Python using Anaconda Distribution</li>
 <li>Installing Raw Python</li>
 </ul>
-<p><a href="https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&amp;medium=cpc&amp;campaign=dsa_other_topnations&amp;gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE">Click on this link</a>. It will guide you to install python.</p>
+<p>After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.</p>
+<!--Installing Jupyter Notebook 
+
+https://www.datacamp.com/community/tutorials/installing-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=278443377086&utm_targetid=aud-392016246653:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1009919&gclid=CjwKCAjw_L6LBhBbEiwA4c46upyVY8Onx3-i_vkRg6TZ9HMnYjfSIF6yQogXDTKaBPXGh81gaO8sGRoCN54QAvD_BwE-->
+<div id="method-1-how-to-install-the-notebook-using-pip" class="section level3" number="14.1.1">
+<h3><span class="header-section-number">14.1.1</span> Method 1: How to Install the Notebook Using <code>pip</code></h3>
 <ul>
-<li>After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.</li>
+<li>If you don’t want to install Anaconda, you just have to make sure that you have the latest version of <code>pip</code>.</li>
+<li>If you have installed Python, you will typically already have it.</li>
+<li>You can check the already installed pip version</li>
+</ul>
+<p><code>pip3 --version</code></p>
+<ul>
+<li>You can upgrade that using</li>
+</ul>
+<pre><code># On Windows
+python -m pip install -U pip setuptools
+
+# On OS X or Linux
+pip3 install -U pip setuptools</code></pre>
+<ul>
+<li>When you install Python directly from its <a href="https://www.python.org/">official website</a>, it does not include <strong>Jupyter Notebook</strong> in its standard library.</li>
+<li>In this case, you need to install Jupyter Notebook using the <code>pip</code>. The process is as follows:</li>
+</ul>
+<p><code>python -m pip install jupyter</code></p>
+<p>or if you are using Python 3</p>
+<p><code>python3 -m pip install jupyter</code></p>
+<p>or simply</p>
+<p><code>pip install jupyter</code></p>
+<p>Congratulations, you have installed Jupyter Notebook!</p>
+<p>After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.</p>
+</div>
+<div id="method-2-installing-jupyter-notebook-using-anaconda" class="section level3" number="14.1.2">
+<h3><span class="header-section-number">14.1.2</span> Method 2: Installing Jupyter Notebook using Anaconda</h3>
+<ul>
+<li><p>If you have installed Python using Anaconda Distribution, then it includes Python, the Jupyter Notebook, and other commonly used packages for the scientific community.</p></li>
+<li><p>You can follow the instructions for the installation of Anaconda here for <a href="https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x">Mac: click here</a> or <a href="https://www.datacamp.com/community/tutorials/installing-anaconda-windows">Windows: click here</a>.</p></li>
 </ul>
 </div>
-<div id="how-to-run-or-open-jupyter-notebooks" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> How to run or open Jupyter Notebooks?</h2>
-<ul>
-<li><p>After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.</p></li>
-<li><p>Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.</p></li>
-<li><p>When the notebook opens in your browser, you will see the Notebook Homepage</p></li>
-</ul>
 </div>
-<div id="shutdown-the-jupyter-notebook-local-server" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Shutdown the Jupyter Notebook Local Server</h2>
-<ul>
-<li><p>You can also close your terminal by typing the command <code>exit</code> and hitting <code>Enter</code>.</p></li>
-<li><p>You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking <code>Ctrl+c</code>. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.</p></li>
-</ul>
+<div id="working-with-jupyter-notebook" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> Working with Jupyter Notebook</h2>
+<p>This video: <a href="https://www.youtube.com/watch?v=IKBMIThz78c">(click here)</a> will guide you to create your first jupyter notebook.</p>
+<!--
+
+`jupyter notebook`
+
+<!--
+
+[Click on this link](https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE). It will guide you to install python. 
+
+
+- After installing python using one of the above methods, then we need to installing Jupyter Notebook using either  Anaconda or pip.
+
+## How to run or open Jupyter Notebooks?
+
+- After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+
+- Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.
+
+- When the notebook opens in your browser, you will see the Notebook Homepage
+
+## Working with jupyter notebook
+
+1. The Files tab lists the directories and files in the home folder, which usually is the home directory of the user logged in to the computer.
+2. If you want to create a new folder, Go to 
+  `New -- Folder`
+  
+3. Then create a jupyter notebook by 
+   `New-- Python 3`
+   
+   
+## Shutdown the Jupyter Notebook Local Server
+
+- You can also close your terminal by typing the command `exit` and hitting `Enter`.
+
+- You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking `Ctrl+c`. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.
+
+-->
 
 </div>
 </div>
@@ -312,7 +375,7 @@ https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-ma
         </div>
       </div>
 <a href="advanced-r-and-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-with-jupyter-notebook.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-with-jupyter-notebook-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

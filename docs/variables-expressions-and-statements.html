@@ -24,7 +24,7 @@
 <meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala" />
 
 
-<meta name="date" content="2021-10-20" />
+<meta name="date" content="2021-10-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,11 +238,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="14" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html"><i class="fa fa-check"></i><b>14</b> Jupyter Notebooks</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a></li>
-<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-run-or-open-jupyter-notebooks"><i class="fa fa-check"></i><b>14.2</b> How to run or open Jupyter Notebooks?</a></li>
-<li class="chapter" data-level="14.3" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#shutdown-the-jupyter-notebook-local-server"><i class="fa fa-check"></i><b>14.3</b> Shutdown the Jupyter Notebook Local Server</a></li>
+<li class="chapter" data-level="14.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#how-to-install-jupyter-environment"><i class="fa fa-check"></i><b>14.1</b> How to install Jupyter environment?</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-1-how-to-install-the-notebook-using-pip"><i class="fa fa-check"></i><b>14.1.1</b> Method 1: How to Install the Notebook Using <code>pip</code></a></li>
+<li class="chapter" data-level="14.1.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#method-2-installing-jupyter-notebook-using-anaconda"><i class="fa fa-check"></i><b>14.1.2</b> Method 2: Installing Jupyter Notebook using Anaconda</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook.html"><a href="working-with-jupyter-notebook.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
+<li class="chapter" data-level="14.2" data-path="jupyter-notebooks.html"><a href="jupyter-notebooks.html#working-with-jupyter-notebook"><i class="fa fa-check"></i><b>14.2</b> Working with Jupyter Notebook</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="working-with-jupyter-notebook-1.html"><a href="working-with-jupyter-notebook-1.html"><i class="fa fa-check"></i><b>15</b> Working with jupyter notebook</a></li>
 <li class="chapter" data-level="16" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html"><i class="fa fa-check"></i><b>16</b> Working with pycharm</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="working-with-pycharm.html"><a href="working-with-pycharm.html#install-packages"><i class="fa fa-check"></i><b>16.1</b> install packages</a></li>
@@ -273,20 +276,20 @@ div.csl-indent {
 <p>This is a test code</p>
 <div id="r-code" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> R code</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="variables-expressions-and-statements.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an R code</span></span>
-<span id="cb1-2"><a href="variables-expressions-and-statements.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-3"><a href="variables-expressions-and-statements.html#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb1-4"><a href="variables-expressions-and-statements.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x<span class="sc">+</span>y)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="variables-expressions-and-statements.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an R code</span></span>
+<span id="cb3-2"><a href="variables-expressions-and-statements.html#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="variables-expressions-and-statements.html#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb3-4"><a href="variables-expressions-and-statements.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x<span class="sc">+</span>y)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 </div>
 <div id="python-code" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Python Code</h3>
 <p>The ‘python’ engine in knitr requires the <code>reticulate</code> package.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="variables-expressions-and-statements.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="variables-expressions-and-statements.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a Python code</span></span>
-<span id="cb4-2"><a href="variables-expressions-and-statements.html#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-3"><a href="variables-expressions-and-statements.html#cb4-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb4-4"><a href="variables-expressions-and-statements.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x<span class="op">+</span>y)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="variables-expressions-and-statements.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="variables-expressions-and-statements.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a Python code</span></span>
+<span id="cb6-2"><a href="variables-expressions-and-statements.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-3"><a href="variables-expressions-and-statements.html#cb6-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb6-4"><a href="variables-expressions-and-statements.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x<span class="op">+</span>y)</span></code></pre></div>
 <pre><code>## 4</code></pre>
 
 </div>
