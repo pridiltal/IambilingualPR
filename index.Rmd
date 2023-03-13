@@ -1,5 +1,5 @@
 --- 
-title: "I am Bilingual - Python and R"
+title: "R and PYTHON: WE ARE BILINGUAL"
 author: "Priyanga Dilini Talagala <br/> Thiyanga S. Talagala"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -9,7 +9,7 @@ bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "I am Bilingual - Python and R"
+description: "Whether you're an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!"
 ---
 
 # Preface {-}
