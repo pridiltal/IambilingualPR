@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.253">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!">
+
+<title>R and Python: WE ARE BILINGUAL - 1&nbsp; Introduction to R and Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-basics.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and Python</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R and Python: WE ARE BILINGUAL</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/pridiltal/IambilingualPR" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About this</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions, and statements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-conditions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional execution</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Functions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Functions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Iteration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Iteration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Tidyworkflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidy workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Import.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Import</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tidy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-transform.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Transform</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-visualise.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-model.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-communicate.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Communicate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-advancedRnPython.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-Jupyter.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-Createproject.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with jupyter notebook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#about-r-and-python" id="toc-about-r-and-python" class="nav-link active" data-scroll-target="#about-r-and-python"><span class="toc-section-number">1.1</span>  About R and Python</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="toc-section-number">1.1.1</span>  R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><span class="toc-section-number">1.1.2</span>  Python</a></li>
+  </ul></li>
+  <li><a href="#history-of-r-and-python" id="toc-history-of-r-and-python" class="nav-link" data-scroll-target="#history-of-r-and-python"><span class="toc-section-number">1.2</span>  History of R and Python</a>
+  <ul class="collapse">
+  <li><a href="#r-1" id="toc-r-1" class="nav-link" data-scroll-target="#r-1"><span class="toc-section-number">1.2.1</span>  R</a></li>
+  <li><a href="#python-1" id="toc-python-1" class="nav-link" data-scroll-target="#python-1"><span class="toc-section-number">1.2.2</span>  Python</a></li>
+  </ul></li>
+  <li><a href="#story-behind-their-names" id="toc-story-behind-their-names" class="nav-link" data-scroll-target="#story-behind-their-names"><span class="toc-section-number">1.3</span>  Story behind their names</a>
+  <ul class="collapse">
+  <li><a href="#r-2" id="toc-r-2" class="nav-link" data-scroll-target="#r-2"><span class="toc-section-number">1.3.1</span>  R</a></li>
+  <li><a href="#python-2" id="toc-python-2" class="nav-link" data-scroll-target="#python-2"><span class="toc-section-number">1.3.2</span>  Python</a></li>
+  </ul></li>
+  <li><a href="#logo" id="toc-logo" class="nav-link" data-scroll-target="#logo"><span class="toc-section-number">1.4</span>  Logo</a></li>
+  <li><a href="#worldwide-google-trends" id="toc-worldwide-google-trends" class="nav-link" data-scroll-target="#worldwide-google-trends"><span class="toc-section-number">1.5</span>  Worldwide Google Trends</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="toc-section-number">1.6</span>  Installation</a>
+  <ul class="collapse">
+  <li><a href="#r-3" id="toc-r-3" class="nav-link" data-scroll-target="#r-3"><span class="toc-section-number">1.6.1</span>  R</a></li>
+  <li><a href="#python-3" id="toc-python-3" class="nav-link" data-scroll-target="#python-3"><span class="toc-section-number">1.6.2</span>  Python</a></li>
+  </ul></li>
+  <li><a href="#install-and-load-libraries" id="toc-install-and-load-libraries" class="nav-link" data-scroll-target="#install-and-load-libraries"><span class="toc-section-number">1.7</span>  Install and Load Libraries</a>
+  <ul class="collapse">
+  <li><a href="#r-4" id="toc-r-4" class="nav-link" data-scroll-target="#r-4"><span class="toc-section-number">1.7.1</span>  R</a></li>
+  <li><a href="#python-4" id="toc-python-4" class="nav-link" data-scroll-target="#python-4"><span class="toc-section-number">1.7.2</span>  Python</a></li>
+  </ul></li>
+  <li><a href="#ranked15python-packages" id="toc-ranked15python-packages" class="nav-link" data-scroll-target="#ranked15python-packages"><span class="toc-section-number">1.8</span>  Ranked:15Python packages</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/01-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="intro" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and Python</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>R Vs Python: What’s the Difference? https://www.guru99.com/r-vs-python.html</p>
+<section id="about-r-and-python" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="about-r-and-python"><span class="header-section-number">1.1</span> About R and Python</h2>
+<section id="r" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="r"><span class="header-section-number">1.1.1</span> R</h3>
+<p>R is an object oriented, open source programming <strong>language</strong> and <strong>environment</strong> for statistical computing and graphics. R is not a statistics system but an environment within which statistical techniques are implemented. Further, R gains more capabilities via packages, its fundamental shareable units that bundle together R functions, code, data, documentation, and tests etc. <span class="citation" data-cites="Rcoreteam2020">(<a href="#ref-Rcoreteam2020" role="doc-biblioref">R Core Team 2020</a>)</span>.</p>
+</section>
+<section id="python" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="python"><span class="header-section-number">1.1.2</span> Python</h3>
+<p>Python is an object-oriented, interpreted, and interactive programming language. The motto of Python language is “Batteries included” as the functionality of the language can be performed via its comprehensive standard in built Libraries <span class="citation" data-cites="wikipython">(<a href="#ref-wikipython" role="doc-biblioref">Wikipedia contributors 2020a</a>)</span>.</p>
+</section>
+</section>
+<section id="history-of-r-and-python" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="history-of-r-and-python"><span class="header-section-number">1.2</span> History of R and Python</h2>
+<section id="r-1" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="r-1"><span class="header-section-number">1.2.1</span> R</h3>
+<p>R is an implementation of the S programming language which was created by John Chambers in 1976. In 1991, an alternative implementation of the basic S language was developed by Ross Ihaka and Robert Gentleman, University of Auckland, New Zealand. It was published in 1993 <span class="citation" data-cites="wikiR">(<a href="#ref-wikiR" role="doc-biblioref">Wikipedia contributors 2020b</a>)</span>.</p>
+</section>
+<section id="python-1" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="python-1"><span class="header-section-number">1.2.2</span> Python</h3>
+<p>In 1989, Guido van Rossum at Centrum Wiskunde &amp; Informatica (CWI) in the Netherlands started the implementation of Python as a successor to ABC programming language. Python 2.0 was released in 2000. Python 3.0, a major revision of the language that is not completely backward-compatible was released in 2008 <span class="citation" data-cites="wikipython">(<a href="#ref-wikipython" role="doc-biblioref">Wikipedia contributors 2020a</a>)</span> . Today many developers create libraries strictly for the use with Python 3.</p>
+</section>
+</section>
+<section id="story-behind-their-names" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="story-behind-their-names"><span class="header-section-number">1.3</span> Story behind their names</h2>
+<section id="r-2" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="r-2"><span class="header-section-number">1.3.1</span> R</h3>
+<p>R was introduced by <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman and it was named after the first names of the two authors. The name of the “S” language also had some influence on the selection of its name and it was selected partly as a play on the name of S <span class="citation" data-cites="wikiR">(<a href="#ref-wikiR" role="doc-biblioref">Wikipedia contributors 2020b</a>)</span>.</p>
+</section>
+<section id="python-2" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="python-2"><span class="header-section-number">1.3.2</span> Python</h3>
+<p>Python was named after a famous <a href="https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus">TV show ‘Monty Python’s Flying Circus’</a>. Guido van Rossum, the creater of Python was a big fan of the TV show. He wanted to name his invention with a short, unique and slightly mysterious name and chose Python as a working title for his ongoing project.</p>
+</section>
+</section>
+<section id="logo" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="logo"><span class="header-section-number">1.4</span> Logo</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/C1_Rlogo.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<p></p><figcaption class="figure-caption">Retrieved from: https://www.r-project.org/logo/</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fig/C1_Pythonlogo.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">Retrieved from: https://www.python.org/community/logos/</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="worldwide-google-trends" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="worldwide-google-trends"><span class="header-section-number">1.5</span> Worldwide Google Trends</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="01-intro_files/figure-html/googletrends-1.png" class="img-fluid" width="1248"></p>
+</div>
+</div>
+</section>
+<section id="installation" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="installation"><span class="header-section-number">1.6</span> Installation</h2>
+<section id="r-3" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="r-3"><span class="header-section-number">1.6.1</span> R</h3>
+<p>You can download it for free from the following websites: - R (https://cran.r-project.org/)</p>
+<p><strong>Install Rstudio IDE</strong></p>
+<p>RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.</p>
+<ul>
+<li>RStudio (https://www.rstudio.com/products/rstudio/download/#download).</li>
+</ul>
+</section>
+<section id="python-3" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="python-3"><span class="header-section-number">1.6.2</span> Python</h3>
+<p>Ref: https://www.w3schools.com/python/python_getstarted.asp</p>
+<p>Many PCs and Macs will have python already installed.</p>
+<p>To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):</p>
+<p><code>C:\Users\Your Name&gt;python --version</code></p>
+<p>To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:</p>
+<p><code>python --version</code></p>
+<p>If you find that you do not have python installed on your computer, then you can download it for free from the following website: https://www.python.org/</p>
+<p><strong>Install PyCharm IDE</strong></p>
+<p>PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.</p>
+<p>PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.</p>
+<p><strong>Jupyter Notebook</strong></p>
+<p>Is Anaconda necessary to be installed to PC besides Jupyter Notebook?</p>
+<p><a href="https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook">source</a></p>
+<p>Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?</p>
+<p>The packages in python are generally installed with “pip” (or “conda”) in the terminal and are then available regardless where you run your script from. Assuming you don’t have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.</p>
+<p>If you don’t want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)</p>
+<p><a href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">Source - How to use Pip from the Jupyter Notebook</a></p>
+<pre><code># Not Recommended 
+# DON'T DO THIS
+!pip install numpy</code></pre>
+<p>Here is a short snippet that should generally work:</p>
+<p><strong>Install a pip package in the current Jupyter kernel</strong></p>
+<pre><code>import sys
+!{sys.executable} -m pip install numpy</code></pre>
+<p>The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.</p>
+<p>https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook</p>
+<p>Python packages are not installed with python functions, like it would be the case in R with install.packages(“package name”). Instead, an external package manager usually is used to install and possibly compile the package files to a directory where python can import it from.</p>
+<p>Anaconda offers (among others) the package manager conda. Most popular is pip. Some Linux distributions also offer python packages via their package manager (e.g.&nbsp;apt on Debian/Ubuntu). All these package managers download packages from their own repositories, so conda install numpy, pip install numpy and apt install python3-numpy all install a package numpy, but from different sources and in possibly different versions.</p>
+<p>Jupyter Notebook is a programming environment, where you can execute shell commands with !command, so depending on the system where the Jupyter server is running, you can use !pip install numpy, !conda install numpy or other commands as cells in the Jupyter Notebook you are working in. This will run the command in a shell.</p>
+<p>That graphical menu with Jupyter, RStudio etc. you describe is the program “Anaconda Navigator”, which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.</p>
+<p>Anaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands.</p>
+</section>
+</section>
+<section id="install-and-load-libraries" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="install-and-load-libraries"><span class="header-section-number">1.7</span> Install and Load Libraries</h2>
+<section id="r-4" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="r-4"><span class="header-section-number">1.7.1</span> R</h3>
+<p>R Packages: A Beginner’s Guide https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc&amp;utm_campaignid=1655852085&amp;utm_adgroupid=61045434222&amp;utm_device=c&amp;utm_keyword=%2Bload%20%2Bpackage%20%2Br&amp;utm_matchtype=b&amp;utm_network=g&amp;utm_adpostion=&amp;utm_creative=469789579329&amp;utm_targetid=aud-522010995285:kwd-589281898774&amp;utm_loc_interest_ms=9071445&amp;utm_loc_physical_ms=1009919&amp;gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB</p>
+<p>An <strong>R package</strong> is a way to organize your own work and share it with others. Typically, a package contains code, documentation for the package and the functions inside, some tests to check everything works as it should, and data sets.</p>
+<p>Three of the most popular repositories for R packages are: CRAN, Bioconductor and Github.</p>
+<section id="installing-packages-from-cran" class="level4" data-number="1.7.1.1">
+<h4 data-number="1.7.1.1" class="anchored" data-anchor-id="installing-packages-from-cran"><span class="header-section-number">1.7.1.1</span> Installing Packages From CRAN</h4>
+<p><code>install.packages("package_name")</code></p>
+<p>Example</p>
+<p><code>install.packages("tidyverse")</code></p>
+<p>After running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.</p>
+<p>To install more than a package at the same time, we can use a character vector</p>
+<p><code>install.packages(c("vioplot", "MASS"))</code></p>
+<p><strong>The function <code>install.packages</code> will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.</strong></p>
+<p>You have to install a package only once.</p>
+</section>
+<section id="load-packages" class="level4" data-number="1.7.1.2">
+<h4 data-number="1.7.1.2" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">1.7.1.2</span> Load Packages</h4>
+<p>After a package is installed, you are ready to use its functionalities.</p>
+<p>If you just need a sporadic use of a few functions or data inside a package you can access them with the notation</p>
+<p><code>packagename::functionname()</code>.</p>
+<p>If you will make a more intensive use of the package, then maybe is worth to load it into memory. The simplest way to do this is with the <code>library()</code> command.</p>
+<p>Please note that the input of install.packages() is a character vector and requires the name to be in quotes, while library() accepts either character or name and makes it possible for you to write the name of the package without quotes.</p>
+<p>Once you have the package installed, you can load the library into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. Note that quotations are not required here.</p>
+<p><code>library(tidyverse)</code></p>
+</section>
+</section>
+<section id="python-4" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="python-4"><span class="header-section-number">1.7.2</span> Python</h3>
+<p>Use ‘import module’ or ‘from module import’? https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import</p>
+<p><strong>Method 1:</strong> <code>import module</code></p>
+<p><strong>Method 2:</strong> <code>from module import foo</code></p>
+<p>The difference between <code>import module</code> and <code>from module import foo</code> is subjective. User can select one method and be consitent in the use of it.</p>
+<table class="table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>import module</code></th>
+<th><code>from module import foo</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pros</strong></td>
+<td><strong>Pros</strong></td>
+</tr>
+<tr class="even">
+<td>- Less Maintanence of the import statements</td>
+<td>- Less typying to use <code>foo</code> function</td>
+</tr>
+<tr class="odd">
+<td>- Don’t need to add any aditional imports to start using another item from the same module</td>
+<td>- More control over whcih items of the module can be accessed</td>
+</tr>
+<tr class="even">
+<td><strong>Cons</strong></td>
+<td><strong>Cons</strong></td>
+</tr>
+<tr class="odd">
+<td>- Typing <code>module.foo</code> in the code be tedious (dull, boring )</td>
+<td>to use new items from the module the user have to update the <code>import</code> statement</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>It can be minimized by using <code>import module as mo</code>, then typing <code>mo.foo</code> | You loose context about <code>foo</code>. For example it is less clear <code>ceil()</code> does, compared to <code>math.ceil()</code></li>
+</ul>
+<p><strong>Don’t use</strong></p>
+<ul>
+<li><p><code>from modle import *</code></p>
+<ul>
+<li>Because it clutters or fills with untidy collection of things in the namespace</li>
+</ul></li>
+<li><p><code>import *</code></p>
+<ul>
+<li><p>For any reasonable large set of code, if you <code>import *</code> you will likely be cementing it into the module, unable to be removed.</p></li>
+<li><p>This is because now it is difficullt to identiify what items used in the code are coming from <code>module</code>.</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="ranked15python-packages" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="ranked15python-packages"><span class="header-section-number">1.8</span> Ranked:15Python packages</h2>
+<p>for Data Science</p>
+<p>http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Rcoreteam2020" class="csl-entry" role="doc-biblioentry">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-wikipython" class="csl-entry" role="doc-biblioentry">
+Wikipedia contributors. 2020a. <span>“Python (Programming Language) — <span>Wikipedia</span><span>,</span> the Free Encyclopedia.”</span> <a href="https://en.wikipedia.org/w/index.php?title=Python_(programming_language)&amp;oldid=996025213">https://en.wikipedia.org/w/index.php?title=Python_(programming_language)&amp;oldid=996025213</a>.
+</div>
+<div id="ref-wikiR" class="csl-entry" role="doc-biblioentry">
+———. 2020b. <span>“R (Programming Language) — <span>Wikipedia</span><span>,</span> the Free Encyclopedia.”</span> <a href="https://en.wikipedia.org/w/index.php?title=R_(programming_language)&amp;oldid=995691124">https://en.wikipedia.org/w/index.php?title=R_(programming_language)&amp;oldid=995691124</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About this</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-basics.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Variables, expressions, and statements</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2023, Priyanga Dilini Talagala, Thiyanga S. Talagala</div>
+  </div>
+</footer>
+
+
+
+</body></html>

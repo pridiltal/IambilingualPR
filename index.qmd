@@ -1,0 +1,11 @@
+# About this {-}
+
+Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!
+
+With “R and PYTHON: WE ARE BILINGUAL,” you’ll gain a thorough understanding of both R and/or Python and learn how to use them together to solve complex problems.
+
+
+```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
+knitr::include_graphics('fig/cover/cover.jpg', dpi = NA)
+```
+

@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala">
-<meta name="dcterms.date" content="2023-03-13">
 <meta name="description" content="Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!">
 
-<title>R and Python: WE ARE BILINGUAL</title>
+<title>R and Python: WE ARE BILINGUAL - 14&nbsp; Jupyter Notebooks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./15-Createproject.html" rel="next">
+<link href="./13-advancedRnPython.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">R and Python: WE ARE BILINGUAL</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -102,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">About this</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About this</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -172,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-Jupyter.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></a>
+  <a href="./14-Jupyter.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -194,40 +193,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-this" id="toc-about-this" class="nav-link active" data-scroll-target="#about-this">About this</a></li>
+  <li><a href="#how-to-install-jupyter-environment" id="toc-how-to-install-jupyter-environment" class="nav-link active" data-scroll-target="#how-to-install-jupyter-environment"><span class="toc-section-number">14.1</span>  How to install Jupyter environment?</a>
+  <ul class="collapse">
+  <li><a href="#method-1-how-to-install-the-notebook-using-pip" id="toc-method-1-how-to-install-the-notebook-using-pip" class="nav-link" data-scroll-target="#method-1-how-to-install-the-notebook-using-pip"><span class="toc-section-number">14.1.1</span>  Method 1: How to Install the Notebook Using <code>pip</code></a></li>
+  <li><a href="#method-2-installing-jupyter-notebook-using-anaconda" id="toc-method-2-installing-jupyter-notebook-using-anaconda" class="nav-link" data-scroll-target="#method-2-installing-jupyter-notebook-using-anaconda"><span class="toc-section-number">14.1.2</span>  Method 2: Installing Jupyter Notebook using Anaconda</a></li>
+  </ul></li>
+  <li><a href="#working-with-jupyter-notebook" id="toc-working-with-jupyter-notebook" class="nav-link" data-scroll-target="#working-with-jupyter-notebook"><span class="toc-section-number">14.2</span>  Working with Jupyter Notebook</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/14-Jupyter.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">R and Python: WE ARE BILINGUAL</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Priyanga Dilini Talagala <br> Thiyanga S. Talagala </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -235,19 +222,101 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-this" class="level1 unnumbered">
-<h1 class="unnumbered">About this</h1>
-<p>Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!</p>
-<p>With “R and PYTHON: WE ARE BILINGUAL,” you’ll gain a thorough understanding of both R and/or Python and learn how to use them together to solve complex problems.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig/cover/cover.jpg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<!--Jupyter Notebook Tutorial: Installation, Components and Magic Commands
+https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE
+-->
+<ul>
+<li>The <a href="https://jupyter.org/">Jupyter Notebook</a> is an open-source web application that allows the user to create and share documents that contain live code, equations, visualizations, and narrative text.</li>
+<li><a href="https://jupyter.org/">JupyterLab</a> is an advanced version of Jupyter Notebook interface. It brings the classic notebooks, text editor, terminal, and directory viewer all under one roof. However, both operate in a similar fashion.</li>
+</ul>
+<section id="how-to-install-jupyter-environment" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="how-to-install-jupyter-environment"><span class="header-section-number">14.1</span> How to install Jupyter environment?</h2>
+<p>First, open a new command prompt (Windows) or terminal (Mac/Linux) on your workstation, and second, execute the following command:</p>
+<p><code>jupyter notebook</code></p>
+<p>If the above command fails, first, you need to install python on your workstation. There are two popular methods to install Python on your workstation.</p>
+<ul>
+<li>Installing Python using Anaconda Distribution</li>
+<li>Installing Raw Python</li>
+</ul>
+<p>After installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.</p>
+<!--Installing Jupyter Notebook 
+
+https://www.datacamp.com/community/tutorials/installing-jupyter-notebook?utm_source=adwords_ppc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=278443377086&utm_targetid=aud-392016246653:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1009919&gclid=CjwKCAjw_L6LBhBbEiwA4c46upyVY8Onx3-i_vkRg6TZ9HMnYjfSIF6yQogXDTKaBPXGh81gaO8sGRoCN54QAvD_BwE-->
+<section id="method-1-how-to-install-the-notebook-using-pip" class="level3" data-number="14.1.1">
+<h3 data-number="14.1.1" class="anchored" data-anchor-id="method-1-how-to-install-the-notebook-using-pip"><span class="header-section-number">14.1.1</span> Method 1: How to Install the Notebook Using <code>pip</code></h3>
+<ul>
+<li>If you don’t want to install Anaconda, you just have to make sure that you have the latest version of <code>pip</code>.</li>
+<li>If you have installed Python, you will typically already have it.</li>
+<li>You can check the already installed pip version</li>
+</ul>
+<p><code>pip3 --version</code></p>
+<ul>
+<li>You can upgrade that using</li>
+</ul>
+<pre><code># On Windows
+python -m pip install -U pip setuptools
+
+# On OS X or Linux
+pip3 install -U pip setuptools</code></pre>
+<ul>
+<li>When you install Python directly from its <a href="https://www.python.org/">official website</a>, it does not include <strong>Jupyter Notebook</strong> in its standard library.</li>
+<li>In this case, you need to install Jupyter Notebook using the <code>pip</code>. The process is as follows:</li>
+</ul>
+<p><code>python -m pip install jupyter</code></p>
+<p>or if you are using Python 3</p>
+<p><code>python3 -m pip install jupyter</code></p>
+<p>or simply</p>
+<p><code>pip install jupyter</code></p>
+<p>Congratulations, you have installed Jupyter Notebook!</p>
+<p>After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.</p>
+</section>
+<section id="method-2-installing-jupyter-notebook-using-anaconda" class="level3" data-number="14.1.2">
+<h3 data-number="14.1.2" class="anchored" data-anchor-id="method-2-installing-jupyter-notebook-using-anaconda"><span class="header-section-number">14.1.2</span> Method 2: Installing Jupyter Notebook using Anaconda</h3>
+<ul>
+<li><p>If you have installed Python using Anaconda Distribution, then it includes Python, the Jupyter Notebook, and other commonly used packages for the scientific community.</p></li>
+<li><p>You can follow the instructions for the installation of Anaconda here for <a href="https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x">Mac: click here</a> or <a href="https://www.datacamp.com/community/tutorials/installing-anaconda-windows">Windows: click here</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="working-with-jupyter-notebook" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="working-with-jupyter-notebook"><span class="header-section-number">14.2</span> Working with Jupyter Notebook</h2>
+<p>This video: <a href="https://www.youtube.com/watch?v=IKBMIThz78c">(click here)</a> will guide you to create your first jupyter notebook.</p>
+<!--
+
+`jupyter notebook`
+
+<!--
+
+[Click on this link](https://blog.quantinsti.com/jupyter-notebook-tutorial-installation-components-magic-commands/?source=google&medium=cpc&campaign=dsa_other_topnations&gclid=CjwKCAjw_L6LBhBbEiwA4c46ui3I3LExNsT-8hio3gGLkVRXewJwHZO3EijzgRAkh29lx7uCg8P4hxoCGuAQAvD_BwE). It will guide you to install python. 
+
+
+- After installing python using one of the above methods, then we need to installing Jupyter Notebook using either  Anaconda or pip.
+
+## How to run or open Jupyter Notebooks?
+
+- After you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.
+
+- Keep the terminal open as it is. It will then open the default web browser with the URL mentioned in the command prompt or terminal.
+
+- When the notebook opens in your browser, you will see the Notebook Homepage
+
+## Working with jupyter notebook
+
+1. The Files tab lists the directories and files in the home folder, which usually is the home directory of the user logged in to the computer.
+2. If you want to create a new folder, Go to 
+  `New -- Folder`
+  
+3. Then create a jupyter notebook by 
+   `New-- Python 3`
+   
+   
+## Shutdown the Jupyter Notebook Local Server
+
+- You can also close your terminal by typing the command `exit` and hitting `Enter`.
+
+- You can also shutdown a Jupyter Notebook session by clicking in the Terminal window and clicking `Ctrl+c`. You will be asked to confirm that you want to Shutdown this notebook server (y/[n])?. Type y and hit Enter to confirm. Then, you can close the Terminal by typing the command exit and hitting Enter.
+
+-->
 
 
 </section>
@@ -388,10 +457,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./13-advancedRnPython.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15-Createproject.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with jupyter notebook</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

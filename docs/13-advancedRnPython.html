@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Priyanga Dilini Talagala   Thiyanga S. Talagala">
-<meta name="dcterms.date" content="2023-03-13">
 <meta name="description" content="Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!">
 
-<title>R and Python: WE ARE BILINGUAL</title>
+<title>R and Python: WE ARE BILINGUAL - 13&nbsp; Advanced R and Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./14-Jupyter.html" rel="next">
+<link href="./12-communicate.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">R and Python: WE ARE BILINGUAL</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">About this</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About this</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-advancedRnPython.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></a>
+  <a href="./13-advancedRnPython.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -194,40 +194,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-this" id="toc-about-this" class="nav-link active" data-scroll-target="#about-this">About this</a></li>
+  <li><a href="#time-series-forecasting" id="toc-time-series-forecasting" class="nav-link active" data-scroll-target="#time-series-forecasting"><span class="toc-section-number">13.1</span>  Time Series Forecasting</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/13-advancedRnPython.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">R and Python: WE ARE BILINGUAL</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Advanced R and Python</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Priyanga Dilini Talagala <br> Thiyanga S. Talagala </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -235,19 +218,33 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-this" class="level1 unnumbered">
-<h1 class="unnumbered">About this</h1>
-<p>Whether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!</p>
-<p>With “R and PYTHON: WE ARE BILINGUAL,” you’ll gain a thorough understanding of both R and/or Python and learn how to use them together to solve complex problems.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fig/cover/cover.jpg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>WIP <!--Refer this website
+
+https://www.business-science.io/learning-python/2018/11/18/data-science-python-cheatsheet.html?utm_content=bufferd082c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer--></p>
+<section id="time-series-forecasting" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="time-series-forecasting"><span class="header-section-number">13.1</span> Time Series Forecasting</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>R</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/fable/index.html">fable</a>-Forecasting Models for Tidy Time Series</td>
+<td><a href="https://www.statsmodels.org/devel/user-guide.html#time-series-analysis">statsmodels</a>- Statistics based models</td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/forecast/index.html">forecast</a>- Forecasting Functions for Time Series and Linear Models</td>
+<td><a href="https://www.sktime.org/en/latest/">sktime</a>- A unified framework for machine learning with time series</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\text{}\)</span></td>
+<td><a href="https://ts.gluon.ai/">GluonTS</a>- Deep learning-based models.</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -388,10 +385,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./12-communicate.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Communicate</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R and Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./14-Jupyter.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Jupyter Notebooks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

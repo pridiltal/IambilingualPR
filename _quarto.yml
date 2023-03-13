@@ -1,0 +1,54 @@
+project: 
+  type: book
+  output-dir: docs
+  
+book:
+  title: "R and Python: WE ARE BILINGUAL"
+  author: "Priyanga Dilini Talagala <br/> Thiyanga S. Talagala"
+  description: | 
+     Whether you're an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!
+  site-url: https://pridiltal.github.io/IambilingualPR/
+  repo-url: https://github.com/pridiltal/IambilingualPR
+  repo-branch: main
+  repo-actions: [edit, issue]
+  sharing: [twitter]
+  date: "2023-03-13"
+  page-footer: "Copyright 2023, Priyanga Dilini Talagala, Thiyanga S. Talagala" 
+  page-navigation: true
+  search: true
+  chapters:
+    - "index.qmd"
+    - "01-intro.qmd"
+    - "02-basics.qmd"
+    - "03-conditions.qmd"
+    - "04-Functions.qmd"
+    - "05-Iteration.qmd"
+    - "06-Tidyworkflow.qmd"
+    - "07-Import.qmd"
+    - "08-tidy.qmd"
+    - "09-transform.qmd"
+    - "10-visualise.qmd"
+    - "11-model.qmd"
+    - "12-communicate.qmd"
+    - "13-advancedRnPython.qmd"
+    - "14-Jupyter.qmd"
+    - "15-Createproject.qmd"
+    - "16-references.qmd"
+bibliography:
+  - book.bib
+  - packages.bib
+format:
+  html:
+    theme: cosmo
+    code-background: true
+    code-copy: true
+    css: style.css
+    toc: true
+    fontsize: 12pt
+    monofont: "Source Code Pro"
+  pdf:
+    documentclass: krantz
+    keep-tex: true
+    cite-method: natbib
+  # epub:
+  #   cover-image: cover.png

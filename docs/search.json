@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R and Python: WE ARE BILINGUAL",
+    "section": "",
+    "text": "About this\nWhether you’re an R user looking to learn Python, a Python user looking to learn R, or simply looking for a comprehensive source to learn both languages, this book is for you!\nWith “R and PYTHON: WE ARE BILINGUAL,” you’ll gain a thorough understanding of both R and/or Python and learn how to use them together to solve complex problems."
+  },
+  {
+    "objectID": "01-intro.html#about-r-and-python",
+    "href": "01-intro.html#about-r-and-python",
+    "title": "1  Introduction to R and Python",
+    "section": "1.1 About R and Python",
+    "text": "1.1 About R and Python\n\n1.1.1 R\nR is an object oriented, open source programming language and environment for statistical computing and graphics. R is not a statistics system but an environment within which statistical techniques are implemented. Further, R gains more capabilities via packages, its fundamental shareable units that bundle together R functions, code, data, documentation, and tests etc. (R Core Team 2020).\n\n\n1.1.2 Python\nPython is an object-oriented, interpreted, and interactive programming language. The motto of Python language is “Batteries included” as the functionality of the language can be performed via its comprehensive standard in built Libraries (Wikipedia contributors 2020a)."
+  },
+  {
+    "objectID": "01-intro.html#history-of-r-and-python",
+    "href": "01-intro.html#history-of-r-and-python",
+    "title": "1  Introduction to R and Python",
+    "section": "1.2 History of R and Python",
+    "text": "1.2 History of R and Python\n\n1.2.1 R\nR is an implementation of the S programming language which was created by John Chambers in 1976. In 1991, an alternative implementation of the basic S language was developed by Ross Ihaka and Robert Gentleman, University of Auckland, New Zealand. It was published in 1993 (Wikipedia contributors 2020b).\n\n\n1.2.2 Python\nIn 1989, Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands started the implementation of Python as a successor to ABC programming language. Python 2.0 was released in 2000. Python 3.0, a major revision of the language that is not completely backward-compatible was released in 2008 (Wikipedia contributors 2020a) . Today many developers create libraries strictly for the use with Python 3."
+  },
+  {
+    "objectID": "01-intro.html#story-behind-their-names",
+    "href": "01-intro.html#story-behind-their-names",
+    "title": "1  Introduction to R and Python",
+    "section": "1.3 Story behind their names",
+    "text": "1.3 Story behind their names\n\n1.3.1 R\nR was introduced by Ross Ihaka and Robert Gentleman and it was named after the first names of the two authors. The name of the “S” language also had some influence on the selection of its name and it was selected partly as a play on the name of S (Wikipedia contributors 2020b).\n\n\n1.3.2 Python\nPython was named after a famous TV show ‘Monty Python’s Flying Circus’. Guido van Rossum, the creater of Python was a big fan of the TV show. He wanted to name his invention with a short, unique and slightly mysterious name and chose Python as a working title for his ongoing project."
+  },
+  {
+    "objectID": "01-intro.html#logo",
+    "href": "01-intro.html#logo",
+    "title": "1  Introduction to R and Python",
+    "section": "1.4 Logo",
+    "text": "1.4 Logo\n\n\n\n\n\nRetrieved from: https://www.r-project.org/logo/\n\n\n\n\n\n\n\n\n\nRetrieved from: https://www.python.org/community/logos/"
+  },
+  {
+    "objectID": "01-intro.html#worldwide-google-trends",
+    "href": "01-intro.html#worldwide-google-trends",
+    "title": "1  Introduction to R and Python",
+    "section": "1.5 Worldwide Google Trends",
+    "text": "1.5 Worldwide Google Trends"
+  },
+  {
+    "objectID": "01-intro.html#installation",
+    "href": "01-intro.html#installation",
+    "title": "1  Introduction to R and Python",
+    "section": "1.6 Installation",
+    "text": "1.6 Installation\n\n1.6.1 R\nYou can download it for free from the following websites: - R (https://cran.r-project.org/)\nInstall Rstudio IDE\nRStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.\n\nRStudio (https://www.rstudio.com/products/rstudio/download/#download).\n\n\n\n1.6.2 Python\nRef: https://www.w3schools.com/python/python_getstarted.asp\nMany PCs and Macs will have python already installed.\nTo check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):\nC:\\Users\\Your Name>python --version\nTo check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:\npython --version\nIf you find that you do not have python installed on your computer, then you can download it for free from the following website: https://www.python.org/\nInstall PyCharm IDE\nPyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.\nPyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.\nJupyter Notebook\nIs Anaconda necessary to be installed to PC besides Jupyter Notebook?\nsource\nIs there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?\nThe packages in python are generally installed with “pip” (or “conda”) in the terminal and are then available regardless where you run your script from. Assuming you don’t have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.\nIf you don’t want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)\nSource - How to use Pip from the Jupyter Notebook\n# Not Recommended \n# DON'T DO THIS\n!pip install numpy\nHere is a short snippet that should generally work:\nInstall a pip package in the current Jupyter kernel\nimport sys\n!{sys.executable} -m pip install numpy\nThe benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.\nhttps://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook\nPython packages are not installed with python functions, like it would be the case in R with install.packages(“package name”). Instead, an external package manager usually is used to install and possibly compile the package files to a directory where python can import it from.\nAnaconda offers (among others) the package manager conda. Most popular is pip. Some Linux distributions also offer python packages via their package manager (e.g. apt on Debian/Ubuntu). All these package managers download packages from their own repositories, so conda install numpy, pip install numpy and apt install python3-numpy all install a package numpy, but from different sources and in possibly different versions.\nJupyter Notebook is a programming environment, where you can execute shell commands with !command, so depending on the system where the Jupyter server is running, you can use !pip install numpy, !conda install numpy or other commands as cells in the Jupyter Notebook you are working in. This will run the command in a shell.\nThat graphical menu with Jupyter, RStudio etc. you describe is the program “Anaconda Navigator”, which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.\nAnaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands."
+  },
+  {
+    "objectID": "01-intro.html#install-and-load-libraries",
+    "href": "01-intro.html#install-and-load-libraries",
+    "title": "1  Introduction to R and Python",
+    "section": "1.7 Install and Load Libraries",
+    "text": "1.7 Install and Load Libraries\n\n1.7.1 R\nR Packages: A Beginner’s Guide https://www.datacamp.com/community/tutorials/r-packages-guide?utm_source=adwords_ppc&utm_campaignid=1655852085&utm_adgroupid=61045434222&utm_device=c&utm_keyword=%2Bload%20%2Bpackage%20%2Br&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=469789579329&utm_targetid=aud-522010995285:kwd-589281898774&utm_loc_interest_ms=9071445&utm_loc_physical_ms=1009919&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnKGh4ZVHa4OxhLq0JUzpoBMMRhQvCGEmvscFuLZ5CI3V3JPsQ2v9P8aAhwpEALw_wcB\nAn R package is a way to organize your own work and share it with others. Typically, a package contains code, documentation for the package and the functions inside, some tests to check everything works as it should, and data sets.\nThree of the most popular repositories for R packages are: CRAN, Bioconductor and Github.\n\n1.7.1.1 Installing Packages From CRAN\ninstall.packages(\"package_name\")\nExample\ninstall.packages(\"tidyverse\")\nAfter running this, some messages will be diplayed on the console. They will depend on what operating system you are using, the dependencies, and if the package was successfully installed.\nTo install more than a package at the same time, we can use a character vector\ninstall.packages(c(\"vioplot\", \"MASS\"))\nThe function install.packages will download the source code from on the CRAN mirrors and install the package (and any dependencies) locally on your computer.\nYou have to install a package only once.\n\n\n1.7.1.2 Load Packages\nAfter a package is installed, you are ready to use its functionalities.\nIf you just need a sporadic use of a few functions or data inside a package you can access them with the notation\npackagename::functionname().\nIf you will make a more intensive use of the package, then maybe is worth to load it into memory. The simplest way to do this is with the library() command.\nPlease note that the input of install.packages() is a character vector and requires the name to be in quotes, while library() accepts either character or name and makes it possible for you to write the name of the package without quotes.\nOnce you have the package installed, you can load the library into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. Note that quotations are not required here.\nlibrary(tidyverse)\n\n\n\n1.7.2 Python\nUse ‘import module’ or ‘from module import’? https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import\nMethod 1: import module\nMethod 2: from module import foo\nThe difference between import module and from module import foo is subjective. User can select one method and be consitent in the use of it.\n\n\n\n\n\n\n\nimport module\nfrom module import foo\n\n\n\n\nPros\nPros\n\n\n- Less Maintanence of the import statements\n- Less typying to use foo function\n\n\n- Don’t need to add any aditional imports to start using another item from the same module\n- More control over whcih items of the module can be accessed\n\n\nCons\nCons\n\n\n- Typing module.foo in the code be tedious (dull, boring )\nto use new items from the module the user have to update the import statement\n\n\n\n\nIt can be minimized by using import module as mo, then typing mo.foo | You loose context about foo. For example it is less clear ceil() does, compared to math.ceil()\n\nDon’t use\n\nfrom modle import *\n\nBecause it clutters or fills with untidy collection of things in the namespace\n\nimport *\n\nFor any reasonable large set of code, if you import * you will likely be cementing it into the module, unable to be removed.\nThis is because now it is difficullt to identiify what items used in the code are coming from module."
+  },
+  {
+    "objectID": "01-intro.html#ranked15python-packages",
+    "href": "01-intro.html#ranked15python-packages",
+    "title": "1  Introduction to R and Python",
+    "section": "1.8 Ranked:15Python packages",
+    "text": "1.8 Ranked:15Python packages\nfor Data Science\nhttp://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf\n\n\n\n\nR Core Team. 2020. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/.\n\n\nWikipedia contributors. 2020a. “Python (Programming Language) — Wikipedia, the Free Encyclopedia.” https://en.wikipedia.org/w/index.php?title=Python_(programming_language)&oldid=996025213.\n\n\n———. 2020b. “R (Programming Language) — Wikipedia, the Free Encyclopedia.” https://en.wikipedia.org/w/index.php?title=R_(programming_language)&oldid=995691124."
+  },
+  {
+    "objectID": "02-basics.html#basic-exmaple",
+    "href": "02-basics.html#basic-exmaple",
+    "title": "2  Variables, expressions, and statements",
+    "section": "2.1 Basic Exmaple",
+    "text": "2.1 Basic Exmaple\nThis is a test code\n\n2.1.1 R code\n\n# This is an R code\nx <- 1\ny <- 3\nprint(x+y)\n\n[1] 4\n\n\n\n\n2.1.2 Python Code\nThe ‘python’ engine in knitr requires the reticulate package.\n\nlibrary(reticulate)\n\n\n# This is a Python code\nx = 1\ny = 3\nprint(x+y)\n\n4"
+  },
+  {
+    "objectID": "03-conditions.html",
+    "href": "03-conditions.html",
+    "title": "3  Conditional execution",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "04-Functions.html",
+    "href": "04-Functions.html",
+    "title": "4  Functions",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "05-Iteration.html",
+    "href": "05-Iteration.html",
+    "title": "5  Iteration",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "06-Tidyworkflow.html",
+    "href": "06-Tidyworkflow.html",
+    "title": "6  Tidy workflow",
+    "section": "",
+    "text": "WIP\nMoving from R to Python: The Libraries You Need to Know https://www.kdnuggets.com/2017/02/moving-r-python-libraries.html"
+  },
+  {
+    "objectID": "07-Import.html",
+    "href": "07-Import.html",
+    "title": "7  Import",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "08-tidy.html",
+    "href": "08-tidy.html",
+    "title": "8  Tidy",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "09-transform.html",
+    "href": "09-transform.html",
+    "title": "9  Transform",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "10-visualise.html#data",
+    "href": "10-visualise.html#data",
+    "title": "10  Data Visualization",
+    "section": "10.1 Data",
+    "text": "10.1 Data\nThe Palmer penguins dataset was introduced by Allison Horst, Alison Hill, and Kristen Gorman provide a great dataset for data exploration and visualization, as an alternative to iris. It was first introduced as an R package. The released version of palmerpenguins can be instaalled from CRAN with:\nR Installation install.packages(\"palmerpenguins\")\nUsing palmerpenguins python package you can easily load the Palmer penguins into your python environment.\nPython Installation pip install palmerpenguins\nThe palmerpenguins package contains two datasets : penguins and penguins_raw. penguins is a simplified version of the penguins_raw data."
+  },
+  {
+    "objectID": "10-visualise.html#r",
+    "href": "10-visualise.html#r",
+    "title": "10  Data Visualization",
+    "section": "10.2 R",
+    "text": "10.2 R\nLoad data\n\n# Load Palmer Archipelago (Antarctica) Penguin Data\nlibrary(palmerpenguins)\n# Return the first part of the dataset\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_l…¹ body_…² sex    year\n  <fct>   <fct>              <dbl>         <dbl>       <int>   <int> <fct> <int>\n1 Adelie  Torgersen           39.1          18.7         181    3750 male   2007\n2 Adelie  Torgersen           39.5          17.4         186    3800 fema…  2007\n3 Adelie  Torgersen           40.3          18           195    3250 fema…  2007\n4 Adelie  Torgersen           NA            NA            NA      NA <NA>   2007\n5 Adelie  Torgersen           36.7          19.3         193    3450 fema…  2007\n6 Adelie  Torgersen           39.3          20.6         190    3650 male   2007\n# … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g\n\n# Retrieve column names\ncolnames(penguins)\n\n[1] \"species\"           \"island\"            \"bill_length_mm\"   \n[4] \"bill_depth_mm\"     \"flipper_length_mm\" \"body_mass_g\"      \n[7] \"sex\"               \"year\"             \n\n\n\n10.2.1 base R package\n\n# Define color for each of the 3 penguine species\ncolors <- c(\"#00AFBB\", \"#E7B800\", \"#FC4E07\")\ncolors <- colors[as.numeric(penguins$species)]\n\n# Define shapes\nshapes = c(16, 17, 18) \nshapes <- shapes[as.numeric(penguins$species)]\n\nplot(x = penguins$flipper_length_mm,\n          y = penguins$body_mass_g,\n          col = colors,\n          pch = shapes,\n          xlab = \"Flipper Length\",\n          ylab = \"Body Mass\" )\n\n\n\n\n\n\n10.2.2 gggplot2 Package\nggplot2 is an R package dedicated to data visualization which is based on The Grammar of Graphics (Wilkinson 2012).\n\n#load ggplot2 package to make statistical graphics\nlibrary(ggplot2)\np <- ggplot(penguins) +\n  geom_point( aes(x = flipper_length_mm,\n                  y = body_mass_g,\n                  color = species,\n                  shape = species)) +\n  xlab(\"Flipper Length\")+\n  ylab(\"Body Mass\")\n\nprint(p)\n\n\n\n\n\n\n10.2.3 plotly R package for interactive data visualization\nInteractive visualization focuses on graphic representations of data that improve the way we interact with information\nplotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.\n\nlibrary(plotly)\np <- ggplot(penguins) +\n  geom_point( aes(x = flipper_length_mm,\n                  y = body_mass_g,\n                  color = species,\n                  shape = species)) +\n  xlab(\"Flipper Length\")+\n  ylab(\"Body Mass\")\n\n# The function ggplotly converts a ggplot2::ggplot() object to a plotly object.\nplotly::ggplotly(p)\n\n\n\n\n\nMethod 2\n\nlibrary(plotly)\nfig <- plot_ly(penguins, \n               x = ~flipper_length_mm,\n               y = ~body_mass_g, \n               color = ~species,\n               symbol = ~species,\n               type = \"scatter\")\nfig"
+  },
+  {
+    "objectID": "10-visualise.html#python",
+    "href": "10-visualise.html#python",
+    "title": "10  Data Visualization",
+    "section": "10.3 Python",
+    "text": "10.3 Python\n\nLoad data\n\n#load functions in palmerpenguins package\nfrom palmerpenguins import load_penguins\npenguins = load_penguins()\n# Return the first part of the dataset\npenguins.head()\n# Retrieve column names\nlist(penguins.columns)\n\n\n10.3.1 Matplotlib package\nMatplotlib is mainly deployed for basic plotting. Visualization using Matplotlib generally consists of bars, pies, lines, scatter plots and so on.\n\n# Import matplotlib to make statistical graphics. \n# By convention, it is imported with the shorthand sns.\nimport matplotlib.pyplot as plt\n\ncolors = {'Adelie':'blue', 'Gentoo':'orange', 'Chinstrap':'green'}\nplt.scatter(penguins.flipper_length_mm,\npenguins.body_mass_g, \nc= penguins.species.apply(lambda x: colors[x]))\nplt.xlabel('Flipper Length')\nplt.ylabel('Body Mass')\n\n\n\n\n\n\n\n\n\n\n\n\n10.3.2 seaborn Package\nSeaborn is an easy-to-use high level statistical plotting library which provides a variety of visualization patterns. It uses fewer syntax and has easily interesting default themes.\nIt tries to provide a ‘grammar of graphics’ style way to create plots but in a pythonic style without getting the exact syntax from ggplot as in plotnine. \nIntroduction to Seaborn\n\n# Import seaborn to make statistical graphics. \n# By convention, it is imported with the shorthand sns.\nimport seaborn as sns \n#load functions in palmerpenguins package\nfrom palmerpenguins import load_penguins\npenguins = load_penguins()\n\n# Apply the default theme\nsns.set_theme()\n# sns.set_style('whitegrid')\np = sns.relplot(x = 'flipper_length_mm',\n            y ='body_mass_g',\n            hue = 'species',\n            style = 'species',\n            data = penguins)\np.set_xlabels('Flipper Length')\np.set_ylabels('Body Mass')   \n\n\n\n\n\n\n\n\n\n\nThe function relplot() is named that way because it is designed to visualize many different statistical relationships. The relplot() function has a convenient kind parameter that lets you easily switch to this alternate representation: scatterplot() with kind=\"scatter\"; the default and lineplot() with kind=\"line\".\n\n\n10.3.3 plotnine package\nhttps://pypi.org/project/plotnine/\nplotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to compose plots by explicitly mapping data to the visual objects that make up the plot.\nPlotting with a grammar is powerful, it makes custom (and otherwise complex) plots are easy to think about and then create, while the simple plots remain simple.\nNOTE: R vs Python Syntax\nUnlike in R, now all the variables must be enclosed by single quotes\n\nfrom plotnine import *\n# unlike in R, now all the variables must be enclosed by single quotes\n(ggplot(penguins) +\n  geom_point(aes(x = 'flipper_length_mm',\n                  y = 'body_mass_g',\n                  color = 'species',\n                  shape = 'species')) +\n  xlab(\"Flipper Length\")+\n  ylab(\"Body Mass\"))\n\n\n\n\n\n\n\n\n\n\n\n\n10.3.4 plotly Python library for interactive data visualization\nThe plotly.express (Plotly Express or PX) module contains functions that can create entire figures at once. It is usually imported as px. Plotly Express is a built-in part of the plotly library.\n\nimport plotly.express as px\n\nfig = px.scatter(penguins,\n                 x=\"flipper_length_mm\",\n                 y=\"body_mass_g\",\n                 color= \"species\",\n                 symbol= \"species\",\n                 labels=dict(flipper_length_mm=\"Flipper Length\",\n                             body_mass_g=\"Body Mass\"))\nfig.show()\n\n\n\n\n\n\n\n\n                                \n                        170180190200210220230250030003500400045005000550060006500speciesAdelieGentooChinstrapFlipper LengthBody Massplotly-logomark                    \n\n\n\n\n\n\n\n\nWilkinson, Leland. 2012. “The Grammar of Graphics.” In Handbook of Computational Statistics, 375–414. Springer."
+  },
+  {
+    "objectID": "11-model.html",
+    "href": "11-model.html",
+    "title": "11  Model",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "12-communicate.html",
+    "href": "12-communicate.html",
+    "title": "12  Communicate",
+    "section": "",
+    "text": "WIP"
+  },
+  {
+    "objectID": "13-advancedRnPython.html#time-series-forecasting",
+    "href": "13-advancedRnPython.html#time-series-forecasting",
+    "title": "13  Advanced R and Python",
+    "section": "13.1 Time Series Forecasting",
+    "text": "13.1 Time Series Forecasting\n\n\n\nR\nPython\n\n\n\n\nfable-Forecasting Models for Tidy Time Series\nstatsmodels- Statistics based models\n\n\nforecast- Forecasting Functions for Time Series and Linear Models\nsktime- A unified framework for machine learning with time series\n\n\n\\(\\text{}\\)\nGluonTS- Deep learning-based models."
+  },
+  {
+    "objectID": "14-Jupyter.html#how-to-install-jupyter-environment",
+    "href": "14-Jupyter.html#how-to-install-jupyter-environment",
+    "title": "14  Jupyter Notebooks",
+    "section": "14.1 How to install Jupyter environment?",
+    "text": "14.1 How to install Jupyter environment?\nFirst, open a new command prompt (Windows) or terminal (Mac/Linux) on your workstation, and second, execute the following command:\njupyter notebook\nIf the above command fails, first, you need to install python on your workstation. There are two popular methods to install Python on your workstation.\n\nInstalling Python using Anaconda Distribution\nInstalling Raw Python\n\nAfter installing python using one of the above methods, then we need to installing Jupyter Notebook using either Anaconda or pip.\n\n\n14.1.1 Method 1: How to Install the Notebook Using pip\n\nIf you don’t want to install Anaconda, you just have to make sure that you have the latest version of pip.\nIf you have installed Python, you will typically already have it.\nYou can check the already installed pip version\n\npip3 --version\n\nYou can upgrade that using\n\n# On Windows\npython -m pip install -U pip setuptools\n\n# On OS X or Linux\npip3 install -U pip setuptools\n\nWhen you install Python directly from its official website, it does not include Jupyter Notebook in its standard library.\nIn this case, you need to install Jupyter Notebook using the pip. The process is as follows:\n\npython -m pip install jupyter\nor if you are using Python 3\npython3 -m pip install jupyter\nor simply\npip install jupyter\nCongratulations, you have installed Jupyter Notebook!\nAfter you have installed the Jupyter Notebook on your computer, you are ready to run the notebook server.\n\n\n14.1.2 Method 2: Installing Jupyter Notebook using Anaconda\n\nIf you have installed Python using Anaconda Distribution, then it includes Python, the Jupyter Notebook, and other commonly used packages for the scientific community.\nYou can follow the instructions for the installation of Anaconda here for Mac: click here or Windows: click here."
+  },
+  {
+    "objectID": "14-Jupyter.html#working-with-jupyter-notebook",
+    "href": "14-Jupyter.html#working-with-jupyter-notebook",
+    "title": "14  Jupyter Notebooks",
+    "section": "14.2 Working with Jupyter Notebook",
+    "text": "14.2 Working with Jupyter Notebook\nThis video: (click here) will guide you to create your first jupyter notebook."
+  },
+  {
+    "objectID": "15-Createproject.html",
+    "href": "15-Createproject.html",
+    "title": "15  Working with jupyter notebook",
+    "section": "",
+    "text": "16 Working with pycharm"
+  },
+  {
+    "objectID": "15-Createproject.html#install-packages",
+    "href": "15-Createproject.html#install-packages",
+    "title": "15  Working with jupyter notebook",
+    "section": "16.1 install packages",
+    "text": "16.1 install packages\npython -m pip install <package>\nmust read what toavoide: https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/"
+  },
+  {
+    "objectID": "15-Createproject.html#install-python-package-using-jupyter-notebook",
+    "href": "15-Createproject.html#install-python-package-using-jupyter-notebook",
+    "title": "15  Working with jupyter notebook",
+    "section": "16.2 Install Python package using Jupyter Notebook",
+    "text": "16.2 Install Python package using Jupyter Notebook\n\nhttps://www.geeksforgeeks.org/install-python-package-using-jupyter-notebook/\n\nimport sys !{sys.executable} -m pip install [package_name]"
+  }
+]
