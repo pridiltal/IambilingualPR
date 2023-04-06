@@ -257,6 +257,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#if-else-statement" id="toc-if-else-statement" class="nav-link active" data-scroll-target="#if-else-statement"><span class="toc-section-number">3.1</span>  if-else statement:</a></li>
+  <li><a href="#switch-statement-r-only" id="toc-switch-statement-r-only" class="nav-link" data-scroll-target="#switch-statement-r-only"><span class="toc-section-number">3.2</span>  switch statement (R only)</a></li>
+  <li><a href="#if-else-if-else-statement" id="toc-if-else-if-else-statement" class="nav-link" data-scroll-target="#if-else-if-else-statement"><span class="toc-section-number">3.3</span>  if-else if-else statement</a></li>
+  <li><a href="#ternary-operator" id="toc-ternary-operator" class="nav-link" data-scroll-target="#ternary-operator"><span class="toc-section-number">3.4</span>  Ternary operator</a></li>
+  <li><a href="#nested-if-else-statement" id="toc-nested-if-else-statement" class="nav-link" data-scroll-target="#nested-if-else-statement"><span class="toc-section-number">3.5</span>  Nested if-else statement</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/03-conditions.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -295,7 +299,7 @@ switch(expression,
        </code></pre>
 <ol start="3" type="1">
 <li><p>if-else if-else statement: This type of conditional execution allows a program to test multiple conditions and execute different code blocks depending on which condition is true. In R, the syntax for this type of statement is similar to the basic if-else statement, but with additional else if clauses. In Python, this is achieved using the elif keyword.</p></li>
-<li><p>Ternary operator (Python only): The ternary operator is a shorthand way of writing a basic if-else statement in Python. The syntax is as follows:</p></li>
+<li><p>Ternary operator: The ternary operator is a shorthand way of writing a basic if-else statement in Python. The syntax is as follows:</p></li>
 </ol>
 <pre><code>value_if_true if condition else value_if_false
 </code></pre>
@@ -354,6 +358,181 @@ switch(expression,
 <pre><code>[1] "both x and y meet the condition"</code></pre>
 </div>
 </div>
+</section>
+<section id="switch-statement-r-only" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="switch-statement-r-only"><span class="header-section-number">3.2</span> switch statement (R only)</h2>
+<p>This is an example of a switch statement in R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"B"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(x,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">"A"</span> <span class="ot">=</span> <span class="fu">print</span>(<span class="st">"Letter A"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">"B"</span> <span class="ot">=</span> <span class="fu">print</span>(<span class="st">"Letter B"</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="st">"C"</span> <span class="ot">=</span> <span class="fu">print</span>(<span class="st">"Letter C"</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">print</span>(<span class="st">"Not A, B, or C"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Letter B"</code></pre>
+</div>
+</div>
+<p>In this example, we define a variable x with the value “B”. We then use the switch() function to check the value of x and execute a corresponding action. In this case, since x is “B”, the second argument of the switch() function is matched, and the message “Letter B” is printed to the console.</p>
+<p>If x were instead set to “A”, “C”, or any other value, the switch() function would check each argument in turn until it found a match. If none of the provided arguments matched the value of x, the default action specified in the final argument (in this case, printing “Not A, B, or C”) would be executed.</p>
+<p>Python has a similar construct to the switch statement in other programming languages, called if-elif-else statements.</p>
+<p>Here’s an example of how you can use if-elif-else statements to achieve the same functionality as the switch statement in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">==</span> <span class="st">"A"</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Letter A"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">==</span> <span class="st">"B"</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Letter B"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">==</span> <span class="st">"C"</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Letter C"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not A, B, or C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Letter B</code></pre>
+</div>
+</div>
+<p>In this example, the value of x is set to “B”. We then use if-elif-else statements to check the value of x and execute the corresponding action. In this case, since x is “B”, the second if condition is true, and the message “Letter B” is printed to the console.</p>
+<p>Just like the switch statement in R, if none of the conditions in the if-elif-else statements evaluate to true, the else block is executed.</p>
+</section>
+<section id="if-else-if-else-statement" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="if-else-if-else-statement"><span class="header-section-number">3.3</span> if-else if-else statement</h2>
+<p>R example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is less than 5"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is between 5 and 10"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x is greater than or equal to 10"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x is greater than or equal to 10"</code></pre>
+</div>
+</div>
+<p>Python example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is less than 5"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;=</span> <span class="dv">5</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is between 5 and 10"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than or equal to 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than or equal to 10</code></pre>
+</div>
+</div>
+<p>In both examples, we define a variable x with the value of 10, and then use if-else if-else statements to check the value of x and execute the corresponding action.</p>
+<p>In the R example, we use the if, else if, and else keywords to create a chain of conditions that will be checked in order. If the first condition is true, the code block associated with the if statement will be executed. If the first condition is false, but the second condition is true, the code block associated with the else if statement will be executed. If neither the if nor the else if statements evaluate to true, the code block associated with the else statement will be executed.</p>
+<p>In the Python example, we use the if, elif, and else keywords to create the same chain of conditions. The difference is that Python uses the keyword elif instead of else if. Otherwise, the logic is the same as in the R example.</p>
+<p>Both examples will produce the same output, since the value of x is 10, which is greater than or equal to 10. The output will be:</p>
+</section>
+<section id="ternary-operator" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="ternary-operator"><span class="header-section-number">3.4</span> Ternary operator</h2>
+<p>A ternary operator is a shorthand way of writing an if-else statement that returns a value. It’s called “ternary” because it involves three operands: the condition being evaluated, the value to return if the condition is true, and the value to return if the condition is false.</p>
+<p>The ternary operator is commonly used in programming languages like Python and some other languages to write concise, one-line expressions that return a value based on a condition. It’s often used when the if-else statement would only contain one statement in each block.</p>
+<p>The syntax for the ternary operator varies slightly between languages. In Python, the syntax for the ternary operator is:</p>
+<p><code>value_if_true if condition else value_if_false</code></p>
+<p>In this syntax, condition is the expression being evaluated, value_if_true is the value to return if the condition is true, and value_if_false is the value to return if the condition is false.</p>
+<p>In R, the ternary operator is implemented using the ifelse() function. The syntax of ifelse() function is:</p>
+<p><code>ifelse(condition, value_if_true, value_if_false)</code></p>
+<p>In this syntax, condition is the expression being evaluated, value_if_true is the value to return if the condition is true, and value_if_false is the value to return if the condition is false.</p>
+<p>For example, consider the following code snippet:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> y, <span class="st">"x is greater than y"</span>, <span class="st">"x is less than or equal to y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this example, we are using the ifelse() function to check whether x is greater than y. If the condition is true, the value “x is greater than y” will be assigned to the result variable. If the condition is false, the value “x is less than or equal to y” will be assigned to the result variable.</p>
+<p>Note that the ifelse() function can also be used with vectors and matrices, allowing you to apply the ternary operator to multiple values at once.</p>
+<p>Here’s an example of how to use the ternary operator in Python:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>max_value <span class="op">=</span> x <span class="cf">if</span> x <span class="op">&gt;</span> y <span class="cf">else</span> y</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(max_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>20</code></pre>
+</div>
+</div>
+<p>In this example, we define two variables, x and y, with the values 10 and 20, respectively. We then use the ternary operator to determine the maximum value between the two.</p>
+<p>The ternary operator is a shorthand way of writing an if-else statement. In this case, the condition we want to check is x &gt; y, and the two possible outcomes are x and y. If the condition is true, the value of x is assigned to max_value. Otherwise, the value of y is assigned to max_value.</p>
+<p>The output of this code will be 20.</p>
+<p>since y has a larger value than x.</p>
+<p>Note that the syntax for the ternary operator in Python is as follows:</p>
+<p><code>value_if_true if condition else value_if_false</code></p>
+<p>where condition is the expression t</p>
+<p>R also has a similar shorthand way of writing an if-else statement, called the “ternary operator” or “conditional operator”.</p>
+<p>Here’s an example of how to use the ternary operator in R:hat is being evaluated, value_if_true is the value to return if condition is true, and value_if_false is the value to return if condition is false.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>max_value <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> y, x, y)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(max_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+<p>In this example, we define two variables, x and y, with the values 10 and 20, respectively. We then use the ternary operator to determine the maximum value between the two.</p>
+<p>The ternary operator in R is the ifelse() function. Its syntax is similar to that of the ternary operator in Python, where the first argument is the condition we want to check, the second argument is the value to return if the condition is true, and the third argument is the value to return if the condition is false.</p>
+<p>In this case, the condition we want to check is x &gt; y, and the two possible outcomes are x and y. If the condition is true, the value of x is assigned to max_value. Otherwise, the value of y is assigned to max_value.</p>
+<p>The output of this code will be 20.</p>
+<p>since y has a larger value than x.</p>
+<p>Note that the syntax for the ifelse() function in R is as follows:</p>
+<p><code>ifelse(condition, value_if_true, value_if_false)</code></p>
+<p>where condition is the expression that is being evaluated, value_if_true is the value to return if condition is true, and value_if_false is the value to return if condition is false.</p>
+</section>
+<section id="nested-if-else-statement" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="nested-if-else-statement"><span class="header-section-number">3.5</span> Nested if-else statement</h2>
+<p>here are examples of nested if-else statements in R and Python:</p>
+<p>R example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> y) {</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&gt;</span> z) {</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"x is the largest number"</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"z is the largest number"</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y <span class="sc">&gt;</span> z) {</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"y is the largest number"</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">"z is the largest number"</span>)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "z is the largest number"</code></pre>
+</div>
+</div>
+<p>In this example, we have three variables x, y, and z. We use nested if-else statements to determine which of these variables contains the largest number.</p>
+<p>Python example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> y:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> z:</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"x is the largest number"</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"z is the largest number"</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> y <span class="op">&gt;</span> z:</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"y is the largest number"</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"z is the largest number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>z is the largest number</code></pre>
+</div>
+</div>
+<p>This Python code does the same thing as the R code above. We have the same three variables x, y, and z, and we use nested if-else statements to determine which one is the largest. Note that the syntax for the if-else statements is slightly different in Python, using colons to indicate the start of a block of code, and indentation to indicate which code belongs to each block.</p>
 
 
 </section>

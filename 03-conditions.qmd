@@ -22,7 +22,7 @@ switch(expression,
 
 3. if-else if-else statement: This type of conditional execution allows a program to test multiple conditions and execute different code blocks depending on which condition is true. In R, the syntax for this type of statement is similar to the basic if-else statement, but with additional else if clauses. In Python, this is achieved using the elif keyword.
 
-4. Ternary operator (Python only): The ternary operator is a shorthand way of writing a basic if-else statement in Python. The syntax is as follows:
+4. Ternary operator: The ternary operator is a shorthand way of writing a basic if-else statement in Python. The syntax is as follows:
 
 ```
 value_if_true if condition else value_if_false
@@ -86,3 +86,233 @@ if (x > 5 & y > 15) {
 }
 
 ```
+
+## switch statement (R only)
+
+This is an example of a switch statement in R
+
+```{r}
+x <- "B"
+switch(x,
+       "A" = print("Letter A"),
+       "B" = print("Letter B"),
+       "C" = print("Letter C"),
+       print("Not A, B, or C")
+)
+
+
+```
+
+
+In this example, we define a variable x with the value "B". We then use the switch() function to check the value of x and execute a corresponding action. In this case, since x is "B", the second argument of the switch() function is matched, and the message "Letter B" is printed to the console.
+
+If x were instead set to "A", "C", or any other value, the switch() function would check each argument in turn until it found a match. If none of the provided arguments matched the value of x, the default action specified in the final argument (in this case, printing "Not A, B, or C") would be executed.
+
+
+Python has a similar construct to the switch statement in other programming languages, called if-elif-else statements.
+
+Here's an example of how you can use if-elif-else statements to achieve the same functionality as the switch statement in R:
+
+
+```{python}
+x = "B"
+if x == "A":
+    print("Letter A")
+elif x == "B":
+    print("Letter B")
+elif x == "C":
+    print("Letter C")
+else:
+    print("Not A, B, or C")
+
+```
+
+
+In this example, the value of x is set to "B". We then use if-elif-else statements to check the value of x and execute the corresponding action. In this case, since x is "B", the second if condition is true, and the message "Letter B" is printed to the console.
+
+Just like the switch statement in R, if none of the conditions in the if-elif-else statements evaluate to true, the else block is executed.
+
+
+## if-else if-else statement
+
+R example:
+
+```{r}
+x <- 10
+if (x < 5) {
+  print("x is less than 5")
+} else if (x >= 5 & x < 10) {
+  print("x is between 5 and 10")
+} else {
+  print("x is greater than or equal to 10")
+}
+
+```
+
+Python example:
+
+```{python}
+x = 10
+if x < 5:
+    print("x is less than 5")
+elif x >= 5 and x < 10:
+    print("x is between 5 and 10")
+else:
+    print("x is greater than or equal to 10")
+```
+
+
+In both examples, we define a variable x with the value of 10, and then use if-else if-else statements to check the value of x and execute the corresponding action.
+
+In the R example, we use the if, else if, and else keywords to create a chain of conditions that will be checked in order. If the first condition is true, the code block associated with the if statement will be executed. If the first condition is false, but the second condition is true, the code block associated with the else if statement will be executed. If neither the if nor the else if statements evaluate to true, the code block associated with the else statement will be executed.
+
+In the Python example, we use the if, elif, and else keywords to create the same chain of conditions. The difference is that Python uses the keyword elif instead of else if. Otherwise, the logic is the same as in the R example.
+
+Both examples will produce the same output, since the value of x is 10, which is greater than or equal to 10. The output will be:
+
+## Ternary operator 
+
+A ternary operator is a shorthand way of writing an if-else statement that returns a value. It's called "ternary" because it involves three operands: the condition being evaluated, the value to return if the condition is true, and the value to return if the condition is false.
+
+The ternary operator is commonly used in programming languages like Python and some other languages to write concise, one-line expressions that return a value based on a condition. It's often used when the if-else statement would only contain one statement in each block.
+
+The syntax for the ternary operator varies slightly between languages. In Python, the syntax for the ternary operator is:
+
+`value_if_true if condition else value_if_false`
+
+In this syntax, condition is the expression being evaluated, value_if_true is the value to return if the condition is true, and value_if_false is the value to return if the condition is false.
+
+
+In R, the ternary operator is implemented using the ifelse() function. The syntax of ifelse() function is:
+
+`ifelse(condition, value_if_true, value_if_false)`
+
+In this syntax, condition is the expression being evaluated, value_if_true is the value to return if the condition is true, and value_if_false is the value to return if the condition is false.
+
+For example, consider the following code snippet:
+
+```{r}
+x <- 5
+y <- 10
+result <- ifelse(x > y, "x is greater than y", "x is less than or equal to y")
+
+```
+
+In this example, we are using the ifelse() function to check whether x is greater than y. If the condition is true, the value "x is greater than y" will be assigned to the result variable. If the condition is false, the value "x is less than or equal to y" will be assigned to the result variable.
+
+Note that the ifelse() function can also be used with vectors and matrices, allowing you to apply the ternary operator to multiple values at once.
+
+
+
+Here's an example of how to use the ternary operator in Python:
+
+
+```{python}
+
+x = 10
+y = 20
+max_value = x if x > y else y
+print(max_value)
+```
+
+
+In this example, we define two variables, x and y, with the values 10 and 20, respectively. We then use the ternary operator to determine the maximum value between the two.
+
+The ternary operator is a shorthand way of writing an if-else statement. In this case, the condition we want to check is x > y, and the two possible outcomes are x and y. If the condition is true, the value of x is assigned to max_value. Otherwise, the value of y is assigned to max_value.
+
+The output of this code will be 20.
+
+since y has a larger value than x.
+
+Note that the syntax for the ternary operator in Python is as follows:
+
+
+`value_if_true if condition else value_if_false`
+
+where condition is the expression t
+
+ R also has a similar shorthand way of writing an if-else statement, called the "ternary operator" or "conditional operator".
+
+Here's an example of how to use the ternary operator in R:hat is being evaluated, value_if_true is the value to return if condition is true, and value_if_false is the value to return if condition is false.
+
+
+```{r}
+x <- 10
+y <- 20
+max_value <- ifelse(x > y, x, y)
+print(max_value)
+
+
+```
+
+In this example, we define two variables, x and y, with the values 10 and 20, respectively. We then use the ternary operator to determine the maximum value between the two.
+
+The ternary operator in R is the ifelse() function. Its syntax is similar to that of the ternary operator in Python, where the first argument is the condition we want to check, the second argument is the value to return if the condition is true, and the third argument is the value to return if the condition is false.
+
+In this case, the condition we want to check is x > y, and the two possible outcomes are x and y. If the condition is true, the value of x is assigned to max_value. Otherwise, the value of y is assigned to max_value.
+
+The output of this code will be 20.
+
+since y has a larger value than x.
+
+Note that the syntax for the ifelse() function in R is as follows:
+
+`ifelse(condition, value_if_true, value_if_false)`
+
+where condition is the expression that is being evaluated, value_if_true is the value to return if condition is true, and value_if_false is the value to return if condition is false.
+
+## Nested if-else statement
+
+
+here are examples of nested if-else statements in R and Python:
+
+R example:
+
+
+```{r}
+x <- 10
+y <- 20
+z <- 30
+
+if (x > y) {
+  if (x > z) {
+    print("x is the largest number")
+  } else {
+    print("z is the largest number")
+  }
+} else {
+  if (y > z) {
+    print("y is the largest number")
+  } else {
+    print("z is the largest number")
+  }
+}
+
+
+```
+
+
+In this example, we have three variables x, y, and z. We use nested if-else statements to determine which of these variables contains the largest number.
+
+Python example:
+
+
+```{python}
+x = 10
+y = 20
+z = 30
+
+if x > y:
+    if x > z:
+        print("x is the largest number")
+    else:
+        print("z is the largest number")
+else:
+    if y > z:
+        print("y is the largest number")
+    else:
+        print("z is the largest number")
+
+```
+
+This Python code does the same thing as the R code above. We have the same three variables x, y, and z, and we use nested if-else statements to determine which one is the largest. Note that the syntax for the if-else statements is slightly different in Python, using colons to indicate the start of a block of code, and indentation to indicate which code belongs to each block.
