@@ -211,7 +211,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#r-2" id="toc-r-2" class="nav-link" data-scroll-target="#r-2"><span class="toc-section-number">1.6.1</span>  R</a></li>
   <li><a href="#python-2" id="toc-python-2" class="nav-link" data-scroll-target="#python-2"><span class="toc-section-number">1.6.2</span>  Python</a></li>
   </ul></li>
-  <li><a href="#ranked15python-packages" id="toc-ranked15python-packages" class="nav-link" data-scroll-target="#ranked15python-packages"><span class="toc-section-number">1.7</span>  Ranked:15Python packages</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pridiltal/IambilingualPR/edit/main/01-intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pridiltal/IambilingualPR/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -314,37 +313,86 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="python-1" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="python-1"><span class="header-section-number">1.5.2</span> Python</h3>
-<p>Ref: https://www.w3schools.com/python/python_getstarted.asp</p>
-<p>Many PCs and Macs will have python already installed.</p>
-<p>To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):</p>
-<p><code>C:\Users\Your Name&gt;python --version</code></p>
-<p>To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:</p>
-<p><code>python --version</code></p>
-<p>If you find that you do not have python installed on your computer, then you can download it for free from the following website: https://www.python.org/</p>
-<p><strong>Install PyCharm IDE</strong></p>
-<p>PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.</p>
-<p>PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.</p>
-<p><strong>Jupyter Notebook</strong></p>
-<p>Is Anaconda necessary to be installed to PC besides Jupyter Notebook?</p>
-<p><a href="https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook">source</a></p>
-<p>Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?</p>
-<p>The packages in python are generally installed with “pip” (or “conda”) in the terminal and are then available regardless where you run your script from. Assuming you don’t have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.</p>
-<p>If you don’t want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)</p>
-<p><a href="https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">Source - How to use Pip from the Jupyter Notebook</a></p>
-<pre><code># Not Recommended 
+<p>To get started with Python programming, you’ll need to follow these steps:</p>
+<ol type="1">
+<li><p>Download Python: Python is an open-source programming language that is used for a wide range of tasks, including web development, data analysis, and machine learning. You can download Python for free from the official Python website at https://www.python.org/downloads/. Make sure to choose the appropriate version for your computer’s operating system.</p></li>
+<li><p>Install an Integrated Development Environment (IDE): An IDE is a software application that provides comprehensive facilities to computer programmers for software development. It typically consists of a code editor, a debugger, and a compiler. There are several options for Python IDEs, including:</p></li>
+</ol>
+<ul>
+<li><p>PyCharm: PyCharm is a popular Python IDE developed by JetBrains. It is available in both free and paid versions and provides advanced features for web development, scientific computing, and data analysis. You can download PyCharm from https://www.jetbrains.com/pycharm/download/.</p></li>
+<li><p>Visual Studio Code: Visual Studio Code is a free, open-source IDE developed by Microsoft. It supports multiple programming languages, including Python, and provides a range of features such as debugging, syntax highlighting, and code completion. You can download Visual Studio Code from https://code.visualstudio.com/download.</p></li>
+<li><p>Jupyter Notebook: Jupyter Notebook is a web-based interactive computing environment that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is commonly used for data analysis and machine learning tasks. You can download Jupyter Notebook from https://jupyter.org/install.</p></li>
+</ul>
+<p>Once you have downloaded and installed Python and an IDE of your choice, you’re ready to start coding in Python!</p>
+
+<!-- Check this spart
+### Python 
+
+Ref: https://www.w3schools.com/python/python_getstarted.asp
+
+Many PCs and Macs will have python already installed.
+
+To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):
+
+```C:\Users\Your Name>python --version```
+
+To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:
+
+```python --version```
+
+If you find that you do not have python installed on your computer, then you can download it for free from the following website: https://www.python.org/
+
+**Install PyCharm IDE**
+
+PyCharm is a cross-platform IDE that provides consistent experience on the Windows, macOS, and Linux operating systems.
+
+PyCharm is available in three editions: Professional, Community, and Edu. The Community and Edu editions are open-source projects and they are free, but they have fewer features. PyCharm Edu provides courses and helps you learn programming with Python. The Professional edition is commercial, and provides an outstanding set of tools and features. For details, see the editions comparison matrix.
+
+**Jupyter Notebook**
+
+Is Anaconda necessary to be installed to PC besides Jupyter Notebook?
+
+[source](https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook)
+
+Is there a way to install python packages within Jupyter Notebook, or should I really install Anaconda? What is the benefit of installing Anaconda (besides Jupyter Notebook)?
+
+
+The packages in python are generally installed with "pip" (or "conda") in the terminal and are then available regardless where you run your script from. Assuming you don't have multiple python versions set up on your PC, they should then all be available in your jupyter-notebook also.
+
+If you don't want to open another window to do this, you can also run BASH code from Jupyter itself, just start the line with an exclamation mark (!)
+
+[Source - How to use Pip from the Jupyter Notebook](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/)
+```
+# Not Recommended 
 # DON'T DO THIS
-!pip install numpy</code></pre>
-<p>Here is a short snippet that should generally work:</p>
-<p><strong>Install a pip package in the current Jupyter kernel</strong></p>
-<pre><code>import sys
-!{sys.executable} -m pip install numpy</code></pre>
-<p>The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.</p>
-<p>https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook</p>
-<p>Python packages are not installed with python functions, like it would be the case in R with install.packages(“package name”). Instead, an external package manager usually is used to install and possibly compile the package files to a directory where python can import it from.</p>
-<p>Anaconda offers (among others) the package manager conda. Most popular is pip. Some Linux distributions also offer python packages via their package manager (e.g.&nbsp;apt on Debian/Ubuntu). All these package managers download packages from their own repositories, so conda install numpy, pip install numpy and apt install python3-numpy all install a package numpy, but from different sources and in possibly different versions.</p>
-<p>Jupyter Notebook is a programming environment, where you can execute shell commands with !command, so depending on the system where the Jupyter server is running, you can use !pip install numpy, !conda install numpy or other commands as cells in the Jupyter Notebook you are working in. This will run the command in a shell.</p>
-<p>That graphical menu with Jupyter, RStudio etc. you describe is the program “Anaconda Navigator”, which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.</p>
-<p>Anaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands.</p>
+!pip install numpy
+```
+
+Here is a short snippet that should generally work:
+
+**Install a pip package in the current Jupyter kernel**
+
+```
+import sys
+!{sys.executable} -m pip install numpy
+```
+
+The benefits of Anaconda are that it bundles everything you need to at least start your more basic projects (python release, basic packages, IDE) and that you can set-up project-specific environments that do not interfere with your system-wide package installations.
+
+
+https://stackoverflow.com/questions/64426680/is-anaconda-necessary-to-be-installed-to-pc-besides-jupyter-notebook
+
+Python packages are not installed with python functions, like it would be the case in R with install.packages("package name"). Instead, an external package manager usually is used to install and possibly compile the package files to a directory where python can import it from.
+
+Anaconda offers (among others) the package manager conda. Most popular is pip. Some Linux distributions also offer python packages via their package manager (e.g. apt on Debian/Ubuntu). All these package managers download packages from their own repositories, so conda install numpy, pip install numpy and apt install python3-numpy all install a package numpy, but from different sources and in possibly different versions.
+
+Jupyter Notebook is a programming environment, where you can execute shell commands with !command, so depending on the system where the Jupyter server is running, you can use !pip install numpy, !conda install numpy or other commands as cells in the Jupyter Notebook you are working in. This will run the command in a shell.
+
+That graphical menu with Jupyter, RStudio etc. you describe is the program "Anaconda Navigator", which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.
+
+Anaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands. 
+
+-->
 </section>
 </section>
 <section id="install-and-load-libraries" class="level2" data-number="1.6">
@@ -431,14 +479,19 @@ ul.task-list li input[type="checkbox"] {
 <li><p>This is because now it is difficullt to identiify what items used in the code are coming from <code>module</code>.</p></li>
 </ul></li>
 </ul>
-</section>
-</section>
-<section id="ranked15python-packages" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="ranked15python-packages"><span class="header-section-number">1.7</span> Ranked:15Python packages</h2>
-<p>for Data Science</p>
-<p>http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf</p>
+<!--
+
+## Ranked:15Python packages
+for Data Science
 
 
+http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf
+
+
+-->
+
+
+</section>
 </section>
 
 </main> <!-- /main -->

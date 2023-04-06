@@ -81,6 +81,23 @@ To get started with R programming, you'll need to follow two steps:
 2. Install RStudio, an integrated development environment (IDE) for R. RStudio makes it easier to write, debug, and organize your R code. There are two versions of RStudio available: RStudio Desktop and RStudio Server. RStudio Desktop is a standalone desktop application that you can download from https://posit.co/download/rstudio-desktop/. RStudio Server is a web-based version that runs on a remote server and can be accessed through a web browser.
 
 
+### Python
+
+To get started with Python programming, you'll need to follow these steps:
+
+1. Download Python: Python is an open-source programming language that is used for a wide range of tasks, including web development, data analysis, and machine learning. You can download Python for free from the official Python website at https://www.python.org/downloads/. Make sure to choose the appropriate version for your computer's operating system.
+
+2. Install an Integrated Development Environment (IDE): An IDE is a software application that provides comprehensive facilities to computer programmers for software development. It typically consists of a code editor, a debugger, and a compiler. There are several options for Python IDEs, including:
+
+  - PyCharm: PyCharm is a popular Python IDE developed by JetBrains. It is available in both free and paid versions and provides advanced features for web development, scientific computing, and data analysis. You can download PyCharm from https://www.jetbrains.com/pycharm/download/.
+
+  - Visual Studio Code: Visual Studio Code is a free, open-source IDE developed by Microsoft. It supports multiple programming languages, including Python, and provides a range of features such as debugging, syntax highlighting, and code completion. You can download Visual Studio Code from https://code.visualstudio.com/download.
+
+  - Jupyter Notebook: Jupyter Notebook is a web-based interactive computing environment that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is commonly used for data analysis and machine learning tasks. You can download Jupyter Notebook from https://jupyter.org/install.
+
+Once you have downloaded and installed Python and an IDE of your choice, you're ready to start coding in Python!
+
+<!-- Check this spart
 ### Python 
 
 Ref: https://www.w3schools.com/python/python_getstarted.asp
@@ -146,6 +163,8 @@ Jupyter Notebook is a programming environment, where you can execute shell comma
 That graphical menu with Jupyter, RStudio etc. you describe is the program "Anaconda Navigator", which is installed with Anaconda. Jupyter is just a Python library, which is pre-installed with Anaconda, but can also be installed via pip, apt and other package managers.
 
 Anaconda Navigator is a desktop graphical user interface (GUI) included in Anaconda® distribution that allows you to launch applications and easily manage conda packages, environments, and channels without using command-line commands. 
+
+-->
 
 
 ## Install and Load Libraries
@@ -226,6 +245,9 @@ The difference between `import module` and `from module import foo` is  subjecti
    
    - This is because now it is difficullt to identiify what items used in the code are coming from `module`. 
 
+
+<!--
+
 ## Ranked:15Python packages
 for Data Science
 
@@ -233,5 +255,5 @@ for Data Science
 http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf
 
 
-
+-->
 
