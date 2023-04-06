@@ -4,35 +4,42 @@ R Vs Python: What’s the Difference? https://www.guru99.com/r-vs-python.html
 
 ## About R and Python
 
-### R 
+R and Python are both versatile and widely used open-source programming languages with uses in statistical computing and graphics. R is an object-oriented environment that enables statistical techniques to be easily implemented and adapted for different use cases. It is specifically designed for statistical computing and graphics. R's extensive library of packages, which provide a variety of functions, data, and documentation that can be readily shared and used by other researchers and analysts, is one of its main strengths. These packages provide a wide range of capabilities, making R an essential tool for data analysis, visualization, and modeling across a wide range of disciplines.
 
-R is an object oriented, open source programming **language** and **environment** for statistical computing and graphics. R is not a statistics system but an environment within which statistical techniques are implemented. Further, R gains more capabilities via packages, its fundamental shareable units that bundle together R functions, code, data, documentation, and tests etc. [@Rcoreteam2020]. 
+Python, on the other hand, is a general-purpose computer language that excels at statistical computing and graphics. Python's object-oriented method lends itself well to organizing and manipulating complicated data structures, and its interactive nature enables rapid prototyping and experimentation. Python also has a robust ecosystem of third-party libraries and frameworks, including several for data processing and visualization. While Python's statistical capabilities are not as extensive as those of R, its versatility and popularity make it a popular option for a variety of applications other than statistical computing.
 
-### Python 
+When considering programming languages for data analysis and manipulation, R and Python are two of the most popular choices. While both languages have similarities in terms of syntax and functionality, there are also several key differences between the two that can impact their usefulness for different projects or tasks. In this context, let's explore some of the key differences between R and Python, including their data structures, function syntax, package ecosystems, object-oriented programming support, and error handling.
 
-Python is an object-oriented, interpreted, and interactive programming language. The motto of Python language is "Batteries included" as the functionality of the language can be performed via its comprehensive standard in built Libraries [@wikipython].
+1. Data structures: R has several built-in data structures, such as vectors, matrices, data frames, and lists, that are optimized for statistical analysis and data manipulation. Python, on the other hand, has a more diverse range of built-in data structures, including lists, tuples, dictionaries, and sets, that can be used for a variety of purposes.
+
+2. Function syntax: The syntax for defining functions is slightly different in R and Python. In R, the function keyword is used to define a function, while in Python the def keyword is used. Additionally, R allows for optional arguments to be specified by name, while Python requires all arguments to be specified in order.
+
+3. Package ecosystems: Both R and Python have large ecosystems of packages and libraries that extend the functionality of the language. However, R's ecosystem is more focused on statistical analysis and data manipulation, while Python's ecosystem is more diverse and includes libraries for web development, machine learning, scientific computing, and more.
+
+4. Object-oriented programming: Python is a fully object-oriented language, whereas R has some support for object-oriented programming but is primarily a functional programming language.
+
+5. Error handling: Python has a built-in mechanism for handling errors, called exceptions, that allows for more fine-grained control over error handling. R does not have a built-in exception mechanism, but instead relies on returning error codes or messages from functions.
+
+Overall, the choice between R and Python depends on the specific needs of the project or task at hand. R is a good choice for statistical analysis and data manipulation, while Python is more versatile and can be used for a wider range of tasks. However, both languages have their strengths and weaknesses, and many projects may benefit from using both languages together in a complementary way.
 
 ## History of R and Python
 
-### R 
+R is an implementation of the S computer language, which was created in 1976 by John Chambers. Ross Ihaka and Robert Gentleman of the University of Auckland in New Zealand created an alternate version of the basic S language in 1991. R, an alternative implementation, was released in 1993. R has since grown in popularity and is now a top statistical computing and graphics tool.
 
-R is an implementation of the S programming language which was created by John Chambers in 1976. In 1991, an alternative implementation of the basic S language was developed by Ross Ihaka and Robert Gentleman, University of Auckland, New Zealand.  It was published in 1993 [@wikiR].
-
-### Python 
-
-In 1989, Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands started the implementation of Python  as a successor to ABC programming language. Python 2.0 was released in 2000. Python 3.0, a major revision of the language that is not completely backward-compatible  was released in 2008 [@wikipython] . Today many  developers create libraries strictly for the use with Python 3.
+Python, on the other hand, was developed in 1989 at Centrum Wiskunde & Informatica (CWI) in the Netherlands by Guido van Rossum. It was created as a replacement for the ABC computer language. Python 2.0 was released in 2000, and Python 3.0, a significant language revision that is not fully backward-compatible, was released in 2008. Today, many developers create libraries especially for use with Python 3, and the language has grown in popularity for a variety of uses other than statistical computing, such as web development, machine learning, and scientific computing.
 
 
 ## Story behind their names
 
 ### R 
 
-R was introduced by **R**oss Ihaka and **R**obert Gentleman and it was named after the first names of the two authors. The name of the "S" language also had some influence on the selection of its name and it was selected partly as a play on the name of S [@wikiR]. 
+R is called after its creators, Robert Gentleman and Ross Ihaka. S was named after its creators, John Chambers and his coworkers at Bell Labs, whose surnames all began with the letter "S." This practice is continued by R's name, which incorporates the first letter of its creators' first names.
 
 
 ### Python
 
-Python was named after a famous [TV show 'Monty Python's Flying Circus'](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus). Guido van Rossum, the creater of Python was a big fan of the TV show. He wanted to name his invention with a short, unique and slightly mysterious name and chose Python as a working title for his ongoing project. 
+Guido van Rossum, the creator of Python, was a fan of the British comedy group [Monty Python's Flying Circus](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus). Van Rossum selected the name Python as a working title for his project in December 1989, while working at the Netherlands' National Research Institute for Mathematics and Computer Science. He wanted a short, distinct, and slightly mysterious name for his language, and he liked the connotations of the term "Python" - it was an uncommon and exotic species, and it also had a connection to serpents, implying the language's power and flexibility. Van Rossum kept the name when he released the first version of Python in February 1991, and it has since become one of the most famous programming languages in the world.
+
 
 ## Logo
 
@@ -44,6 +51,7 @@ knitr::include_graphics("fig/C1_Rlogo.png")
 knitr::include_graphics("fig/C1_Pythonlogo.png")
 ```
 
+<!--
 ## Worldwide Google Trends 
 
 ```{r googletrends, echo = FALSE, warning=FALSE, message=FALSE, fig.width=13, fig.height=8}
@@ -59,18 +67,18 @@ p<- datatsibble %>% autoplot() +
 print(p)
 ```
 
+
+-->
+
 ## Installation
 
 ### R 
 
-You can download it for free from the following websites:
-- R (https://cran.r-project.org/) 
+To get started with R programming, you'll need to follow two steps:
 
-**Install Rstudio IDE**
+1. Download R, a programming language for statistical computing and graphics. You can get the latest version for free from the official R website at https://cran.rstudio.com/. Make sure to choose the appropriate version for your computer's operating system.
 
-RStudio is an integrated development environment for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
-
-- RStudio (https://www.rstudio.com/products/rstudio/download/#download).
+2. Install RStudio, an integrated development environment (IDE) for R. RStudio makes it easier to write, debug, and organize your R code. There are two versions of RStudio available: RStudio Desktop and RStudio Server. RStudio Desktop is a standalone desktop application that you can download from https://posit.co/download/rstudio-desktop/. RStudio Server is a web-based version that runs on a remote server and can be accessed through a web browser.
 
 
 ### Python 
@@ -223,3 +231,7 @@ for Data Science
 
 
 http://blog.thedataincubator.com/wp-content/uploads/2017/04/Ranked-15-Python-Packages-for-Data-Science.pdf
+
+
+
+

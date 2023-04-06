@@ -1,3 +1,88 @@
 # Conditional execution
 
-WIP
+Conditional execution is an essential feature of any programming language, allowing programs to make decisions based on specific conditions. Both R and Python offer support for conditional execution, but they differ in their syntax and some features.
+
+Both R and Python support various types of conditional execution, which allow programs to make decisions based on specific conditions. Let's explore some of the common types of conditional execution in both languages:
+
+1. if-else statement: This is the most basic form of conditional execution in both languages. It allows a program to execute one set of statements if a condition is true and another set of statements if the condition is false. The syntax is similar in both languages, with R using curly braces to denote code blocks and Python using indentation.
+
+
+2. switch statement (R only): The switch statement is a specialized form of conditional execution in R that allows a program to select one of several possible execution paths based on the value of a single expression. The syntax is as follows:
+
+
+```
+
+switch(expression,
+       value1 = statement1,
+       value2 = statement2,
+       …
+       default = statementN)
+       
+```
+
+3. if-else if-else statement: This type of conditional execution allows a program to test multiple conditions and execute different code blocks depending on which condition is true. In R, the syntax for this type of statement is similar to the basic if-else statement, but with additional else if clauses. In Python, this is achieved using the elif keyword.
+
+4. Ternary operator (Python only): The ternary operator is a shorthand way of writing a basic if-else statement in Python. The syntax is as follows:
+
+```
+value_if_true if condition else value_if_false
+
+```
+
+5. Nested if-else statement: This type of conditional execution allows a program to test multiple conditions in a hierarchical manner, with one set of conditions being nested within another set. The syntax is similar in both languages, with R using curly braces to denote nested code blocks and Python using indentation.
+
+
+Overall, both R and Python offer support for various types of conditional execution, with some differences in syntax and features. The choice between the two often depends on the specific needs of the project or task at hand.
+
+##  if-else statement:
+
+In R, the basic syntax for conditional execution is the if-else statement, which tests a condition and executes one set of statements if the condition is true and another set of statements if the condition is false. Here's an example:
+
+```{r}
+x <- 10
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is less than or equal to 5")
+}
+```
+
+In Python, the basic syntax for conditional execution is also the if-else statement. However, Python uses a colon and indentation to denote code blocks, as opposed to R's curly braces. Here's the same example in Python:
+
+```{python}
+
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is less than or equal to 5")
+
+```
+
+One notable difference between the two languages is that Python allows for more complex conditions using logical operators such as and, or, and not. Here's an example:
+
+
+```{python}
+x = 10
+y = 20
+if x > 5 and y > 15:
+    print("both x and y meet the condition")
+else:
+    print("either x or y (or both) do not meet the condition")
+
+```
+
+In R, the same condition would be written as follows:
+
+
+```{r}
+
+x <- 10
+y <- 20
+if (x > 5 & y > 15) {
+  print("both x and y meet the condition")
+} else {
+  print("either x or y (or both) do not meet the condition")
+}
+
+```
